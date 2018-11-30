@@ -46,7 +46,7 @@ class Products
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
       // 4.a. For each row, make a new work php object
-      $productsItem =  new products($row);
+      $productsItem =  new Products($row);
       array_push($arr, $productsItem);
 
     }
