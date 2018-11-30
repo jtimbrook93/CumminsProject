@@ -1,5 +1,7 @@
 var myProductsApp = new Vue ({
+
   el: '#myProductsMain',
+
   data: {
     myProducts: {
 
@@ -22,7 +24,6 @@ var myProductsApp = new Vue ({
       .then( json => {
         myProductsApp.myProducts = json;
         // TODO: Build out client chart
-
       })
   .catch( err => {
     console.log('SITE LIST FETCH ERROR:');
@@ -36,7 +37,7 @@ var myProductsApp = new Vue ({
   // Do data fetch
   fetch('api/myproducts.php')
   .then( response => response.json() )
-  .then( json => {myproductsApp.myProducts = json} )
+  .then( json => {myProductsApp.myProducts = json} )
   .catch( err => {
   console.error('SITE FETCH ERROR:');
   console.error(err);
