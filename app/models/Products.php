@@ -26,7 +26,7 @@ class Products
     $this->classification = ($data['classification']);
     $this->size = ($data['size']);
   }
-  
+
   public static function fetchAll() {
 
     // 1. Connect to the database
