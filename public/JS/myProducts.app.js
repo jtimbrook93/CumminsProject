@@ -10,15 +10,16 @@ var myProductsApp = new Vue ({
       productName: '',
       purchaseId: ''
 
-    }
-
+    },
+    
+myProductsArr: []
 
   },
 
   computed: {},
 
   methods: {
-    
+
     getAllProducts() {
       fetch('api/myproducts.php')
       .then( response => response.json() ) // "a => expression" is shorthand function declaration
