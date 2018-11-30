@@ -11,9 +11,12 @@ data: {
     dateStart: '',
     estimatedFinish: '',
     processStep: ''
-}
+},
+
+repairsArr:[]
 
 },
+
 computed: {
 
   },

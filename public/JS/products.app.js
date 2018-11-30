@@ -1,6 +1,6 @@
 var productsApp = new Vue({
   el: '#productMain',
-
+data: {
   products: {
 
     serialNumber: '',
@@ -11,9 +11,10 @@ var productsApp = new Vue({
     torque: '',
     classification: '',
     size: ''
-
-
   },
+
+  productsArr: []
+},
 
     methods: {
       fetchAll() {

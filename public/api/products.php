@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 $productsArr = Products::fetchAll();
 
 // convert to json and print
-$json = json_encode($productstArr, JSON_PRETTY_PRINT);
+$json = json_encode($productsArr, JSON_PRETTY_PRINT);
 
 header ('Content-type: application/json;charset=utf-8');
 echo json_encode($productsArr);
