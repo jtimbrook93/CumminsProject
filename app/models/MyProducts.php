@@ -27,6 +27,7 @@ class MyProducts
     //TODO: change this query
     $sql = 'SELECT customerId, serialNumber, productName, purchaseId
             FROM myProducts;';
+            
     $statement = $db->prepare($sql);
 
     // 3. Run the query

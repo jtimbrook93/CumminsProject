@@ -50,7 +50,7 @@ computed: {
       }
     }
   },
-  created () {
+  created() {
 
     // Do data fetch
     fetch('api/comment.php')

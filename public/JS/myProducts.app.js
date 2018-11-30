@@ -11,7 +11,7 @@ var myProductsApp = new Vue ({
       purchaseId: ''
 
     },
-    
+
 myProductsArr: []
 
   },
@@ -34,7 +34,7 @@ myProductsArr: []
   },
 
   },
-  created () {
+  created() {
 
   // Do data fetch
   fetch('api/myproducts.php')
