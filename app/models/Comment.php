@@ -17,7 +17,7 @@ class Comment
   public static function getAllComments(){
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-  $sql = 'SELECT * FROM Comments';
+  $sql = 'SELECT * FROM comments';
 
 
 
