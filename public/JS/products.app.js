@@ -34,7 +34,6 @@ data: {
       created () {
 
         // Do data fetch
-        fetchAll();
         fetch('api/products.php')
         .then( response => response.json() )
         .then( json => {productsApp.products = json} )
