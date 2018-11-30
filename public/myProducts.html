@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="CSS/stylesheet.css" />
   </head>
   <header>
-    <h1>Sites and Turbines</h1>
+    <h1>My Products</h1>
 <nav>
-  <h4>Alternative Green Systems</h4>
+  <h4>Cummins Engine Diognostics</h4>
   <a href="myProducts.html">My Products</a>
   <a href="newProducts.html">New Products</a>
   <a href="support.html">Support</a>
@@ -23,75 +23,57 @@
 </header>
   <body>
   <div id="contentbox">
-  <div id="siteMain" class= "container">
+  <div id="myProductsMain" class= "container">
     <h3>Site Information</h3>
     Service managers can view information on each site below.<br /><br />
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th>Site ID</th>
-          <th>Client ID</th>
-          <th>Site Name</th>
-          <th>Site Description</th>
-          <th>Primary Contact</th>
-          <th>Capacity</th>
-          <th>Address Line 1</th>
-          <th>Address Line 2</th>
-          <th>City</th>
-          <th>State</th>
-          <th>Zip</th>
-          <th>Country</th>
+          <th>Customer ID</th>
+          <th>Serial Number</th>
+          <th>Product Name</th>
+          <th>Purchase ID</th>
         </tr>
       </thead>
-      <tbody id="siteTableBody">
-        <tr v-for = "site in site">
-        <td>{{site.siteId}}</td>
-        <td>{{site.clientId}}</td>
-        <td>{{site.siteName}}</td>
-        <td>{{site.siteDescription}}</td>
-        <td>{{site.primaryContact}}</td>
-        <td>{{site.capacity}}</td>
-        <td>{{site.addrLine1}}</td>
-        <td>{{site.addrLine2}}</td>
-        <td>{{site.addrCity}}</td>
-        <td>{{site.addrState}}</td>
-        <td>{{site.addrZip}}</td>
-        <td>{{site.addrCountry}}</td>
+      <tbody id="myProductsTableBody">
+        <tr v-for = "myProducts in myProducts">
+        <td>{{myProducts.customerId}}</td>
+        <td>{{myProducts.serialNumber}}</td>
+        <td>{{myProducts.productName}}</td>
+        <td>{{myProducts.purchaseId}}</td>
         </tr>
       </tbody>
     </table>
     </div>
-
-    <div id="turbines" class="container">
-      <h3>Turbine Information</h3>
-      Service managers can view information on each deployed turbine below.<br /><br />
-  <table class="table table-striped table-sm" id="turbineTable">
-      <thead>
-        <tr>
-          <th>Turbine ID</th>
-          <th>Turbine Name</th>
-          <th>Site ID</th>
-          <th>Site Name</th>
-          <th>Turbine Description</th>
-          <th>Capacity</th>
-          <th>Ramp Up Time</th>
-          <th>Maintenance Interval</th>
-        </tr>
-      </thead>
-      <tbody id="turbineTableBody">
-        <tr v-for="turbine in turbine">
-          <td>{{turbine.turbineId}}</td>
-          <td>{{turbine.turbineName}}</td>
-          <td>{{turbine.siteId}}</td>
-          <td>{{turbine.siteName}}</td>
-          <td>{{turbine.turbineDescription}}</td>
-          <td>{{turbine.capacity}}</td>
-          <td>{{turbine.rampUpTime}}</td>
-          <td>{{turbine.maintenanceInterval}}</td>
-        </tr>
-      </tbody>
-    </table>
 </div>
+<div id="commentContainer" class="container">
+<h3>Customer Comments...</h3>
+Customers can view and enter new comments about their products below. <br /><br />
+<table class="table table-striped table-sm" id="commentTable">
+  <thead>
+    <tr>
+      <th>Comment ID</th>
+      <th>Customer ID</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody id="commentTableBody">
+    <tr v-for="comment in comment">
+      <td>{{comment.id}}</td>
+      <td>{{comment.customerId}}</td>
+      <td>{{comment.comment}}</td>
+    </tr>
+  </tbody>
+</table>
+<form id="newCommentForm" @submit.prevent="handleWorkForm()">
+<div class="form-group" id="Form">
+<label for="comment">Comment</label>
+<input type="text" class="form-control" id="comment" placeholder="Enter Comment" v-model="commentForm.comment">
+<input type="text" class="form-control" id="customerId" placeholder="Enter Customer Id" v-model="commentForm.customerId">
+</div>
+
+<button v-on:submit="handleWorkForm" form="newCommentForm" type="submit" class="btn btn-primary">Submit</button>
+</form>
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>

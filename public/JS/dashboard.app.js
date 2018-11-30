@@ -48,7 +48,7 @@ var dashboardApp = new Vue ({
         buildOutputChart() {
           Highcharts.chart('OutputChart', {
             title: {
-              text: 'Turbine 1'
+              text: 'ENGINE METRICS'
             },
             xAxis: {
               type: 'datetime'
