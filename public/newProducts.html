@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="CSS/stylesheet.css" />
   </head>
   <header>
-    <h1>Client Information</h1>
+    <h1>Product List</h1>
 <nav>
-  <h4>Alternative Green Systems</h4>
+  <h4>Cummins Product List</h4>
   <a href="myProducts.html">My Products</a>
   <a href="newProducts.html">New Products</a>
   <a href="support.html">Support</a>
@@ -23,63 +23,36 @@
 </header>
   <body>
   <div id="contentbox" align="left">
-  <div id="clientcontainer" class="container">
+  <div id="productscontainer" class="container">
       <h3>Welcome!</h3>
-      Service managers can view all of Alternative Green System's clients and
-      their information below.<br /><br />
+      Take a look at all of our Products!.<br /><br />
     <table class="table table-striped table-sm" id="clientTable">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Gics Sector</th>
-            <th>Gics Sub Industry</th>
-            <th>Headquarters</th>
+            <th>Serial Number</th>
+            <th>Product Name</th>
+            <th>Product Type</th>
+            <th>Product Application</th>
+            <th>Horsepower</th>
+            <th>Torque</th>
+            <th>Classification</th>
+            <th>Size</th>
           </tr>
         </thead>
-        <tbody id="clientTableBody">
-          <tr v-for="client in client">
-            <td>{{client.clientId}}</td>
-            <td>{{client.clientName}}</td>
-            <td>{{client.clientDescription}}</td>
-            <td>{{client.gicsSector}}</td>
-            <td>{{client.gicsSubIndustry}}</td>
-            <td>{{client.headquarters}}</td>
+        <tbody id="productsTableBody">
+          <tr v-for="products in products">
+            <td>{{products.serialNumber}}</td>
+            <td>{{products.productName}}</td>
+            <td>{{products.productType}}</td>
+            <td>{{products.productApplication}}</td>
+            <td>{{products.horsepower}}</td>
+            <td>{{products.torque}}</td>
+            <td>{{products.classification}}</td>
+            <td>{{products.size}}</td>
           </tr>
         </tbody>
       </table>
           </div>
-          <div id="commentContainer" class="container">
-          <h3>Client Comments...</h3>
-          Service managers can view and enter new comments on how to provide
-          service to each client below. <br /><br />
-        <table class="table table-striped table-sm" id="commentTable">
-            <thead>
-              <tr>
-                <th>Comment ID</th>
-                <th>Client ID</th>
-                <th>Comment</th>
-              </tr>
-            </thead>
-            <tbody id="commentTableBody">
-              <tr v-for="comment in comment">
-                <td>{{comment.id}}</td>
-                <td>{{comment.clientId}}</td>
-                <td>{{comment.comment}}</td>
-              </tr>
-            </tbody>
-          </table>
-<form id="newCommentForm" @submit.prevent="handleWorkForm()">
-    <div class="form-group" id="Form">
-    <label for="comment">Comment</label>
-    <input type="text" class="form-control" id="comment" placeholder="Enter Comment" v-model="commentForm.comment">
-    <input type="text" class="form-control" id="clientId" placeholder="Enter Client Id" v-model="commentForm.clientId">
-    </div>
-
-    <button v-on:submit="handleWorkForm" form="newCommentForm" type="submit" class="btn btn-primary">Submit</button>
-  </form>
-    </div>
   </div>
 </body>
 
@@ -92,5 +65,5 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
     <script src="JS/newProducts.app.js"></script>
-  
+
 </html>
