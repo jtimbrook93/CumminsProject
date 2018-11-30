@@ -18,7 +18,8 @@ var myProductsApp = new Vue ({
   computed: {},
 
   methods: {
-    getAllProducts (){
+    
+    getAllProducts() {
       fetch('api/myproducts.php')
       .then( response => response.json() ) // "a => expression" is shorthand function declaration
       .then( json => {
@@ -26,7 +27,7 @@ var myProductsApp = new Vue ({
         // TODO: Build out client chart
       })
   .catch( err => {
-    console.log('SITE LIST FETCH ERROR:');
+    console.log('MY PRODUCT LIST FETCH ERROR:');
     console.log(err);
   })
   },
@@ -38,8 +39,7 @@ var myProductsApp = new Vue ({
   fetch('api/myproducts.php')
   .then( response => response.json() )
   .then( json => {myProductsApp.myProducts = json} )
-  .catch( err => {
-  console.error('SITE FETCH ERROR:');
+  .catch( err => { console.error('MY PRODUCTS FETCH ERROR:');
   console.error(err);
   })
   }
