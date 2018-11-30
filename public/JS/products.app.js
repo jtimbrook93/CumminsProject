@@ -1,25 +1,26 @@
-var turbinetable = new Vue({
-  el: '#turbines',
-  data: {
-      turbine: {
-      turbineId: 0,
-      turbineName: '',
-      siteId: 0,
-      siteName: '',
-      turbineDescription: '',
-      capacity: '',
-      rampUpTime: '',
-      maintenanceInterval: ''
-    },
+var productsApp = new Vue({
+  el: '#productMain',
+
+  products: {
+
+    serialNumber: '',
+    productName: '',
+    productType: '',
+    productApplication: '',
+    horsepower: '',
+    torque: '',
+    classification: '',
+    size: ''
+
 
   },
 
     methods: {
-      fetchTurbines() {
-        fetch('api/turbine.php')
+      fetchAll() {
+        fetch('api/products.php')
         .then( response => response.json() )
         .then( json => {
-          turbinetable.turbine = json;
+          productsApp.products = json;
         } )
         .catch( err => {
           console.log('TURBINE LIST FETCH ERROR:');
@@ -31,9 +32,9 @@ var turbinetable = new Vue({
       created () {
 
         // Do data fetch
-        fetch('api/turbine.php')
+        fetch('api/products.php')
         .then( response => response.json() )
-        .then( json => {turbinetable.turbine = json} )
+        .then( json => {productsApp.products = json} )
         .catch( err => {
           console.error('CLIENT FETCH ERROR:');
           console.error(err);

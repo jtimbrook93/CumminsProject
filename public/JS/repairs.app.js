@@ -1,13 +1,16 @@
-var clientApp = new Vue({
-  el: '#clientcontainer',
+var repairsApp = new Vue({
+  el: '#repairscontainer',
 data: {
-  client: {
-    clientId: '',
-    clientName: '',
-    clientDescription: '',
-    gicsSector: '',
-    gicsSubIndustry: '',
-    headquarters: ''
+
+  repairs: {
+
+    repairID: '',
+    serialNumber: '',
+    customerId: '',
+    dateProcessed: '',
+    dateStart: '',
+    estimatedFinish: '',
+    processStep: ''
 }
 
 },
@@ -16,11 +19,11 @@ computed: {
   },
 
   methods: {
-    fetchClients(){
-      fetch('api/client.php')
+    getAllRepairs(){
+      fetch('api/repairs.php')
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
     .then( json => {
-      clientApp.client = json;
+      repairsApp.repairs = json;
       //  TODO: Build out client chart
 
     } )
@@ -34,9 +37,9 @@ computed: {
   created () {
 
     // Do data fetch
-    fetch('api/client.php')
+    fetch('api/repairs.php')
     .then( response => response.json() )
-    .then( json => {clientApp.client = json} )
+    .then( json => {repairsApp.repairs = json} )
     .catch( err => {
       console.error('CLIENT FETCH ERROR:');
       console.error(err);

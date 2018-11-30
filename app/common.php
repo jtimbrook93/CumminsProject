@@ -13,10 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'
 require 'environment.php';
 //MODELS
 
-require 'models/Client.php';
-require 'models/KPI.php';
-require 'models/Site.php';
-require 'models/Turbine.php';
-require 'models/KPIdata.php';
+require 'models/Repairs.php';
+require 'models/Products.php';
+require 'models/MyProducts.php';
+require 'models/Dashboard.php';
 require 'models/Comment.php';
-require 'models/KPI2.php';

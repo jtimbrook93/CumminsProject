@@ -1,17 +1,17 @@
 <?php
 require '../../app/common.php';
 
-
+//fetch all the work for that task id
 if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   require 'dataPost.php';
   exit;
 }
-
-//fetch all the work for that task id
 // go to the database and get stuff
-$siteArr = Site::getAllSites();
 
-$json = json_encode($siteArr, JSON_PRETTY_PRINT);
+$productsArr = Products::fetchAll();
+
 // convert to json and print
+$json = json_encode($productstArr, JSON_PRETTY_PRINT);
+
 header ('Content-type: application/json;charset=utf-8');
-echo json_encode($siteArr);
+echo json_encode($productsArr);
