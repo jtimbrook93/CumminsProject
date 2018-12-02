@@ -49,7 +49,7 @@ $sql = 'SELECT * FROM repairs';
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
     // 4.a. For each row, make a new work php object
-    $repairItem =  new Repair ($row);
+    $repairItem =  new Repairs($row);
   array_push($arr, $repairItem);
   }
 
