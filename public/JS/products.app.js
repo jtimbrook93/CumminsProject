@@ -35,12 +35,6 @@ data: {
       created () {
 
         // Do data fetch
-        fetch('api/products.php')
-        .then( response => response.json() )
-        .then( json => {productsApp.products = json} )
-        .catch( err => {
-          console.error('CLIENT FETCH ERROR:');
-          console.error(err);
-        })
+        this.fetchAll();
       }
     });
