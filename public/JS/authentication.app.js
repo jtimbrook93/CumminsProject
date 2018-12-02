@@ -7,7 +7,7 @@ var username = document.getElementById("username").value;
 var password = document.getElementById("password").value;
 if ( username == "Formget" && password == "formget#123"){
 alert ("Login successfully");
-window.location = "http://ec2-52-89-69-131.us-west-2.compute.amazonaws.com/myProducts.html"; // Redirecting to other page.
+window.location = "/myProducts.html"; // Redirecting to other page.
 return false;
 }
 else{
