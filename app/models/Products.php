@@ -29,7 +29,7 @@ class Products
     $this->size = ($data['size']);
   }
 
-  public static function fetchAll() {
+  public function fetchAll() {
 
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
