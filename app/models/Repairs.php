@@ -16,10 +16,10 @@ class Repairs
 
 
   public function __construct($row) {
-    $this->reparisID = isset($row['repairID'])   ? intval($row['repaireID']) : null;
+    $this->repairID = isset($row['repairID'])   ? intval($row['repairID']) : null;
 
 
-    $this->serialNumber = $row['serialNumbe'];
+    $this->serialNumber = $row['serialNumber'];
     $this->customerId = ($row['customerId']);
     $this->dateProcessed = date($row['dateProcessed']);
     $this->dateStart = date($row['dateStart']);
