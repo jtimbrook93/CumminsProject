@@ -79,10 +79,10 @@ div {
   background: white;
 }
 div h3 {
-  color: red;
+  color: black;
 }
 div p {
-  color: red;
+  color: black;
 }
 main {
   background: red;
@@ -99,7 +99,7 @@ main article {
   border-radius: 3px;
 }
 main article p {
-  color: red;
+  color: black;
   line-height: 1.5;
 }
 .capsule {
@@ -144,7 +144,7 @@ main article p {
     border-color: black;
   }
   #formtitle {
-    color: red;
+    color: black;
     font-weight: bold;
   }
 
