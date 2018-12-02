@@ -12,7 +12,7 @@ class MyProducts
    // creating a new object instance using 'id' as integer
 
     $this->customerId = intval($data['customerId']);
-    $this->serialNumebr = ($data['serialNumber']);
+    $this->serialNumber = ($data['serialNumber']);
     $this->productName = ($data['productName']);
     $this->purchaseId = intval($data['purchaseId']);
 
