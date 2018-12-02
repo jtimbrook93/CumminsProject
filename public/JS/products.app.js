@@ -8,6 +8,7 @@ data: {
     productName: '',
     productType: '',
     productApplication: '',
+    digitalProduct: '',
     horsepower: '',
     torque: '',
     classification: '',
