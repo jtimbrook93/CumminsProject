@@ -7,7 +7,7 @@ class Products
   public $productName;
   public $productType;
   public $productApplication;
-  public $digitalProduct
+  public $digitalProduct;
   public $horsepower;
   public $torque;
   public $classification;
