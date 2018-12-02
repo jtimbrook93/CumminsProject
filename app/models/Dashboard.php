@@ -3,6 +3,7 @@
 class Dashboard
 {
   public $serialNumber;
+  public $dateCollected;
   public $airMassFlowRate;
   public $fuelMassFlowRate;
   public $drag;
@@ -22,6 +23,7 @@ class Dashboard
      // creating a new object instance using 'id' as integer
 
       $this->serialNumber = ($data['serialNumber']);
+      $this->dateCollected = ($data['dateCollected']);
       $this->airMassFlowRate = ($data['airMassFlowRate']);
       $this->fuelMassFlowRate = ($data['fuelMassFlowRate']);
       $this->drag = ($data['drag']);
@@ -43,7 +45,7 @@ class Dashboard
       $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
       // 2. Prepare the query
-      $sql = 'SELECT serialNumber, airMassFlowRate, fuelMassFlowRate,
+      $sql = 'SELECT serialNumber, dateCollected, airMassFlowRate, fuelMassFlowRate,
        drag, thrust, fuelBurned, fuelEfficiency, noxLevels, momentumChangeAMF,
        momentumChangeFMF, energyBalance, propulsiveEfficiency, thermalEfficiency;
        from myProducts;';

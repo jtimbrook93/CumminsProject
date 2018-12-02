@@ -10,7 +10,9 @@ data: {
     dateProcessed: '',
     dateStart: '',
     estimatedFinish: '',
-    processStep: ''
+    processStep: '',
+    contactName: '',
+    employeeId: ''
 },
 
 repairsArr:[]

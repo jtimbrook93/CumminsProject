@@ -12,7 +12,7 @@ class MyProducts
    // creating a new object instance using 'id' as integer
 
     $this->customerId = intval($data['customerId']);
-    $this->serialNumebr = intval($data['serialNumber']);
+    $this->serialNumebr = ($data['serialNumber']);
     $this->productName = ($data['productName']);
     $this->purchaseId = intval($data['purchaseId']);
 
@@ -27,7 +27,7 @@ class MyProducts
     //TODO: change this query
     $sql = 'SELECT customerId, serialNumber, productName, purchaseId
             FROM myProducts;';
-            
+
     $statement = $db->prepare($sql);
 
     // 3. Run the query

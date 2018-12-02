@@ -11,7 +11,8 @@ class Repairs
   public $dateStart;   //'YYYY-MM-DD', needs to be calculated
   public $estimatedFinish;
   public $processStep;
-
+  public $contactName;
+  public $employeeId;
 
 
   public function __construct($row) {
@@ -24,6 +25,8 @@ class Repairs
     $this->dateStart = date($row['dateStart']);
     $this->estimatedFinish = date($row['estimatedFinish']);
     $this->processStep = ($row['processStep']);
+    $this->contactName = ($row['contactName']);
+    $this->employeeId = ($row['employeeId']);
 
 
   }

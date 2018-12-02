@@ -5,6 +5,7 @@ var dashboardApp = new Vue ({
     metrics: {
 
       serialNumber: '',
+      dateCollected: '',
       airMassFlowRate: '',
       fuelMassFlowRate: '',
       drag: '',
