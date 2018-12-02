@@ -23,13 +23,13 @@ data: {
         fetch('api/products.php')
         .then( response => response.json() )
         .then( json => {
-          productsApp.products = json;
+          productsApp.productsArr = json;
         } )
         .catch( err => {
-          console.log('TURBINE LIST FETCH ERROR:');
+          console.log('PRODUCT FETCH ERROR:');
           console.log(err);
         })
-      },
+      }
       },
 
       created () {
