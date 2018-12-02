@@ -23,7 +23,7 @@ data: {
         fetch('api/products.php')
         .then( response => response.json() )
         .then( json => {
-          productsApp.productsArr = json;
+          productsApp.products = json;
         } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
