@@ -7,6 +7,7 @@ class Products
   public $productName;
   public $productType;
   public $productApplication;
+  public $digitalProduct
   public $horsepower;
   public $torque;
   public $classification;
@@ -17,10 +18,11 @@ class Products
   public function __construct($data) {
    // creating a new object instance using 'id' as integer
 
-    $this->serialNumber = intval($data['serialNumber']);
+    $this->serialNumber = ($data['serialNumber']);
     $this->productName = ($data['productName']);
     $this->productType = ($data['productType']);
-    $this->productApplication = intval($data['productApplication']);
+    $this->productApplication = ($data['productApplication']);
+    $this->digitalProduct = ($data['digitalProduct']);
     $this->horsepower = ($data['horsepower']);
     $this->torque = ($data['torque']);
     $this->classification = ($data['classification']);
