@@ -93,14 +93,14 @@ var dashboardApp = new Vue ({
       }
     },
       // The button action
-    $('#button').click(buildOutputChart() {
-          chart.series[0].setData(this.dataArr.map( item => [item.dateCollected, item.airMassFlowRate] ));
+    $('#button').click(function() {
+          chart.series[0].setData(this.dataArr.map( item => [item.dateCollected, item.airMassFlowRate] );
       });
 
-      $('#button2').click(buildOutputChart() {
-          chart.series[0].setData( this.dataArr.map( item => [item.dateCollected, item.fuelMassFlowRate] ));
-      });,
-
+      $('#button2').click(function() {
+          chart.series[0].setData( this.dataArr.map( item => [item.dateCollected, item.fuelMassFlowRate] );
+      });
+},
 
 
   created () {
@@ -114,7 +114,9 @@ var dashboardApp = new Vue ({
      console.error(err);
    }),
 
-   this.getData();
+    this.getData();
      this.buildOutputChart();
  }
+
+}
 });
