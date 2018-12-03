@@ -92,7 +92,7 @@ var dashboardApp = new Vue ({
           }]
       },
       // The button action
-      $('#button').click(buildOutputChart() {
+    $('#button').click(buildOutputChart() {
           chart.series[0].setData(this.dataArr.map( item => [item.dateCollected, item.airMassFlowRate] ))
       });
 
