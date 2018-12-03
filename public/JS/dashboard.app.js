@@ -90,7 +90,8 @@ var dashboardApp = new Vue ({
             series: [{
               data: []
           }]
-      },
+      }
+    },
       // The button action
     $('#button').click(buildOutputChart() {
           chart.series[0].setData(this.dataArr.map( item => [item.dateCollected, item.airMassFlowRate] ));
@@ -98,9 +99,8 @@ var dashboardApp = new Vue ({
 
       $('#button2').click(buildOutputChart() {
           chart.series[0].setData( this.dataArr.map( item => [item.dateCollected, item.fuelMassFlowRate] ));
-      });
+      });,
 
-        },
 
 
   created () {
@@ -115,5 +115,6 @@ var dashboardApp = new Vue ({
    }),
 
    this.getData();
+     this.buildOutputChart();
  }
 });
