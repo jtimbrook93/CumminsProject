@@ -1,7 +1,7 @@
 var dashboardApp = new Vue ({
   el: '#dashboardcontainer',
   data: {
-
+    chartType: '',
     metrics: {
 
       serialNumber: '',
@@ -21,8 +21,18 @@ var dashboardApp = new Vue ({
 
     },
 
-    dataArr: []
-
+    dataArr: [],
+    airMassFlowRateArr: [],
+    fuelMassFlowRateArr: [],
+    dragArr: [],
+    thrustArr: [],
+    fuelBurnedArr: [],
+    noxLevelsArr: [],
+    momentumChangeAMFArr: [],
+    momentumChangeFMFArr: [],
+    energyBalanceArr: [],
+    propulsiveEfficiencyArr: [],
+    thermalEfficiencyArr: []
 
   },
   computed: {
@@ -34,13 +44,34 @@ var dashboardApp = new Vue ({
     getData(){
       fetch('api/dashboard.php')
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
-      .then( json => { dashboardApp.dataArr = json; } )
+      .then( json => {
+        dashboardApp.dataArr = json;  } )
         .catch( err => {
           console.log('METRIC LIST FETCH ERROR:');
           console.log(err);
-        })
+        });
 
+        this.formatDate();
+        this.buildOutputChart();
       },
+
+      valueChange(){
+        console.log(dashboardApp.chartType);
+      },
+
+    formatDate(){
+      this.dataArr.forEach(
+        function(entry) {
+          entry.dateCollected = Date.parse(entry.dateCollected); // Convert to ms since Jan 1, 1970 UTC
+
+        });
+    },
+
+      pretty_date: function (d) {
+      return moment(d).format('l')
+
+    }
+
 
 
     // Vue.use(VueHighcharts);
@@ -112,65 +143,65 @@ var dashboardApp = new Vue ({
 
 
 
-      this:$(function() {
-
-      //create a variable so we can pass the value dynamically
-      var chartype = 'line';
-      var chartTitle = 'Engine Metirics';
-      var chartCategories = this.dataArr.map( item => [item.dateCollected]);
-      var chartData = [{
-      name: 'Year 1800',
-      data: [107, 31, 635, 203, 2]
-      }, {
-      name: 'Year 1900',
-      data: [133, 156, 947, 408, 6]
-      }, {
-      name: 'Year 2008',
-      data: [973, 914, 4054, 732, 34]
-      }];
-
-      //On page load call the function setDynamicChart
-      this.setDynamicChart(chartype, chartTitle, chartCategories, chartData);
-
-      //jQuery part - On Click call the function setDynamicChart(dynval) and pass the chart type
-      $("#chartType").change(function() {
-      //get the value from 'a' tag
-      var chartype = this.value;
-      setDynamicChart(chartype, chartTitle, chartCategories, chartData);
-      });
-
-      $("#data").change(function() {
-      //get the value from 'a' tag
-      var data = this.value;
-
-      if (data == 'airMassFlowRate') {
-        chartype = chartype;
-        chartTitle = 'Air Mass Flow Rate';
-        chartCategories = this.dataArr.map( item => [item.dateCollected]);
-        chartData = [{
-          name: 'Meters/Second',
-          data: this.dataArr.map( item => [item.airMassFlowRate])
-        }];
-
-        setDynamicChart(chartype, chartTitle, chartCategories, chartData);
-        } else if (data == 'fuelMassFlowRate') {
-        chartTitle = 'Fuel Mass Flow Rate';
-        chartCategories =  this.dataArr.map( item => [item.dateCollected]);
-        chartData = [{
-          name: 'Meters/Second',
-          data: this.dataArr.map( item => [item.fuelMassFlowRate])
-        }];
-
-        setDynamicChart(chartype, chartTitle, chartCategories, chartData);
-        } else if (data == 'fuelEfficiency') {
-        chartTitle = 'Fuel Efficiency';
-        chartCategories = [1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000];
-        chartData = [{
-          name: 'Percent',
-          data: this.dataArr.map( item => [item.fuelEfficiency])
-        }];
-
-        setDynamicChart(chartype, chartTitle, chartCategories, chartData);
+      // this:$(function() {
+      //
+      // //create a variable so we can pass the value dynamically
+      // var chartype = 'line';
+      // var chartTitle = 'Engine Metirics';
+      // var chartCategories = this.dataArr.map( item => [item.dateCollected]);
+      // var chartData = [{
+      // name: 'Year 1800',
+      // data: [107, 31, 635, 203, 2]
+      // }, {
+      // name: 'Year 1900',
+      // data: [133, 156, 947, 408, 6]
+      // }, {
+      // name: 'Year 2008',
+      // data: [973, 914, 4054, 732, 34]
+      // }];
+      //
+      // //On page load call the function setDynamicChart
+      // this.setDynamicChart(chartype, chartTitle, chartCategories, chartData);
+      //
+      // //jQuery part - On Click call the function setDynamicChart(dynval) and pass the chart type
+      // $("#chartType").change(function() {
+      // //get the value from 'a' tag
+      // var chartype = this.value;
+      // setDynamicChart(chartype, chartTitle, chartCategories, chartData);
+      // });
+      //
+      // $("#data").change(function() {
+      // //get the value from 'a' tag
+      // var data = this.value;
+      //
+      // if (data == 'airMassFlowRate') {
+      //   chartype = chartype;
+      //   chartTitle = 'Air Mass Flow Rate';
+      //   chartCategories = this.dataArr.map( item => [item.dateCollected]);
+      //   chartData = [{
+      //     name: 'Meters/Second',
+      //     data: this.dataArr.map( item => [item.airMassFlowRate])
+      //   }];
+      //
+      //   setDynamicChart(chartype, chartTitle, chartCategories, chartData);
+      //   } else if (data == 'fuelMassFlowRate') {
+      //   chartTitle = 'Fuel Mass Flow Rate';
+      //   chartCategories =  this.dataArr.map( item => [item.dateCollected]);
+      //   chartData = [{
+      //     name: 'Meters/Second',
+      //     data: this.dataArr.map( item => [item.fuelMassFlowRate])
+      //   }];
+      //
+      //   setDynamicChart(chartype, chartTitle, chartCategories, chartData);
+      //   } else if (data == 'fuelEfficiency') {
+      //   chartTitle = 'Fuel Efficiency';
+      //   chartCategories = [1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000];
+      //   chartData = [{
+      //     name: 'Percent',
+      //     data: this.dataArr.map( item => [item.fuelEfficiency])
+      //   }];
+      //
+      //   setDynamicChart(chartype, chartTitle, chartCategories, chartData);
         // } else if (data == 'data4') {
         // chartTitle = 'Monthly Average Temperature';
         // chartData = [{
@@ -190,39 +221,39 @@ var dashboardApp = new Vue ({
         //   ]
         // }];
         // setDynamicChart(chartype, chartTitle, chartCategories, chartData);
-        }
-      });
-
-      //function is created so we pass the value dynamically and be able to refresh the HighCharts on every click
-
-      function setDynamicChart(chartype, chartTitle, chartCategories, chartData) {
-      $('#grafiek_bench_rendement').highcharts({
-        chart: {
-          type: chartype
-        },
-        title: {
-          text: chartTitle
-        },
-        xAxis: {
-          categories: chartCategories
-        },
-        yAxis: {
-          min: 0,
-          title: {
-            text: 'Engine Metrics'
-          }
-        },
-        plotOptions: {
-          //this need only for pie chart
-          pie: {
-            allowPointSelect: true,
-            cursor: 'pointer'
-          }
-        },
-        series: chartData
-      });
-      }
-      })
+      //  }
+      // });
+      //
+      // //function is created so we pass the value dynamically and be able to refresh the HighCharts on every click
+      //
+      // function setDynamicChart(chartype, chartTitle, chartCategories, chartData) {
+      // $('#grafiek_bench_rendement').highcharts({
+      //   chart: {
+      //     type: chartype
+      //   },
+      //   title: {
+      //     text: chartTitle
+      //   },
+      //   xAxis: {
+      //     categories: chartCategories
+      //   },
+      //   yAxis: {
+      //     min: 0,
+      //     title: {
+      //       text: 'Engine Metrics'
+      //     }
+      //   },
+      //   plotOptions: {
+      //     //this need only for pie chart
+      //     pie: {
+      //       allowPointSelect: true,
+      //       cursor: 'pointer'
+      //     }
+      //   },
+      //   series: chartData
+      // });
+      // }
+      // })
     },
 
 

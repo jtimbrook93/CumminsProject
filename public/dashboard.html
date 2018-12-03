@@ -27,7 +27,7 @@
   <div class="container">
     <div class="panel panel-info">
       <div class="panel-heading">
-        <select class="selectpicker" id="chartType">
+        <select class="selectpicker" id="chartType" @change="valueChange" v-model="chartType">
       <optgroup label="select chart type">
       <option value="line">line</option>
       <option value="bar">bar</option>
@@ -35,7 +35,7 @@
       <option value="pie">pie</option>
   </optgroup>
   </select>
-        <select class="selectpicker" id="data">
+        <select class="selectpicker" id="data" @change="valueChange" v-model="chartType">
       <optgroup label="select chart type">
       <option value="airMassFlowRate">data1</option>
       <option value="fuelMassFlowRate">data2</option>
