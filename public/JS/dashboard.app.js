@@ -164,7 +164,7 @@ var dashboardApp = new Vue ({
         setDynamicChart(chartype, chartTitle, chartCategories, chartData);
         } else if (data == 'fuelEfficiency') {
         chartTitle = 'Fuel Efficiency';
-        chartCategories =  this.dataArr.map( item => [item.dateCollected]);
+        chartCategories = [1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000];
         chartData = [{
           name: 'Percent',
           data: this.dataArr.map( item => [item.fuelEfficiency])
