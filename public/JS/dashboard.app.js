@@ -3,7 +3,7 @@ var dashboardApp = new Vue ({
   data: {
 
     dataValue: '',
-    
+
     metrics: {
 
       serialNumber: '',
@@ -173,6 +173,5 @@ var dashboardApp = new Vue ({
         this.getData();
         this.getSeries();
         this.buildChart();
-        this.valueChange();
       }
     });
