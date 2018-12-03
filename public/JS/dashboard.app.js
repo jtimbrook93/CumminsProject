@@ -43,7 +43,7 @@ var dashboardApp = new Vue ({
       },
 
 
-      this.$(function() {
+      this:$(function() {
 
       //create a variable so we can pass the value dynamically
       var chartype = 'line';
