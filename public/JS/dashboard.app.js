@@ -1,7 +1,6 @@
 var dashboardApp = new Vue ({
   el: '#dashboardcontainer',
   data: {
-    chartType: '',
     dataValue: '',
     metrics: {
 
