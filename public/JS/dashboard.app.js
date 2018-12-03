@@ -1,7 +1,9 @@
 var dashboardApp = new Vue ({
   el: '#dashboardcontainer',
   data: {
+
     dataValue: '',
+    
     metrics: {
 
       serialNumber: '',
@@ -167,16 +169,10 @@ var dashboardApp = new Vue ({
 
       created () {
 
-
-        // fetch('api/dashboard.php')
-        // .then( response => response.json() )
-        // .then( json => {dashboardApp.dataArr = json} )
-        // .catch( err => {
-        //   console.error('METRIC FETCH ERROR:');
-        //   console.error(err);
-        // }),
-
+        this.formatDate();
         this.getData();
-        this.setDynamicChart(chartype, chartTitle, chartCategories, chartData);
+        this.getSeries();
+        this.buildChart();
+        this.valueChange();
       }
     });
