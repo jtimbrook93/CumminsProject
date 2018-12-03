@@ -164,7 +164,7 @@ var dashboardApp = new Vue ({
           return series;
       },
 
-
+},
 
       created () {
 
