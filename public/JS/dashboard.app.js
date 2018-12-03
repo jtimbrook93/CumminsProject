@@ -2,6 +2,7 @@ var dashboardApp = new Vue ({
   el: '#dashboardcontainer',
   data: {
     chartType: '',
+    dataValue: '',
     metrics: {
 
       serialNumber: '',
@@ -52,11 +53,11 @@ var dashboardApp = new Vue ({
         });
 
         this.formatDate();
-        this.buildOutputChart();
       },
 
       valueChange(){
         console.log(dashboardApp.chartType);
+        this.buildChart();
       },
 
     formatDate(){
@@ -70,11 +71,72 @@ var dashboardApp = new Vue ({
       pretty_date: function (d) {
       return moment(d).format('l')
 
+    },
+   buildChart(){
+Highcharts.chart('grafiek_bench_rendement', {
+
+    title: {
+        text: 'Solar Employment Growth by Sector, 2010-2016'
+    },
+
+    subtitle: {
+        text: 'Source: thesolarfoundation.com'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Number of Employees'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2010
+        }
+    },
+    series: this.getSeries(),
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
     }
 
+});
+} ,
 
-
-    // Vue.use(VueHighcharts);
+  getSeries(){
+        var series = [];
+        if(this.chartType=='line')
+        {
+            series = [{name: 'A', data: [1,2,3,2,1]}]
+        }
+        else if(this.chartType=='bar')
+        {
+            series = [{name: 'B', data: [3,2,1,2,3]}]
+        }
+        else if(this.chartType == "C")
+        {
+            series = [{name: 'C', data: [5,4,8,7,6]}]
+        }
+        return series;
+  }// Vue.use(VueHighcharts);
     //
     //   var options = {
     //     title: {
