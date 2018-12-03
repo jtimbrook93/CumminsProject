@@ -23,20 +23,33 @@
 </header>
 <body>
 
-  <!-- <div class="row">
-  <div class="col placeholder">
-  <div class="chart" id="CompressorEfficiencyChart"></div>
-</div>
-<div class="col placeholder">
-<div class="chart" id="OutputChart"></div>
-</div>
-<div class="col placeholder">
-<div class="chart" id="heartRateChart"></div>
-</div>
-</div> -->
-
-
 <div id="dashboardcontainer" class="container">
+  <div class="container">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <select class="selectpicker" id="chartType">
+      <optgroup label="select chart type">
+      <option value="line">line</option>
+      <option value="bar">bar</option>
+      <option value="line">line</option>
+      <option value="pie">pie</option>
+  </optgroup>
+  </select>
+        <select class="selectpicker" id="data">
+      <optgroup label="select chart type">
+      <option value="airMassFlowRate">data1</option>
+      <option value="fuelMassFlowRate">data2</option>
+       <option value="fuelEfficiency">data3</option>
+       <option value="data4">data4</option>
+  </optgroup>
+  </select>
+      </div>
+      <div class="panel-body">
+        <div id="grafiek_bench_rendement"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <h2>Compressor Efficiency</h2>
     <div class="col">
@@ -110,7 +123,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+
 
 
 <!--code borrowed from highcharts.com -->
@@ -120,7 +133,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
