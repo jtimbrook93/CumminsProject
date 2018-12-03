@@ -44,19 +44,17 @@ var dashboardApp = new Vue ({
       },
 
 
-
-
-        buildOutputChart() {
-          Highcharts.chart('OutputChart', {
+  buildOutputChart() {
+          Highcharts.chart('EngineMetricChart', {
             title: {
               text: 'ENGINE METRICS'
             },
             xAxis: {
-              type: 'datetime'
+              type: 'Date'
             },
             yAxis: {
               title: {
-                text: 'output'
+                text: ''
               }
             },
             legend: {
@@ -90,14 +88,20 @@ var dashboardApp = new Vue ({
             },
 
             series: [{
-              type: 'area',
-              name: 'Sensor Output',
-              // Data needs [ [date, num], [date2, num2 ], ... ]
-              data: this.dataArr.map( item => [item.dataCollectedDate, item.output] )
-            }]
-          });
-        },
+              data: []
+          }]
       },
+      // The button action
+      $('#button').click(buildOutputChart() {
+          chart.series[0].setData(this.dataArr.map( item => [item.dateCollected, item.airMassFlowRate] ))
+      });
+
+      $('#button2').click(buildOutputChart() {
+          chart.series[0].setData( this.dataArr.map( item => [item.dateCollected, item.fuelMassFlowRate] ))
+      });
+
+        },
+
 
   created () {
 
