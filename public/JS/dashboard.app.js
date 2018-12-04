@@ -256,7 +256,7 @@ var dashboardApp = new Vue ({
 
         const url = new URL(window.location.href);
         const cid = url.searchParams.get('customerId') || 0;
-        const pn = url.searchParams.get('productName') || "6.7L Cummins Turbo Diesel for Pickups (2016)";
+        const pn = url.searchParams.get('productName') || "";
 
         this.formatDate();
         this.getData(cid, pn);
