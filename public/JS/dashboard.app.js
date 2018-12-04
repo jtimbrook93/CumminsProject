@@ -5,7 +5,7 @@ var dashboardApp = new Vue ({
     dataValue: '',
 
     metrics: {
-      
+
       $customerId: '',
       $productName: '',
       $purchaseId: '',
@@ -251,7 +251,7 @@ var dashboardApp = new Vue ({
         const cid = url.searchParams.get('customerId') || 0;
 
         this.formatDate();
-        this.getData();
+        this.getData(cid);
         this.getSeries();
         this.getName();
         this.buildChart();
