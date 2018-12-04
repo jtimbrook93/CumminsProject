@@ -116,11 +116,11 @@ var dashboardApp = new Vue ({
           var series = [];
           if(this.dataValue=='airMassFlowRate')
           {
-            series = [{name: 'airMassFlowRate', data: this.metrics.airMassFlowRate}]
+            series = [{name: 'airMassFlowRate', data: dashboardApp.metrics.airMassFlowRate}]
           }
           else if(this.dataValue=='fuelMassFlowRate')
           {
-            series = [{name: 'fuelMassFlowRate', data: this.metrics.fuelMassFlowRate}]
+            series = [{name: 'fuelMassFlowRate', data: dashboardApp.metrics.fuelMassFlowRate}]
           }
           else if(this.dataValue == "drag")
           {
