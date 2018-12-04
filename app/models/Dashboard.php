@@ -45,18 +45,18 @@ class Dashboard
 
 
     }
-    public function getData(int $customerId) {
+    public function getData(int $customerId, int $productName) {
 
       // 1. Connect to the database
       $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
       // 2. Prepare the query
-      $sql = 'SELECT * from myProducts where customerId = ? order by dateCollected asc';
+      $sql = 'SELECT * from myProducts where customerId = ? and productName = ? order by dateCollected asc';
 
       $statement = $db->prepare($sql);
 
       // 3. Run the query
-      $success = $statement->execute([$customerId]);
+      $success = $statement->execute([$customerId, $productName]);
 
       // 4. Handle the results
       $arr = [];
