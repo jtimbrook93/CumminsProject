@@ -115,7 +115,7 @@ var dashboardApp = new Vue ({
           var series = [];
           if(this.dataValue=='airMassFlowRate')
           {
-            series = [{name: 'airMassFlowRate', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.airMassFlowRate])}]
+            series = [{name: 'airMassFlowRate', data: this.dataArr.map( item => [item.dateCollected, item.airMassFlowRate])}]
           }
           else if(this.dataValue=='fuelMassFlowRate')
           {
