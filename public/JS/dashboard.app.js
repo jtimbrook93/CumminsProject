@@ -71,7 +71,7 @@ var dashboardApp = new Vue ({
             },
 
             subtitle: {
-              text: 'By Day'
+              text: 'Lifetime statistics'
             },
             xAxis: {
                   type: 'datetime'
@@ -94,7 +94,10 @@ var dashboardApp = new Vue ({
                 },
               }
             },
-            series: this.getSeries(),
+            series: [{
+                type: 'area',
+                data: this.getSeries()
+              }],
             responsive: {
               rules: [{
                 condition: {
