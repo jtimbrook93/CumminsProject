@@ -3,6 +3,7 @@ var dashboardApp = new Vue ({
   data: {
 
     dataValue: '',
+    productValue: '',
 
     metrics: {
 
@@ -36,8 +37,8 @@ var dashboardApp = new Vue ({
 
   methods: {
 
-    getData(cid){
-      fetch('api/dashboard.php?customerId='+cid)
+    getData(cid, pn){
+      fetch('api/dashboard.php?customerId='+cid +'&productName='+pn)
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
         dashboardApp.dataArr = json;  } )
@@ -53,6 +54,12 @@ var dashboardApp = new Vue ({
         console.log(dashboardApp.dataValue);
         this.buildChart();
       },
+      
+      productChange(){
+        console.log(dashboardApp.productValue);
+        this.buildChart();
+      },
+
 
       formatDate(){
         this.dataArr.forEach(
@@ -249,9 +256,10 @@ var dashboardApp = new Vue ({
 
         const url = new URL(window.location.href);
         const cid = url.searchParams.get('customerId') || 0;
+        const pn = url.searchParams.get('productName') || 0;
 
         this.formatDate();
-        this.getData(cid);
+        this.getData(cid, pn);
         this.getSeries();
         this.getName();
         this.buildChart();
