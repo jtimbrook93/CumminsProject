@@ -2,19 +2,17 @@
 
 class MyProducts
 {
-  public $customerId;
-  public $serialNumber;
+
   public $productName;
-  public $purchaseId;
+
 
 
   public function __construct($data) {
    // creating a new object instance using 'id' as integer
 
-    $this->customerId = intval($data['customerId']);
-    $this->serialNumber = ($data['serialNumber']);
+
     $this->productName = ($data['productName']);
-    $this->purchaseId = intval($data['purchaseId']);
+
 
 
   }
