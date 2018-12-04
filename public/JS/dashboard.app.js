@@ -102,7 +102,7 @@ var dashboardApp = new Vue ({
                 },
             series: [{
                 type: 'area',
-                name: this.getname(),
+                name: this.getName(),
                 data: this.getSeries()
               }],
             responsive: {
