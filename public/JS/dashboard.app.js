@@ -53,9 +53,7 @@ var dashboardApp = new Vue ({
         });
     },
 
-    productValue(){
-      this.data
-    },
+
 
     getData(cid, pn){
       fetch('api/dashboard.php?customerId='+cid +'&productName='+pn)
