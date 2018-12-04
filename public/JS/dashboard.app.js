@@ -276,10 +276,11 @@ var dashboardApp = new Vue ({
         const pn = url.searchParams.get('productName') || "";
 
         this.getProductName(cid);
+        this.buildChart();
         this.formatDate();
         this.getData(cid, pn);
         this.getSeries();
         this.getName();
-        this.buildChart();
+
       }
     });
