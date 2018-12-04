@@ -86,16 +86,23 @@ var dashboardApp = new Vue ({
               align: 'right',
               verticalAlign: 'middle'
             },
-
             plotOptions: {
-              series: {
-                label: {
-                  connectorAllowed: false
+              area: {
+                fillColor: {
+                  linearGradient: {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 1
+                  },
+                  stops: [
+                    [0, Highcharts.getOptions().colors[0]],
+                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                  ]
                 },
-              }
-            },
             series: [{
                 type: 'area',
+                name: this.getname(),
                 data: this.getSeries()
               }],
             responsive: {
