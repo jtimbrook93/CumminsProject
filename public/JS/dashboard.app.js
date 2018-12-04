@@ -7,9 +7,9 @@ var dashboardApp = new Vue ({
 
     metrics: {
 
-      $customerId: '',
-      $productName: '',
-      $purchaseId: '',
+      customerId: '',
+      productName: '',
+      purchaseId: '',
       serialNumber: '',
       dateCollected: '',
       airMassFlowRate: '',
