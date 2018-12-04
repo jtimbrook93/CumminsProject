@@ -67,6 +67,10 @@ var dashboardApp = new Vue ({
         this.formatDate();
       },
 
+      selectProduct(pn){
+        this.getData(cid, pn)
+        console.log('asdfasdfasdf')
+      },
       valueChange(){
         console.log(dashboardApp.dataValue);
         this.buildChart();
