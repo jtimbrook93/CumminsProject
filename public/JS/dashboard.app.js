@@ -119,9 +119,10 @@ var dashboardApp = new Vue ({
                 }
               }]
             }
-
-          });
-        } ,
+          }
+        }
+      });
+      },
 
         getSeries(){
           var series = [];
@@ -227,7 +228,7 @@ var dashboardApp = new Vue ({
           name = 'Thermal Efficiency'
         }
         return name;
-    },
+    }
 
 },
 
