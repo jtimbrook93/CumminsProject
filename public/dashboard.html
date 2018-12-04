@@ -45,9 +45,9 @@
   </select>
   <div>
 
-  <select class="selectpicker" id="productName" @change="productChange" v-model="productValue" v-for="dataArr in dataArr">
+  <select class="selectpicker" id="productName" @change="productChange" v-model="productValue" v-for="data in dataArr">
 <optgroup label="select product">
-<option value="productName">{{dataArr.productName}}</option>
+<option value="productName">{{data.productName}}</option>
 </optgroup>
 </select></div>
 
