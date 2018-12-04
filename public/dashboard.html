@@ -27,7 +27,7 @@
   <div class="container">
     <div class="panel panel-info">
       <div class="panel-heading">
-        <select class="selectpicker" id="data" @change="valueChange" v-model="dataValue">
+      <select class="selectpicker" id="data" @change="valueChange" v-model="dataValue">
       <optgroup label="select data set">
       <option value="airMassFlowRate">Air Mass Flow Rate</option>
       <option value="fuelMassFlowRate">Fuel Mass Flow Rate</option>
@@ -43,8 +43,8 @@
       <option value="thermalEfficiency">Thermal Efficiency</option>
   </optgroup>
   </select>
-  <div>
 
+  <div>
   <select class="selectpicker" id="productName" @change="productChange" v-model="productValue">
 <optgroup label="select product">
 <option value="Product Name" v-for="data in dataArr">{{data.productName}}</option>
