@@ -73,7 +73,9 @@ var dashboardApp = new Vue ({
             subtitle: {
               text: 'By Day'
             },
-
+            xAxis: {
+                  type: 'datetime'
+            },
             yAxis: {
               title: {
                 text: this.getName()
@@ -119,47 +121,47 @@ var dashboardApp = new Vue ({
           }
           else if(this.dataValue=='fuelMassFlowRate')
           {
-            series = [{name: 'fuelMassFlowRate', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.fuelMassFlowRate])}]
+            series = [{name: 'fuelMassFlowRate', data: this.dataArr.map( item => [item.dateCollected, item.fuelMassFlowRate])}]
           }
           else if(this.dataValue == "drag")
           {
-            series = [{name: 'drag', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.drag])}]
+            series = [{name: 'drag', data: this.dataArr.map( item => [item.dateCollected, item.drag])}]
           }
           else if(this.dataValue=='thrust')
           {
-          series = [{name: 'thrust', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.thrust])}]
+          series = [{name: 'thrust', data: this.dataArr.map( item => [item.dateCollected, item.thrust])}]
           }
           else if(this.dataValue == "fuelBurned")
          {
-          series = [{name: 'fuelBurned', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.fuelBurned])}]
+          series = [{name: 'fuelBurned', data: this.dataArr.map( item => [item.dateCollected, item.fuelBurned])}]
           }
           else if(this.dataValue=='fuelEfficiency')
           {
-            series = [{name: 'fuelEfficiency', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.fuelEfficiency])}]
+            series = [{name: 'fuelEfficiency', data: this.dataArr.map( item => [item.dateCollected, item.fuelEfficiency])}]
           }
           else if(this.dataValue == "noxLevels")
           {
-            series = [{name: 'noxLevels', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.noxLevels])}]
+            series = [{name: 'noxLevels', data: this.dataArr.map( item => [item.dateCollected, item.noxLevels])}]
           }
           else if(this.dataValue=='momentumChangeAMF')
           {
-          series = [{name: 'momentumChangeAMF', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.momentumChangeAMF])}]
+          series = [{name: 'momentumChangeAMF', data: this.dataArr.map( item => [item.dateCollected, item.momentumChangeAMF])}]
           }
           else if(this.dataValue == "momentumChangeFMF")
          {
-          series = [{name: 'momentumChangeFMF', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.momentumChangeFMF])}]
+          series = [{name: 'momentumChangeFMF', data: this.dataArr.map( item => [item.dateCollected, item.momentumChangeFMF])}]
           }
           else if(this.dataValue=='energyBalance')
           {
-          series = [{name: 'energyBalance', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.energyBalance])}]
+          series = [{name: 'energyBalance', data: this.dataArr.map( item => [item.dateCollected, item.energyBalance])}]
           }
           else if(this.dataValue == "propulsiveEfficiency")
          {
-          series = [{name: 'propulsiveEfficiency', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.propulsiveEfficiency])}]
+          series = [{name: 'propulsiveEfficiency', data: this.dataArr.map( item => [item.dateCollected, item.propulsiveEfficiency])}]
           }
           else if(this.dataValue=='thermalEfficiency')
           {
-            series = [{name: 'thermalEfficiency', data: this.dataArr.map( item => [Date.parse(item.dateCollected), item.thermalEfficiency])}]
+            series = [{name: 'thermalEfficiency', data: this.dataArr.map( item => [item.dateCollected, item.thermalEfficiency])}]
           }
           return series;
       },
