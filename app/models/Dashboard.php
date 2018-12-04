@@ -24,18 +24,18 @@ class Dashboard
 
       $this->serialNumber = ($data['serialNumber']);
       $this->dateCollected = ($data['dateCollected']);
-      $this->airMassFlowRate = ($data['airMassFlowRate']);
-      $this->fuelMassFlowRate = ($data['fuelMassFlowRate']);
-      $this->drag = ($data['drag']);
-      $this->thrust = ($data['thrust']);
-      $this->fuelBurned = ($data['fuelBurned']);
-      $this->fuelEfficiency = ($data['fuelEfficiency']);
-      $this->noxLevels = ($data['noxLevels']);
-      $this->momentumChangeAMF = ($data['momentumChangeAMF']);
-      $this->momentumChangeFMF = ($data['momentumChangeFMF']);
-      $this->energyBalance = ($data['energyBalance']);
-      $this->propulsiveEfficiency = ($data['propulsiveEfficiency']);
-      $this->thermalEfficiency = ($data['thermalEfficiency']);
+      $this->airMassFlowRate = intval($data['airMassFlowRate']);
+      $this->fuelMassFlowRate = intval($data['fuelMassFlowRate']);
+      $this->drag = intval($data['drag']);
+      $this->thrust = intval($data['thrust']);
+      $this->fuelBurned = intval($data['fuelBurned']);
+      $this->fuelEfficiency = intval($data['fuelEfficiency']);
+      $this->noxLevels = intval($data['noxLevels']);
+      $this->momentumChangeAMF = intval($data['momentumChangeAMF']);
+      $this->momentumChangeFMF = intval($data['momentumChangeFMF']);
+      $this->energyBalance = intval($data['energyBalance']);
+      $this->propulsiveEfficiency = intval($data['propulsiveEfficiency']);
+      $this->thermalEfficiency = intval($data['thermalEfficiency']);
 
 
     }
