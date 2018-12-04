@@ -37,6 +37,18 @@ var dashboardApp = new Vue ({
 
   methods: {
 
+
+    getProductName(cid){
+      fetch('api/myproducts.php?customerId='+cid)
+      .then( response => response.json() )  // "a => expression" is shorthand function declaration
+      .then( json => {
+        dashboardApp.dataArr = json;  } )
+        .catch( err => {
+          console.log('METRIC LIST FETCH ERROR:');
+          console.log(err);
+        });
+    },
+
     getData(cid, pn){
       fetch('api/dashboard.php?customerId='+cid +'&productName='+pn)
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
@@ -258,6 +270,7 @@ var dashboardApp = new Vue ({
         const cid = url.searchParams.get('customerId') || 0;
         const pn = url.searchParams.get('productName') || "";
 
+        this.getProductName(cid);
         this.formatDate();
         this.getData(cid, pn);
         this.getSeries();

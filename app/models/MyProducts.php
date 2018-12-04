@@ -25,8 +25,8 @@ class MyProducts
 
     // 2. Prepare the query
     //TODO: change this query
-    $sql = 'SELECT customerId, serialNumber, productName, purchaseId
-            FROM myProducts where customerId = ?';
+    $sql = 'SELECT productName
+       from myProducts where customerId = ?';
 
     $statement = $db->prepare($sql);
 
