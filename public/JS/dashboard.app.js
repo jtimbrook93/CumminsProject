@@ -214,7 +214,7 @@ var dashboardApp = new Vue ({
         {
           name = 'Thermal Efficiency'
         }
-        return series;
+        return name;
     },
 
 },
