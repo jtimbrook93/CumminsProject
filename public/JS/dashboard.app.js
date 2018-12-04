@@ -282,7 +282,7 @@ var dashboardApp = new Vue ({
         this.getProductName(cid);
         this.buildChart();
         this.formatDate();
-        this.getData(cid, pn);
+        //this.getData(cid, pn);
         this.getSeries();
         this.getName();
 
