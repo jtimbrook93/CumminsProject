@@ -74,7 +74,7 @@ var dashboardApp = new Vue ({
               text: 'Lifetime statistics'
             },
             xAxis: {
-                  type: 'datetime'
+              type: 'datetime'
             },
             yAxis: {
               title: {
@@ -114,7 +114,7 @@ var dashboardApp = new Vue ({
                 threshold: null
               }
             },
-            series:  
+            series:
               this.getSeries(),
 
             responsive: {
