@@ -100,6 +100,20 @@ var dashboardApp = new Vue ({
                     [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
                   ]
                 },
+                marker: {
+                  radius: 2
+                },
+
+                lineWidth: 1,
+                states: {
+                  hover: {
+                    lineWidth: 1
+                  }
+                },
+
+                threshold: null
+              }
+            },
             series: [{
                 type: 'area',
                 name: this.getName(),
@@ -119,8 +133,6 @@ var dashboardApp = new Vue ({
                 }
               }]
             }
-          }
-        }
       });
       },
 
