@@ -2,6 +2,9 @@
 
 class Dashboard
 {
+  public $customerId;
+  public $productName;
+  public $purchaseId;
   public $serialNumber;
   public $dateCollected;
   public $airMassFlowRate;
@@ -22,6 +25,9 @@ class Dashboard
 
      // creating a new object instance using 'id' as integer
 
+      $this->customerId = intval($data['customerId']);
+      $this->productName = ($data['productName']);
+      $this->purchaseId = intval($data['purchaseId']);
       $this->serialNumber = ($data['serialNumber']);
       $this->dateCollected = ($data['dateCollected']);
       $this->airMassFlowRate = intval($data['airMassFlowRate']);
@@ -39,21 +45,18 @@ class Dashboard
 
 
     }
-    public function getData() {
+    public function getData(int $customerId) {
 
       // 1. Connect to the database
       $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
       // 2. Prepare the query
-      $sql = 'SELECT serialNumber, dateCollected, airMassFlowRate, fuelMassFlowRate,
-       drag, thrust, fuelBurned, fuelEfficiency, noxLevels, momentumChangeAMF,
-       momentumChangeFMF, energyBalance, propulsiveEfficiency, thermalEfficiency
-       from myProducts order by dateCollected asc';
+      $sql = 'SELECT * from myProducts where customerId = ? order by dateCollected asc';
 
       $statement = $db->prepare($sql);
 
       // 3. Run the query
-      $success = $statement->execute();
+      $success = $statement->execute([$customerId]);
 
       // 4. Handle the results
       $arr = [];

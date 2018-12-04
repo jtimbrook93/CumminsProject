@@ -18,7 +18,7 @@ class MyProducts
 
 
   }
-  public function getAllProducts() {
+  public function getAllProducts(int $customerId) {
 
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
@@ -26,12 +26,12 @@ class MyProducts
     // 2. Prepare the query
     //TODO: change this query
     $sql = 'SELECT customerId, serialNumber, productName, purchaseId
-            FROM myProducts;';
+            FROM myProducts where customerId = ?';
 
     $statement = $db->prepare($sql);
 
     // 3. Run the query
-    $success = $statement->execute();
+    $success = $statement->execute([$customerId]);
 
     // 4. Handle the results
     $arr = [];

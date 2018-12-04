@@ -7,8 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   exit;
 }
 
+$customerId = intval($_GET['customerId'] ?? 0);
 // 1. Go to the database and get all work associated with the $taskId
-$dashboardArr = Dashboard::getData();
+$dashboardArr = Dashboard::getData($customerId);
 
 // 2. Convert to JSON
 $json = json_encode($dashboardArr,  JSON_PRETTY_PRINT);
