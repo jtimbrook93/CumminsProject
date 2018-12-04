@@ -4,6 +4,7 @@ var dashboardApp = new Vue ({
 
     dataValue: '',
     productValue: '',
+    tempCid: '',
 
     metrics: {
 
@@ -51,6 +52,7 @@ var dashboardApp = new Vue ({
           console.log('METRIC LIST FETCH ERROR:');
           console.log(err);
         });
+        tempCid = cid;
     },
 
 
@@ -78,7 +80,7 @@ var dashboardApp = new Vue ({
 
       productChange(){
         console.log(dashboardApp.productValue);
-        this.getData(dashboardApp.cid, dashboardApp.productValue);
+        this.getData(dashboardApp.tempCid, dashboardApp.productValue);
         this.buildChart();
       },
 
