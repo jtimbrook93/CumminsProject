@@ -78,6 +78,7 @@ var dashboardApp = new Vue ({
 
       productChange(){
         console.log(dashboardApp.productValue);
+        this.getData(cid, dashboardApp.productValue);
         this.buildChart();
       },
 
