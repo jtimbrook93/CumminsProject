@@ -5,7 +5,10 @@ var dashboardApp = new Vue ({
     dataValue: '',
 
     metrics: {
-
+      
+      $customerId: '',
+      $productName: '',
+      $purchaseId: '',
       serialNumber: '',
       dateCollected: '',
       airMassFlowRate: '',
