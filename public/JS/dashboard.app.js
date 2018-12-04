@@ -27,7 +27,11 @@ var dashboardApp = new Vue ({
 
     },
 
-    dataArr: [],
+    dataArr: [
+      {
+        productName: ''
+      }
+    ],
 
 
   },
