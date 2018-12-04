@@ -114,11 +114,9 @@ var dashboardApp = new Vue ({
                 threshold: null
               }
             },
-            series: [{
-                type: 'area',
-                name: this.getName(),
-                data: this.getSeries()
-              }],
+            series:  
+              this.getSeries(),
+
             responsive: {
               rules: [{
                 condition: {
