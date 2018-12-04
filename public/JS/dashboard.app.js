@@ -53,6 +53,10 @@ var dashboardApp = new Vue ({
         });
     },
 
+    productValue(){
+      this.data
+    },
+
     getData(cid, pn){
       fetch('api/dashboard.php?customerId='+cid +'&productName='+pn)
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
