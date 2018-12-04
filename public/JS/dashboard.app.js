@@ -33,8 +33,8 @@ var dashboardApp = new Vue ({
 
   methods: {
 
-    getData(){
-      fetch('api/dashboard.php')
+    getData(cid){
+      fetch('api/dashboard.php?customerId='+cid)
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
         dashboardApp.dataArr = json;  } )
@@ -244,10 +244,13 @@ var dashboardApp = new Vue ({
 
       created () {
 
+        const url = new URL(window.location.href);
+        const cid = url.searchParams.get('customerId') || 0;
+
         this.formatDate();
         this.getData();
         this.getSeries();
-        this.getName()
+        this.getName();
         this.buildChart();
       }
     });
