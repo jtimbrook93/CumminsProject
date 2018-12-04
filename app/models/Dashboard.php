@@ -48,7 +48,7 @@ class Dashboard
       $sql = 'SELECT serialNumber, dateCollected, airMassFlowRate, fuelMassFlowRate,
        drag, thrust, fuelBurned, fuelEfficiency, noxLevels, momentumChangeAMF,
        momentumChangeFMF, energyBalance, propulsiveEfficiency, thermalEfficiency
-       from myProducts';
+       from myProducts order by dateCollected asc';
 
       $statement = $db->prepare($sql);
 
