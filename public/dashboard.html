@@ -47,7 +47,7 @@
   <div>
   <select class="selectpicker" id="productName" @change="productChange " v-model="productValue">
 <optgroup label="select product">
-<option v-bind:value="data.productName" v-for="data in dataArr" :key="data.productName">{{data.productName}}</option>
+<option v-bind:value="data.productName" v-for="data in dataArr" :key="data.productName">{{data.category}}</option>
 </optgroup>
 </select>
 </div>
