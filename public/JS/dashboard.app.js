@@ -39,7 +39,7 @@ var dashboardApp = new Vue ({
   computed: {
 
   productCategories () {
-      return [...new Set(this.dashboardApp.dataArr.map(p => p.category))]
+      return [...new Set(this.dataArr.map(p => p.category))]
   }
 },
 
