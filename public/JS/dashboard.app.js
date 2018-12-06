@@ -309,7 +309,7 @@ var dashboardApp = new Vue ({
 
         // this.productCategories ();
         this.getProductName(cid);
-        this.getSerialNumber(cid, pn);
+        //this.getSerialNumber(cid, pn);
         this.buildChart();
         this.formatDate();
         //this.getData(cid, pn);
