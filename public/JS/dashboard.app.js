@@ -38,8 +38,8 @@ var dashboardApp = new Vue ({
   },
   computed: {
 
-  productCategories (cid) {
-      return [...new Set(this.dashboardApp.dataArr.producName.map(p => p.category))]
+  productCategories () {
+      return [...new Set(this.dashboardApp.dataArr.map(p => p.category))]
   }
 },
 
@@ -285,7 +285,7 @@ var dashboardApp = new Vue ({
         this.tempCid = cid;
         this.productValue = pn;
 
-        this.productCategories (cid);
+        this.productCategories ();
         this.getProductName(cid);
         this.buildChart();
         this.formatDate();
