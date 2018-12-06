@@ -4,6 +4,7 @@ var dashboardApp = new Vue ({
 
     dataValue: '',
     productValue: '',
+    serialNumberValue: '',
     tempCid: '',
 
     metrics: {
@@ -30,7 +31,9 @@ var dashboardApp = new Vue ({
 
     dataArr: [
       {
-        productName: ''
+        productName: '',
+        serialNumber: '',
+        category: '',
       }
     ],
 
@@ -58,9 +61,21 @@ var dashboardApp = new Vue ({
 
     },
 
+    getSerialNumebr(cid, pn){
+      fetch('api/myproducts.php?customerId='+cid +'&productName'+pn)
+      .then( response => response.json() )  // "a => expression" is shorthand function declaration
+      .then( json => {
+        dashboardApp.dataArr = json;  })
+        .catch( err => {
+          console.log('METRIC LIST FETCH ERROR:');
+          console.log(err);
+        });
 
-    getData(cid, pn){
-      fetch('api/dashboard.php?customerId='+cid +'&productName='+pn)
+    },
+
+
+    getData(cid, pn, sn) {
+      fetch('api/dashboard.php?customerId='+cid +'&productName='+pn +'&serialNumber='+sn)
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
         dashboardApp.dataArr = json;  } )
@@ -83,6 +98,11 @@ var dashboardApp = new Vue ({
         this.buildChart();
       },
 
+      serialNumberChange(){
+        console.log(dashboardApp.serialNumberValue);
+        this.getData(dashboardApp.tempCid, dashboardApp.productValue, dashboardApp.serialNumberValue);
+        this.buildChart();
+      },
 
 
       formatDate(){
@@ -281,12 +301,15 @@ var dashboardApp = new Vue ({
         const url = new URL(window.location.href);
         const cid = url.searchParams.get('customerId') || 0;
         const pn = url.searchParams.get('productName') || "";
+        const sn = url.searchParams.get('serialNumber') || "";
 
         this.tempCid = cid;
         this.productValue = pn;
+        this.serialNumberValue = sn;
 
         // this.productCategories ();
         this.getProductName(cid);
+        this.getSerialNumber(cid, pn);
         this.buildChart();
         this.formatDate();
         //this.getData(cid, pn);
