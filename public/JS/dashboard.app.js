@@ -40,7 +40,8 @@ var dashboardApp = new Vue ({
 
   productCategories () {
       return [...new Set(this.productValue.map(p => p.category))]
-  },
+  }
+},
 
   methods: {
 
