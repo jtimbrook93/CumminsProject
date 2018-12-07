@@ -64,7 +64,7 @@ myProductsArr: []
     const cid = url.searchParams.get('customerId') || 0;
 
   // Do data fetch
-  fetch('api/myproducts.php')
+  fetch('api/myproducts.php?customerId='+cid)
   .then( response => response.json() )
   .then( json => {myProductsApp.myProducts = json} )
   .catch( err => { console.error('MY PRODUCTS FETCH ERROR:');
