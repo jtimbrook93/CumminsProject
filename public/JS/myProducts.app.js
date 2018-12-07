@@ -71,7 +71,7 @@ myProductsArr: []
   fetch('api/repairs.php')
   .then( response => response.json() )  // "a => expression" is shorthand function declaration
 .then( json => {
-  repairsApp.repairs = json;
+  myProductsApp.moreData = json;
   //  TODO: Build out client chart
 
 } )
