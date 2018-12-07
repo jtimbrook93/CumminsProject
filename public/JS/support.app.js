@@ -1,50 +1,28 @@
-var KPIdataApp = new Vue({
-  el: '#KPIdata',
+var supportApp = new Vue({
+  el: '#supportcontainer',
+
 data: {
-  KPI: {
-    siteId: '',
-    turbineDeployedId: '',
-    sensorDeployedId: '',
-    output: '',
-    heartRate: '',
-    compressorEfficiency: '',
-    availability: '',
-    reliability: '',
-    firedHours: '',
-    trips: '',
-    starts: ''
-}
 
 },
+
 computed: {
 
   },
 
   methods: {
-    getKPIsdata(){
-      fetch('api/kpidata.php')
-      .then( response => response.json() )  // "a => expression" is shorthand function declaration
-    .then( json => {
-      KPIdataApp.KPI = json;
-      //  TODO: Build out client chart
+      $(function(){
+        $("#addClass").click(function () {
+        $('#qnimate').addClass('popup-box-on');
+          });
 
-    } )
-    .catch( err => {
-      console.log('KPI data LIST FETCH ERROR:');
-      console.log(err);
-    })
-  },
+          $("#removeClass").click(function () {
+        $('#qnimate').removeClass('popup-box-on');
+          });
+})
   },
 
   created () {
 
     // Do data fetch
-    fetch('api/kpidata.php')
-    .then( response => response.json() )
-    .then( json => {KPIdataApp.KPI = json} )
-    .catch( err => {
-      console.error('KPI data FETCH ERROR:');
-      console.error(err);
-    })
   }
-})
+});
