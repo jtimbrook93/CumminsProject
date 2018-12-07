@@ -31,7 +31,7 @@ myProductsArr: []
   methods: {
 
     getAllProducts() {
-      fetch('api/myproducts.php')
+    fetch('api/myproducts.php?customerId='+cid)
       .then( response => response.json() ) // "a => expression" is shorthand function declaration
       .then( json => {
         myProductsApp.myProducts = json;
@@ -59,6 +59,9 @@ myProductsArr: []
 
   },
   created() {
+
+    const url = new URL(window.location.href);
+    const cid = url.searchParams.get('customerId') || 0;
 
   // Do data fetch
   fetch('api/myproducts.php')
