@@ -61,7 +61,7 @@ myProductsArr: []
   created() {
 
     const url = new URL(window.location.href);
-    const cid = url.searchParams.get('customerId') || 0;
+    const cid = url.searchParams.get('customerId') || 4501;
 
   // Do data fetch
   fetch('api/myproducts.php?customerId='+cid)
