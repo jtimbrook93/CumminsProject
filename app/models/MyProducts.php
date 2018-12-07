@@ -23,7 +23,7 @@ class MyProducts
 
     // 2. Prepare the query
     //TODO: change this query
-    $sql = 'SELECT productName
+    $sql = 'SELECT DISTINCT(productName) AS productName
        from myProducts where customerId = ?';
 
     $statement = $db->prepare($sql);
