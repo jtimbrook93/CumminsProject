@@ -56,8 +56,8 @@ var dashboardApp = new Vue ({
         }
         return output
       }
+}
 },
-
   methods: {
 
    // TODO: build displayCustomerReport()
