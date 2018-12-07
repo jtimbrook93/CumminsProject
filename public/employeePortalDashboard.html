@@ -118,15 +118,28 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third" id="dashboardcontainer">
         <h5>Customer View</h5>
-        <p>Enter customer number for a full Report</p>
 
         <form id="customerReport" @submit.prevent="displayCustomerReport()">
-        <div class="form-group" id="Form">
-        <label for="CustomerId">Enter Customer Number</label>
+        <div class="form-group" id="customerForm">
+        <label for="CustomerId">Enter Customer Number for a Full Report</label>
         <input type="text" class="form-control" id="customerId" placeholder="Enter Customer Id" v-model="data.customerId">
         </div>
 
         <button v-on:submit="displayCustomerReport" form="newReportForm" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      <!-- <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map"> -->
+      </div>
+
+      <div class="w3-third" id="dashboardcontainer">
+        <h5>Engine Diognostics</h5>
+
+        <form id="EngineReport" @submit.prevent="displayEngineReport()">
+        <div class="form-group" id="engineItemForm">
+        <label for="Serial Number">Enter Serial Number for a Full Report</label>
+        <input type="text" class="form-control" id="serialNumber" placeholder="Enter Serial Number" v-model="data.serialNumber">
+        </div>
+
+        <button v-on:submit="displayEngineReport" form="newReportForm" type="submit" class="btn btn-primary">Submit</button>
         </form>
       <!-- <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map"> -->
       </div>
