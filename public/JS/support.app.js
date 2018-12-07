@@ -10,7 +10,7 @@ computed: {
   },
 
   methods: {
-      $(function(){
+      function(){
         $("#addClass").click(function () {
         $('#qnimate').addClass('popup-box-on');
           });
@@ -18,7 +18,7 @@ computed: {
           $("#removeClass").click(function () {
         $('#qnimate').removeClass('popup-box-on');
           });
-})
+}
   },
 
   created () {
