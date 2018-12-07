@@ -48,7 +48,7 @@ var dashboardApp = new Vue ({
       return function (dataArr, productName) {
         var output = []
         var usedKeys = {}
-        for (var i = 0; i < arr.length; i++) {
+        for (var i = 0; i < dataArr.length; i++) {
           if (!usedKeys[dataArr[i][productName]]) {
             usedKeys[dataArr[i][productName]] = true
             output.push(dataArr[i])
