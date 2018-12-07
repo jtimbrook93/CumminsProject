@@ -30,18 +30,20 @@
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th>Customer ID</th>
-          <th>Serial Number</th>
           <th>Product Name</th>
           <th>Purchase ID</th>
+          <th>Serial Number</th>
+          <th>Order Status</th>
+          <th>Employee Contact</th>
         </tr>
       </thead>
       <tbody id="myProductsTableBody">
         <tr v-for ="myProducts in myProducts">
-        <td>{{myProducts.customerId}}</td>
-        <td>{{myProducts.serialNumber}}</td>
         <td>{{myProducts.productName}}</td>
         <td>{{myProducts.purchaseId}}</td>
+        <td>{{myProducts.serialNumber}}</td>
+        <td>{{myProducts.processStep}}</td>
+        <td>{{myProducts.contactName}}</td>
         </tr>
       </tbody>
     </table>

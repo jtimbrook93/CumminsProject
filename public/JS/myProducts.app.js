@@ -9,8 +9,18 @@ var myProductsApp = new Vue ({
       serialNumber: '',
       productName: '',
       purchaseId: ''
+    },
+
+    moreData: {
+
+      dateStart: '',
+      estimatedFinish: '',
+      processStep: '',
+      contactName: '',
+      employeeId: ''
 
     },
+
 
 myProductsArr: []
 
@@ -31,7 +41,21 @@ myProductsArr: []
     console.log('MY PRODUCT LIST FETCH ERROR:');
     console.log(err);
   })
+
   },
+  getAllRepairs(){
+    fetch('api/repairs.php')
+    .then( response => response.json() )  // "a => expression" is shorthand function declaration
+  .then( json => {
+    myProductsApp.moreData = json;
+    //  TODO: Build out client chart
+
+  } )
+  .catch( err => {
+    console.log('CLIENT LIST FETCH ERROR:');
+    console.log(err);
+  })
+},
 
   },
   created() {
@@ -43,6 +67,14 @@ myProductsArr: []
   .catch( err => { console.error('MY PRODUCTS FETCH ERROR:');
   console.error(err);
   })
-  }
+
+  fetch('api/repairs.php')
+  .then( response => response.json() )  // "a => expression" is shorthand function declaration
+.then( json => {
+  repairsApp.repairs = json;
+  //  TODO: Build out client chart
+
+} )
+}
 
 })
