@@ -30,7 +30,7 @@ myProductsArr: []
 
   methods: {
 
-    getAllProducts() {
+    getAllProducts(cid) {
     fetch('api/myproducts.php?customerId='+cid)
       .then( response => response.json() ) // "a => expression" is shorthand function declaration
       .then( json => {
