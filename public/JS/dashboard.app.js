@@ -31,9 +31,9 @@ var dashboardApp = new Vue ({
 
     dataArr: [
       {
-        productName: '',
-        serialNumber: '',
-        category: '',
+        productNameArr: '',
+        serialNumberArr: '',
+        categoryArr: '',
       }
     ],
 
@@ -48,6 +48,7 @@ var dashboardApp = new Vue ({
 
   methods: {
 
+   // TODO: build displayCustomerReport()
 
     getProductName(cid){
       fetch('api/myproducts.php?customerId='+cid)
