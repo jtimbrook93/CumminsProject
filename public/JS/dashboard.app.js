@@ -31,9 +31,9 @@ var dashboardApp = new Vue ({
 
     dataArr: [
       {
-        productNameArr: '',
-        serialNumberArr: '',
-        categoryArr: '',
+        productName: '',
+        serialNumber: '',
+        category: '',
       }
     ],
 
@@ -43,12 +43,33 @@ var dashboardApp = new Vue ({
 
   productCategories () {
       return [...new Set(this.dataArr.map(p => p.category))]
-  }
+  },
+  unique () {
+      return function (dataArr, productName) {
+        var output = []
+        var usedKeys = {}
+        for (var i = 0; i < arr.length; i++) {
+          if (!usedKeys[dataArr[i][productName]]) {
+            usedKeys[dataArr[i][productName]] = true
+            output.push(dataArr[i])
+          }
+        }
+        return output
+      }
 },
 
   methods: {
 
    // TODO: build displayCustomerReport()
+
+        // myFilter: function (productName, , dataArr) {
+        //   for(var i = 0; i < idx; i++) {
+        //     if(arr[i].name === val.name) {
+        //       return false;
+        //     }
+        //   }
+        //   return true;
+        // },
 
     getProductName(cid){
       fetch('api/myproducts.php?customerId='+cid)
