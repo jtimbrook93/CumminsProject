@@ -5,9 +5,9 @@ var attempt = 3; // Variable to count number of attempts.
 function validate(){
 var username = document.getElementById("username").value;
 var password = document.getElementById("password").value;
-if ( username == "Formget" && password == "formget#123"){
+if ( username == "218" || "219" || "220" || "221" || "222" || "223" && password == "1234"){
 alert ("Login successfully");
-window.open("employeePortal.html"); // Redirecting to other page.
+window.open("employeePortalDashboard.html"); // Redirecting to other page.
 return false;
 }
 else{

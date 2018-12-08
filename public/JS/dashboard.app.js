@@ -41,22 +41,8 @@ var dashboardApp = new Vue ({
   },
   computed: {
 
-  // productCategories () {
-  //     return [...new Set(this.dataArr.map(dataArr => dataArr.category))]
+
   },
-//   unique () {
-//       return function (dataArr, productName) {
-//         var output = []
-//         var usedKeys = {}
-//         for (var i = 0; i < dataArr.length; i++) {
-//           if (!usedKeys[dataArr[i][productName]]) {
-//             usedKeys[dataArr[i][productName]] = true
-//             output.push(dataArr[i])
-//           }
-//         }
-//         return output
-//       }
-// }
 
   methods: {
 
