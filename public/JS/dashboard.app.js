@@ -84,7 +84,7 @@ var dashboardApp = new Vue ({
     },
 
     getSerialNumber(cid, pn){
-      fetch('api/serialNumber.php?customerId='+cid +'&productName'+pn)
+      fetch('api/serialNumber.php?customerId='+cid +'&productName='+pn)
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
         dashboardApp.dataArr = json;  })
