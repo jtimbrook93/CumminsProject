@@ -18,3 +18,4 @@ require 'models/Products.php';
 require 'models/MyProducts.php';
 require 'models/Dashboard.php';
 require 'models/Comment.php';
+require 'models/SerialNumber.php';

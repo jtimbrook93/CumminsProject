@@ -9,8 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 $customerId = intval($_GET['customerId'] ?? 0);
 $productName = ($_GET['productName'] ?? 0);
+$serialNumber = ($_GET['serialNumber'] ?? 0)
 // 1. Go to the database and get all work associated with the $taskId
-$dashboardArr = Dashboard::getData($customerId, $productName);
+$dashboardArr = Dashboard::getData($customerId, $productName, $serialNumber);
 
 // 2. Convert to JSON
 $json = json_encode($dashboardArr,  JSON_PRETTY_PRINT);

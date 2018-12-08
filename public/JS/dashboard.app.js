@@ -41,23 +41,23 @@ var dashboardApp = new Vue ({
   },
   computed: {
 
-  productCategories () {
-      return [...new Set(this.dataArr.map(dataArr => dataArr.category))]
+  // productCategories () {
+  //     return [...new Set(this.dataArr.map(dataArr => dataArr.category))]
   },
-  unique () {
-      return function (dataArr, productName) {
-        var output = []
-        var usedKeys = {}
-        for (var i = 0; i < dataArr.length; i++) {
-          if (!usedKeys[dataArr[i][productName]]) {
-            usedKeys[dataArr[i][productName]] = true
-            output.push(dataArr[i])
-          }
-        }
-        return output
-      }
-}
-},
+//   unique () {
+//       return function (dataArr, productName) {
+//         var output = []
+//         var usedKeys = {}
+//         for (var i = 0; i < dataArr.length; i++) {
+//           if (!usedKeys[dataArr[i][productName]]) {
+//             usedKeys[dataArr[i][productName]] = true
+//             output.push(dataArr[i])
+//           }
+//         }
+//         return output
+//       }
+// }
+
   methods: {
 
    // TODO: build displayCustomerReport()
@@ -83,8 +83,8 @@ var dashboardApp = new Vue ({
 
     },
 
-    getSerialNumebr(cid, pn){
-      fetch('api/myproducts.php?customerId='+cid +'&productName'+pn)
+    getSerialNumber(cid, pn){
+      fetch('api/serialNumber.php?customerId='+cid +'&productName'+pn)
       .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
         dashboardApp.dataArr = json;  })
@@ -116,8 +116,9 @@ var dashboardApp = new Vue ({
 
       productChange(){
         console.log(dashboardApp.productValue);
-        this.getData(dashboardApp.tempCid, dashboardApp.productValue);
-        this.buildChart();
+        this.getSerialNumber(dashboardApp.tempCid, dashboardApp.productValue);
+        //this.getData(dashboardApp.tempCid, dashboardApp.productValue, dashboardApp.serialNumberValue);
+        //this.buildChart();
       },
 
       serialNumberChange(){

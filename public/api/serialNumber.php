@@ -7,12 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   exit;
 }
 
+$customerId = intval($_GET['customerId'] ?? 0);
+$productName = ($_GET['productName'] ?? 0);
 // 1. Go to the database and get all work associated with the $taskId
-$kpiArr = KPI::getKPIs1();
+$serialNumberArr = SerialNumber::getSerialNumber($customerId, $productName);
 
 // 2. Convert to JSON
-$json = json_encode($kpiArr,  JSON_PRETTY_PRINT);
+$json = json_encode($serialNumberArr,  JSON_PRETTY_PRINT);
 
 // 3. Print
 header ('Content-type: application/json;charset=utf-8');
-echo json_encode($kpiArr);
+echo json_encode($serialNumberArr);
