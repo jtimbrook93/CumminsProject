@@ -1,9 +1,10 @@
 <?php
 
-class Products
+class Orders
 
 {
   public $serialNumber;
+  public $customerId;
   public $productName;
   public $productType;
   public $productApplication;
@@ -12,6 +13,7 @@ class Products
   public $torque;
   public $classification;
   public $size;
+  public $orderStatus;
 
 
 
@@ -19,6 +21,7 @@ class Products
    // creating a new object instance using 'id' as integer
 
     $this->serialNumber = ($data['serialNumber']);
+    $this->customerId = intval($data['customerId']);
     $this->productName = ($data['productName']);
     $this->productType = ($data['productType']);
     $this->productApplication = ($data['productApplication']);
@@ -27,6 +30,7 @@ class Products
     $this->torque = ($data['torque']);
     $this->classification = ($data['classification']);
     $this->size = ($data['size']);
+    $this->orderStatus = ($data['orderStatus']);
   }
 
   public function fetchAll() {
@@ -48,7 +52,7 @@ class Products
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
       // 4.a. For each row, make a new work php object
-      $productsItem =  new Products($row);
+      $productsItem =  new Orders($row);
       array_push($arr, $productsItem);
 
     }

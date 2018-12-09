@@ -14,8 +14,10 @@ require 'environment.php';
 //MODELS
 
 require 'models/Repairs.php';
-require 'models/Products.php';
+require 'models/Orders.php';
 require 'models/MyProducts.php';
 require 'models/Dashboard.php';
 require 'models/Comment.php';
 require 'models/SerialNumber.php';
+require 'models/Sales.php';
+require 'models/Invoice.php';

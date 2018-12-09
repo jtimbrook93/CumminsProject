@@ -1,29 +1,27 @@
-var productsApp = new Vue({
-  el: '#productMain',
+var invoiceApp = new Vue({
+  el: '#invoiceMain',
 data: {
 
-  products: {
+  invoices: {
 
-    serialNumber: '',
-    productName: '',
-    productType: '',
-    productApplication: '',
-    digitalProduct: '',
-    horsepower: '',
-    torque: '',
-    classification: '',
-    size: ''
+    invoiceNumber: '',
+    createdDate: '',
+    orderStatus: '',
+    customerName: '',
+    dueDate: '',
+    serviceLine: '',
+    invoiceAmount: ''
   },
 
-  productsArr: []
+  invoiceArr: []
 },
 
     methods: {
       fetchAll() {
-        fetch('api/products.php')
+        fetch('api/invoice.php')
         .then( response => response.json() )
         .then( json => {
-          productsApp.products = json;
+          invoiceApp.invoices = json;
         } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');

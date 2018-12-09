@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 }
 // go to the database and get stuff
 
-$productsArr = Products::fetchAll();
+$salesArr = Sales::fetchAll();
 
 // convert to json and print
-$json = json_encode($productsArr, JSON_PRETTY_PRINT);
+$json = json_encode($salesArr, JSON_PRETTY_PRINT);
 
 header ('Content-type: application/json;charset=utf-8');
-echo json_encode($productsArr);
+echo json_encode($salesArr);
