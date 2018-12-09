@@ -55,7 +55,7 @@
 <div>
 <select class="selectpicker" id="serialNumber" @change="serialNumberChange " v-model="serialNumberValue">
 <optgroup label="select serial number">
-<option v-bind:value="data.serialNumber" v-for="data in dataArr" :key="data.serialNumber">{{data.serialNumber}}</option>
+<option v-bind:value="data.serialNumber" v-for="data in dataSerial" :key="data.serialNumber">{{data.serialNumber}}</option>
 </optgroup>
 </select>
 </div>
