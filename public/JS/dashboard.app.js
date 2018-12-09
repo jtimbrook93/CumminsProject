@@ -97,6 +97,7 @@ var dashboardApp = new Vue ({
 
           valueChange(){
             console.log(dashboardApp.dataValue);
+            this.buildChart();
           },
 
           productChange(){
