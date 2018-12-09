@@ -40,14 +40,14 @@
           </tr>
         </thead>
         <tbody id="invoiceTableBody">
-          <tr v-for="invoices in invioces">
-            <td>{{products.invoiceNumber}}</td>
-            <td>{{products.createdDate}}</td>
-            <td>{{products.orderStatus}}</td>
-            <td>{{products.customerName}}</td>
-            <td>{{products.dueDate}}</td>
-            <td>{{products.serviceLine}}</td>
-            <td>{{products.invoiceAmount}}</td>
+          <tr v-for="invoices in invoices">
+            <td>{{invoices.invoiceNumber}}</td>
+            <td>{{invoices.createdDate}}</td>
+            <td>{{invoices.orderStatus}}</td>
+            <td>{{invoices.customerName}}</td>
+            <td>{{invoices.dueDate}}</td>
+            <td>{{invoices.serviceLine}}</td>
+            <td>{{invoices.invoiceAmount}}</td>
           </tr>
         </tbody>
       </table>
