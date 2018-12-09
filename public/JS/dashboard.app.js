@@ -118,7 +118,7 @@ var dashboardApp = new Vue ({
 
 
       formatDate(){
-        this.dataArr.forEach(
+        this.dataArr2.forEach(
           function(entry) {
             entry.dateCollected = Date.parse(entry.dateCollected); // Convert to ms since Jan 1, 1970 UTC
 
