@@ -29,13 +29,7 @@ var dashboardApp = new Vue ({
 
     },
 
-    dataArr: [
-      {
-        productName: '',
-        serialNumber: '',
-        category: '',
-      },
-    ],
+    dataArr: [],
 
       dataArr2: []
 
