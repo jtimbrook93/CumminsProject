@@ -252,51 +252,51 @@ var dashboardApp = new Vue ({
               var name = [];
               if(this.dataValue=='airMassFlowRate')
               {
-                name = 'Air Mass Flow Rate'
+                name = 'Cubic Meter/Sec'
               }
               else if(this.dataValue=='fuelMassFlowRate')
               {
-                name = 'Fuel Mass Flow Rate'
+                name = 'Cubic Meter/Sec'
               }
               else if(this.dataValue == "drag")
               {
-                name = 'Drag'
+                name = 'Newtons'
               }
               else if(this.dataValue=='thrust')
               {
-                name = 'Thrust'
+                name = 'Newtons'
               }
               else if(this.dataValue == "fuelBurned")
               {
-                name = 'Fuel Burned'
+                name = 'Joules'
               }
               else if(this.dataValue=='fuelEfficiency')
               {
-                name = 'Fuel Efficiency'
+                name = 'MPG'
               }
               else if(this.dataValue == "noxLevels")
               {
-                name = 'NOx Levels'
+                name = 'mg/Nm3'
               }
               else if(this.dataValue=='momentumChangeAMF')
               {
-                name = 'Momentum Change AMF'
+                name = 'Kilogram Meters per Second'
               }
               else if(this.dataValue == "momentumChangeFMF")
               {
-                name = 'Momentum Change FMF'
+                name = 'Kilogram Meters per Second'
               }
               else if(this.dataValue=='energyBalance')
               {
-                name = 'Energy Balance'
+                name = 'Joules'
               }
               else if(this.dataValue == "propulsiveEfficiency")
               {
-                name = 'Propultive Efficiency'
+                name = 'Meters/Second'
               }
               else if(this.dataValue=='thermalEfficiency')
               {
-                name = 'Thermal Efficiency'
+                name = 'Joules/kg'
               }
               return name;
             }
