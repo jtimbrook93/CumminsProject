@@ -84,7 +84,9 @@ var dashboardApp = new Vue ({
           fetch('api/dashboard.php?customerId='+cid +'&productName='+pn +'&serialNumber='+sn)
           .then( response => response.json() )  // "a => expression" is shorthand function declaration
           .then( json => {
-            dashboardApp.dataArr2 = json;  } )
+            dashboardApp.dataArr2 = json;
+              this.buildChart();
+            } )
             .catch( err => {
               console.log('METRIC LIST FETCH ERROR:');
               console.log(err);
@@ -107,7 +109,6 @@ var dashboardApp = new Vue ({
           serialNumberChange(){
             console.log(dashboardApp.serialNumberValue);
             this.getData(dashboardApp.tempCid, dashboardApp.productValue, dashboardApp.serialNumberValue);
-            this.buildChart();
           },
 
 
