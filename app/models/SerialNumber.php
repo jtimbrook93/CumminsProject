@@ -23,7 +23,7 @@ class SerialNumber
 
     // 2. Prepare the query
     //TODO: change this query
-    $sql = 'SELECT serialNumber
+    $sql = 'SELECT DISTINCT(serialNumber) as serialNumber
        from myProducts where customerId = ? and productName = ?';
 
     $statement = $db->prepare($sql);
