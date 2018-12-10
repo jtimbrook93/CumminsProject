@@ -305,9 +305,3 @@ body
     padding: 5px 10px;
     position: relative;
 }
-
-div{
-    background-color: lightblue;
-    width: 40px;
-    overflow-x: auto;
-}
