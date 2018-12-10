@@ -18,7 +18,7 @@ data: {
 
     methods: {
 
-      displayCustomerReport(){
+      displayCustomerReport(id){
         fetch('api/customer.php?Id='+id)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
@@ -40,9 +40,9 @@ data: {
         const url = new URL(window.location.href);
         const id = url.searchParams.get('Id') || 0;
 
-
+        this.customerIdValue = id;
 
         // Do data fetch
-        this.displayCustomerReport();
+        this.displayCustomerReport(id);
       }
     });
