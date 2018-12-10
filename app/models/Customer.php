@@ -31,7 +31,7 @@ class Customer
     $statement = $db->prepare($sql);
 
     // 3. Run the query
-    $success = $statement->execute($Id);
+    $success = $statement->execute([$Id]);
 
     // 4. Handle the results
     $arr = [];
