@@ -47,8 +47,8 @@ class Invoice
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
       // 4.a. For each row, make a new work php object
-      $orderItem =  new Orders($row);
-      array_push($arr, $orderItem);
+      $invoiceItem =  new Invoice($row);
+      array_push($arr, $invoiceItem);
 
     }
 
