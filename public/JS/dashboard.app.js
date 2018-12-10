@@ -6,6 +6,7 @@ var dashboardApp = new Vue ({
     productValue: '',
     serialNumberValue: '',
     tempCid: '',
+    customerIdValue: '',
 
     metrics: {
 
@@ -36,6 +37,7 @@ var dashboardApp = new Vue ({
 
 
 
+
   },
   computed: {
 
@@ -43,17 +45,6 @@ var dashboardApp = new Vue ({
   },
 
   methods: {
-
-    // TODO: build displayCustomerReport()
-
-    // myFilter: function (productName, , dataArr) {
-    //   for(var i = 0; i < idx; i++) {
-    //     if(arr[i].name === val.name) {
-    //       return false;
-    //     }
-    //   }
-    //   return true;
-    // },
 
     getProductName(cid){
       fetch('api/myproducts.php?customerId='+cid)
@@ -310,7 +301,9 @@ var dashboardApp = new Vue ({
             const cid = url.searchParams.get('customerId') || 0;
             const pn = url.searchParams.get('productName') || "";
             const sn = url.searchParams.get('serialNumber') || "";
+            const id = url.searchParams.get('Id') || 0;
 
+            this.customerIdValue = id;
             this.tempCid = cid;
             this.productValue = pn;
             this.serialNumberValue = sn;

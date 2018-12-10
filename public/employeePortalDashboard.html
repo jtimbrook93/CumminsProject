@@ -135,7 +135,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <form id="customerReport" @submit.prevent="displayCustomerReport()">
         <div class="form-group" id="customerForm">
         <label for="CustomerId">Enter Customer Number for a Full Report</label>
-        <input type="text" class="form-control" id="customerId" placeholder="Enter Customer Id" v-model="data.customerId">
+        <input type="text" class="form-control" id="customerId" placeholder="Enter Customer Id" v-model="customerIdValue">
         </div>
 
         <button v-on:submit="displayCustomerReport" form="newReportForm" type="submit" class="btn btn-primary">Submit</button>
