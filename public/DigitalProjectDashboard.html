@@ -131,34 +131,34 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
 
   <!--TODO: add functionality to these containers -->
-  <div id="digitalProductContainer" class="container-fluid">
+  <div id="digitalProductContainer" class="w3-container-fluid">
     <h1>{{ project.name }}</h1>
     <p><em>{{ project.short_description }}</em></p>
     <div class="w3-row-padding w3-margin-bottom">
-      <div class="w3-quarter">
+      <div class="w3-third">
         Completion %
       </div>
 
-      <section class="w3-quarter">
+      <section class="w3-third">
         <div class="w3-row-padding w3-margin-bottom">
-          <div class="w3-quarter">
+          <div class="w3-third">
             <h2>Due date</h2>
             <div class="ban">{{ pretty_date(project.target_date) }}</div>
           </div>
-          <div class="cw3-quarter">
+          <div class="cw3-third">
             <h2>Remaining</h2>
             <div class="ban">{{ days_left }} days</div>
           </div>
         </div>
       </section>
 
-      <div class="w3-quarter">
+      <div class="w3-third">
         Status
       </div>
     </div> <!-- end row 1, high-level summary information -->
 
     <div class="w3-row-padding w3-margin-bottom">
-      <section class="w3-quarter">
+      <section class="w3-third">
         <h2>Spent</h2>
         <div class="ban">{{ pretty_currency(project.spent) }}</div>
 
@@ -168,12 +168,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h2>Projected Spend</h2>
         <div class="ban">{{ pretty_currency(project.projected_spend) }}</div>
       </section>
-      <div class="w3-quarter" style="height:200px">
+      <div class="w3-third" style="height:200px">
 
       <div id="burndownChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
       </div>
-      <div class="w3-quarter">
+      <div class="w3-third">
         <div id="effortChart"></div>
       </div>
     </div> <!-- end row 2, charts -->
