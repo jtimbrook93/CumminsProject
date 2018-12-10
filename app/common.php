@@ -22,3 +22,6 @@ require 'models/SerialNumber.php';
 require 'models/Sales.php';
 require 'models/Invoice.php';
 require 'models/Customer.php';
+require 'models/Team.php';
+require 'models/Work.php';
+require 'models/WorkHoursReport.php';
