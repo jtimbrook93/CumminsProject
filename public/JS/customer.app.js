@@ -24,7 +24,7 @@ data: {
         .then( json => {
           console.log(json);
           customerApp.dataCustomer = json;
-            window.open('CustomerReport.html?customerId='+document.getElementById('customerId').value)  })
+            window.open('CustomerReport.html?Id='+document.getElementById('customerId').value)  })
           .catch( err => {
             console.log('METRIC LIST FETCH ERROR:');
             console.log(err);
