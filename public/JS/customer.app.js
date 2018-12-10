@@ -22,6 +22,7 @@ data: {
         fetch('api/customer.php?Id='+ document.getElementById('customerId').value)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
+          console.log(json);
           customerApp.dataCustomer = json;
             window.open('CustomerReport.html?customerId='+document.getElementById('customerId').value)  })
           .catch( err => {
