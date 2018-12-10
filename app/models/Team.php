@@ -4,7 +4,9 @@ class Team
   public $id;
   public $name;
   public $hourly_rate;
+
   public function __construct($data) {
+    
     $this->id = intval($data['id']);
     $this->name = $data['name'];
     $this->hourly_rate = floatval($data['hourly_rate']);
