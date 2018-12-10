@@ -28,8 +28,49 @@ data: {
           console.log('PRODUCT FETCH ERROR:');
           console.log(err);
         })
-      }
       },
+
+    Highcharts.chart('salesChart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Stacked column chart'
+    },
+    xAxis: {
+        categories: ['Quarter 1 Revenue', 'Quarter 2 Revenue', 'Quarter 3 Revenue', 'Quarter 4 Revenue']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Percent of Revenue'
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    series: [{
+        name: 'Distribution',
+        data: this.sales.map( item => [item.quarter1Revenue])
+      {
+        name: 'Engines',
+        data:  this.sales.map( item => [item.quarter2Revenue])
+    }, {
+        name: 'Filtration',
+        data:  this.sales.map( item => [item.quarter3Revenue])
+        },{
+        name: 'Filtration',
+        data:  this.sales.map( item => [item.quarter3Revenue])
+        }
+      ]}
+});
+},
 
       created () {
 
