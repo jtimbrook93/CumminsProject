@@ -21,3 +21,4 @@ require 'models/Comment.php';
 require 'models/SerialNumber.php';
 require 'models/Sales.php';
 require 'models/Invoice.php';
+require 'models/Customer.php';
