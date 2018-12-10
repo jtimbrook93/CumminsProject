@@ -226,5 +226,6 @@ var digitalProductApp = new Vue({
     this.fetchProject(projectId);
     this.fetchTasks(projectId);
     this.fetchProjectWork(projectId);
+    this.buildBurndownChart();
   }
 })
