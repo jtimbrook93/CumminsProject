@@ -22,7 +22,7 @@ data: {
         fetch('api/customer.php?Id='+id)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
-          dashboardApp.dataCustomer = json;  })
+          customerApp.dataCustomer = json;  })
           window.open('?customerId='+id)
           .catch( err => {
             console.log('METRIC LIST FETCH ERROR:');
@@ -36,7 +36,7 @@ data: {
 
         const url = new URL(window.location.href);
         const id = url.searchParams.get('Id') || 0;
-        
+
         this.customerIdValue = id;
 
         // Do data fetch
