@@ -43,6 +43,6 @@ data: {
 
 
         // Do data fetch
-        this.displayCustomerReport(id);
+        this.displayCustomerReport();
       }
     });
