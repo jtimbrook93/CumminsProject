@@ -134,31 +134,31 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div id="digitalProductContainer" class="container-fluid">
     <h1>{{ project.name }}</h1>
     <p><em>{{ project.short_description }}</em></p>
-    <div class="row">
-      <div class="col placeholder">
+    <div class="w3-row-padding w3-margin-bottom">
+      <div class="w3-quarter">
         Completion %
       </div>
 
-      <section class="col">
-        <div class="row">
-          <div class="col">
+      <section class="w3-quarter">
+        <div class="w3-row-padding w3-margin-bottom">
+          <div class="w3-quarter">
             <h2>Due date</h2>
             <div class="ban">{{ pretty_date(project.target_date) }}</div>
           </div>
-          <div class="col">
+          <div class="cw3-quarter">
             <h2>Remaining</h2>
             <div class="ban">{{ days_left }} days</div>
           </div>
         </div>
       </section>
 
-      <div class="col placeholder">
+      <div class="w3-quarter">
         Status
       </div>
     </div> <!-- end row 1, high-level summary information -->
 
-    <div class="row">
-      <section class="col">
+    <div class="w3-row-padding w3-margin-bottom">
+      <section class="w3-quarter">
         <h2>Spent</h2>
         <div class="ban">{{ pretty_currency(project.spent) }}</div>
 
@@ -168,17 +168,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h2>Projected Spend</h2>
         <div class="ban">{{ pretty_currency(project.projected_spend) }}</div>
       </section>
-      <div class="col placeholder" style="height:200px">
+      <div class="w3-quarter" style="height:200px">
 
       <div id="burndownChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
       </div>
-      <div class="col">
+      <div class="w3-quarter">
         <div id="effortChart"></div>
       </div>
     </div> <!-- end row 2, charts -->
 
-    <div class="row">
+    <div class="w3-row-padding w3-margin-bottom">
       <table id="taskTable" class="table table-striped table-sm table-hover">
         <thead>
           <tr>
@@ -214,7 +214,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
         <!--TODO: fix feeds to reflect cummins -->
-      <div class="w3-row=padding">
+      <div class="w3-row-padding">
         <h5> Feeds</h5>
         <table class="w3-table w3-striped w3-white">
           <tr>
