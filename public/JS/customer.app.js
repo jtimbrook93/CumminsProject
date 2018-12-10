@@ -2,6 +2,8 @@ var customerApp = new Vue({
   el: '#customerMain',
 data: {
 
+    customerIdValue: '',
+
   customers: {
 
     Id: '',
@@ -31,6 +33,11 @@ data: {
       },
 
       created () {
+
+        const url = new URL(window.location.href);
+        const id = url.searchParams.get('Id') || 0;
+        
+        this.customerIdValue = id;
 
         // Do data fetch
         this.displayCustomerReport();
