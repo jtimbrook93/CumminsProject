@@ -8,6 +8,7 @@ class Work
   public $stop;   //'YYYY-MM-DD', needs to be calculated
   public $hours;
   public $completion_estimate;
+
   public function __construct($row) {
     $this->id = isset($row['id']) ? intval($row['id']) : null;
     $this->task_id = intval($row['task_id']);
@@ -25,7 +26,7 @@ class Work
   }
   public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-    $sql = 'INSERT Work (task_id, team_id, start_date, hours, completion_estimate)
+    $sql = 'INSERT into Work (task_id, team_id, start_date, hours, completion_estimate)
             VALUES (?, ?, ?, ?, ?)';
     $statement = $db->prepare($sql);
     $success = $statement->execute([

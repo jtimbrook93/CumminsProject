@@ -1,5 +1,6 @@
 <?php
 require '../../app/common.php';
+
 $projectId = intval($_GET['projectId'] ?? 0);
 if ($projectId < 1) {
   throw new Exception('Invalid Project ID');
