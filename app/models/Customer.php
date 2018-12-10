@@ -15,9 +15,9 @@ class Customer
 
     $this->Id = intval($data['Id']);
     $this->customerName = ($data['customerName']);
-    $this->customerSince = ($data['customerSince']);
+    $this->customerSince = date($data['customerSince']);
     $this->primaryContactName = ($data['primaryContactName']);
-    $this->primaryContactNumber = ($data['primaryContactNumber']);
+    $this->primaryContactNumber = intval($data['primaryContactNumber']);
 
   }
 
