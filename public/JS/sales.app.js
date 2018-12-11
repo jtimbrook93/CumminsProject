@@ -1,4 +1,4 @@
-var salesApp = new Vue({
+        var salesApp = new Vue({
   el: '#salesMain',
 data: {
 
@@ -163,19 +163,19 @@ data: {
           },
           series: [{
               name: 'Distribution',
-              data: this.DistributionArr.map( item => [parseFloat(item.DistributionArr.quarter1Revenue, this.DistributionArr.quarter2Revenue, this.DistributionArr.quarter3Revenue, this.DistributionArr.quarter4Revenue)])
+              data: this.DistributionArr.map( item => [item.DistributionArr.quarter1Revenue, this.DistributionArr.quarter2Revenue, this.DistributionArr.quarter3Revenue, this.DistributionArr.quarter4Revenue])
 
           }, {
               name: 'Filtration',
-              data: this.FiltrationArr.map( item => [parseFloat(item.FiltrationArr.quarter1Revenue, this.FiltrationArr.quarter2Revenue, this.FiltrationArr.quarter3Revenue, this.FiltrationArr.quarter4Revenue)])
+              data: this.FiltrationArr.map( item => [item.FiltrationArr.quarter1Revenue, this.FiltrationArr.quarter2Revenue, this.FiltrationArr.quarter3Revenue, this.FiltrationArr.quarter4Revenue])
 
           }, {
               name: 'Engines',
-              data: this.EnginesArr.map( item => [parseFloat(item.EnginesArr.quarter1Revenue, this.EnginesArr.quarter2Revenue, this.EnginesArr.quarter3Revenue, this.EnginesArr.quarter4Revenue)])
+              data: this.EnginesArr.map( item => [item.EnginesArr.quarter1Revenue, this.EnginesArr.quarter2Revenue, this.EnginesArr.quarter3Revenue, this.EnginesArr.quarter4Revenue])
 
           }, {
               name: 'Power Generation',
-              data: this.PowerGenerationArr.map( item => [parseFloat(item.PowerGenerationArr.quarter1Revenue, this.PowerGenerationArr.quarter2Revenue, this.PowerGenerationArr.quarter3Revenue, this.PowerGenerationArr.quarter4Revenue)])
+              data: this.PowerGenerationArr.map( item => [item.PowerGenerationArr.quarter1Revenue, this.PowerGenerationArr.quarter2Revenue, this.PowerGenerationArr.quarter3Revenue, this.PowerGenerationArr.quarter4Revenue])
 
           }]
       });
