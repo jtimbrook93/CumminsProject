@@ -54,7 +54,7 @@ class Invoice
 
     // 4.b. return the array of work objects
     return $arr;
-  },
+  }
 
   public function fetchInvoiceByCustomer($customerName) {
 
