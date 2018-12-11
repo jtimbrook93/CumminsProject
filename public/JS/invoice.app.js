@@ -37,7 +37,7 @@ customerNameValue: '',
         .then( json => {
           console.log(json);
           customerApp.invoiceArr = json;
-            // window.open('CustomerReport.html?Id='+document.getElementById('customerId').value)
+            window.open('Invoice.html?customerName='+document.getElementById('customerName').value)
             })
           .catch( err => {
             console.log('METRIC LIST FETCH ERROR:');
