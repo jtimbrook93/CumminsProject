@@ -62,9 +62,7 @@ data: {
         const id = url.searchParams.get('customerId') || 0;
 
           this.customerIdValue = id;
-      },
 
-      created () {
 
         // Do data fetch
         this.fetchAll();
