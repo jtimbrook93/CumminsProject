@@ -24,7 +24,7 @@ data: {
 },
 
     methods: {
-      
+
       fetchAll() {
         fetch('api/orders.php')
         .then( response => response.json() )
@@ -41,7 +41,7 @@ data: {
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
         ordersApp.ordersArr = json;
-          window.open('ordersByCustomer.html?customerId='+document.getElementById('customerId').value)
+          window.open('OrdersByCustomer.html?customerId='+document.getElementById('customerId').value)
       } )
       .catch( err => {
         console.log('CLIENT LIST FETCH ERROR:');
