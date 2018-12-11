@@ -32,7 +32,7 @@ customerNameValue: '',
         })
       },
 
-      displayInvoiceReport(name){
+      displayInvoiceReport(){
         fetch('api/invoiceByCustomer.php?customerName='+name)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
