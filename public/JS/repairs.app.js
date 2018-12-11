@@ -41,7 +41,7 @@ computed: {
   },
 
   getRepairsByCustomer(id){
-    fetch('api/getRepairsByCustomer.php?customerId='+id)
+    fetch('api/repairsByCustomer.php?customerId='+id)
     .then( response => response.json() )  // "a => expression" is shorthand function declaration
   .then( json => {
     repairsApp.repairsArr = json;
