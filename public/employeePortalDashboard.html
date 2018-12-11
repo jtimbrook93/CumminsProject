@@ -136,13 +136,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="w3-third">
         <h5>Customer View</h5>
 
-        <form id="customerReport" @submit.prevent="displayCustomerReport(id)">
+        <form id="customerReport" @submit.prevent="displayCustomerReport()">
         <div class="form-group" id="customerForm">
         <label for="CustomerId">Enter Customer Number for a Full Report</label>
         <input type="text" class="form-control" id="customerId" placeholder="Enter Customer Id" v-model="customerIdValue">
         </div>
 
-        <button v-on:submit="displayCustomerReport(id)" form="newReportForm" type="submit" class="btn btn-primary">Submit</button>
+        <button v-on:submit="displayCustomerReport()" form="newReportForm" type="submit" class="btn btn-primary">Submit</button>
         </form>
       <!-- <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map"> -->
       </div>
