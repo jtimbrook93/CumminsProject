@@ -1,23 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-tr {
-width: 100%;
-display: inline-table;
-table-layout: fixed;
-}
-
-table{
- height:300px;              // <-- Select the height of the table
- display: -moz-groupbox;    // Firefox Bad Effect
-}
-tbody{
-  overflow-y: scroll;
-  height: 200px;            //  <-- Select the height of the body
-  width: 100%;
-  position: absolute;
-}
-
+#scollableInvoice{
+  overflow-y: auto; margin-bottom: 120px
+  ;}
 
 body
 {
