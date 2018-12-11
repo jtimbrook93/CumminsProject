@@ -33,7 +33,7 @@ customerNameValue: '',
       },
 
       displayInvoiceReport(){
-        fetch('api/invoiceByCustomer.php?customerName='+name)
+        fetch('api/invoiceByCustomer.php?customerName='+document.getElementById('customerName').value)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
           console.log(json);
