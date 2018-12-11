@@ -62,7 +62,7 @@ customerChange(){
   created () {
 
     const url = new URL(window.location.href);
-    const cid = url.searchParams.get('customerId') || 0;
+    const id = url.searchParams.get('customerId') || 0;
 
       this.customerIdValue = id;
     // Do data fetch
