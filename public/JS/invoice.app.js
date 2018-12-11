@@ -32,7 +32,7 @@ customerNameValue: '',
         })
       },
 
-      displayInvoiceReport(){
+      displayInvoiceReport(name){
         fetch('api/invoicebyCustomer.php?customerName='+name)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
@@ -52,7 +52,7 @@ customerNameValue: '',
 
 
         const url = new URL(window.location.href);
-        const name = url.searchParams.get('customerName') || 0;
+        const name = url.searchParams.get('customerName') || '';
 
         this.customerNameValue = name;
 
