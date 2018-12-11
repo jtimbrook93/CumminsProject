@@ -6,10 +6,10 @@ data: {
 
           businessSegment: '',
           percentOfRevenue: '',
-          quarter1Revenue: '',
-          quarter2Revenue: '',
-          quarter3Revenue: '',
-          quarter4Revenue: '',
+          quarter1Revenue: null,
+          quarter2Revenue: null,
+          quarter3Revenue: null,
+          quarter4Revenue: null,
           profitMargin: ''
 
 },
@@ -18,10 +18,10 @@ data: {
 
     businessSegment: '',
     percentOfRevenue: '',
-    quarter1Revenue: '',
-    quarter2Revenue: '',
-    quarter3Revenue: '',
-    quarter4Revenue: '',
+    quarter1Revenue: null,
+    quarter2Revenue: null,
+    quarter3Revenue: null,
+    quarter4Revenue: null,
     profitMargin: ''
 
   }],
@@ -30,10 +30,10 @@ data: {
 
     businessSegment: '',
     percentOfRevenue: '',
-    quarter1Revenue: '',
-    quarter2Revenue: '',
-    quarter3Revenue: '',
-    quarter4Revenue: '',
+    quarter1Revenue: null,
+    quarter2Revenue: null,
+    quarter3Revenue: null,
+    quarter4Revenue: null,
     profitMargin: ''
 
   }],
@@ -41,10 +41,10 @@ data: {
 
     businessSegment: '',
     percentOfRevenue: '',
-    quarter1Revenue: '',
-    quarter2Revenue: '',
-    quarter3Revenue: '',
-    quarter4Revenue: '',
+    quarter1Revenue: null,
+    quarter2Revenue: null,
+    quarter3Revenue: null,
+    quarter4Revenue: null,
     profitMargin: ''
 
   }],
@@ -52,10 +52,10 @@ data: {
 
     businessSegment: '',
     percentOfRevenue: '',
-    quarter1Revenue: '',
-    quarter2Revenue: '',
-    quarter3Revenue: '',
-    quarter4Revenue: '',
+    quarter1Revenue: null,
+    quarter2Revenue: null,
+    quarter3Revenue: null,
+    quarter4Revenue: null,
     profitMargin: ''
 
   }]
