@@ -304,7 +304,9 @@ var digitalProductApp = new Vue({
         }
     }]
 
+})
 },
+
 // Add some life
 // function (chart) {
 //     if (!chart.renderer.forExport) {
