@@ -83,6 +83,7 @@ var digitalProductApp = new Vue({
         this.buildEffortChart();
         this.buildBurndownChart();
         this.buildGaugeChart();
+        this.buildPercentageChart();
       } )
       .catch( err => {
         console.log('PROJECT WORK FETCH ERROR:');
@@ -412,24 +413,6 @@ buildPercentageChart(){
   });
 },
 
-// Add some life
-// function (chart) {
-//     if (!chart.renderer.forExport) {
-//         setInterval(function () {
-//             var point = chart.series[0].points[0],
-//                 newVal,
-//                 inc = Math.round((Math.random() - 0.5) * 20);
-//
-//             newVal = point.y + inc;
-//             if (newVal < 0 || newVal > 200) {
-//                 newVal = point.y - inc;
-//             }
-//
-//             point.update(newVal);
-//
-//         }, 3000);
-//     }
-// });
 
     gotoTask(tid) {
       window.location = 'task.html?taskId=' + tid;
