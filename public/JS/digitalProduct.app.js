@@ -323,7 +323,7 @@ var digitalProductApp = new Vue({
 //         }, 3000);
 //     }
 // });
-},
+
     gotoTask(tid) {
       window.location = 'task.html?taskId=' + tid;
     }
