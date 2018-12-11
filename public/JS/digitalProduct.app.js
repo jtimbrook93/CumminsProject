@@ -305,36 +305,111 @@ var digitalProductApp = new Vue({
 });
 },
 buildPercentageChart(){
-Highcharts.chart('percentageChart', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Project Completion %'
-    },
-    xAxis: {
-        categories: ['Project Id 1']
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Percentage Complete'
-        }
-    },
-    tooltip: {
-        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-        shared: true
-    },
-    plotOptions: {
-        column: {
-            stacking: 'percent'
-        }
-    },
-    series: [{
-        name: 'Project Id 1',
-        data: [9]
-    }]
-});
+
+  Highcharts.chart('percentageChart', {
+
+      chart: {
+          type: 'solidgauge',
+          height: '110%',
+          events: {
+              render: renderIcons
+          }
+      },
+
+      title: {
+          text: 'Activity',
+          style: {
+              fontSize: '24px'
+          }
+      },
+
+      tooltip: {
+          borderWidth: 0,
+          backgroundColor: 'none',
+          shadow: false,
+          style: {
+              fontSize: '16px'
+          },
+          pointFormat: '{series.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
+          positioner: function (labelWidth) {
+              return {
+                  x: (this.chart.chartWidth - labelWidth) / 2,
+                  y: (this.chart.plotHeight / 2) + 15
+              };
+          }
+      },
+
+      pane: {
+          startAngle: 0,
+          endAngle: 360,
+          background: [{ // Track for Move
+              outerRadius: '112%',
+              innerRadius: '88%',
+              backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[0])
+                  .setOpacity(0.3)
+                  .get(),
+              borderWidth: 0
+          }, { // Track for Exercise
+              outerRadius: '87%',
+              innerRadius: '63%',
+              backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[1])
+                  .setOpacity(0.3)
+                  .get(),
+              borderWidth: 0
+          }, { // Track for Stand
+              outerRadius: '62%',
+              innerRadius: '38%',
+              backgroundColor: Highcharts.Color(Highcharts.getOptions().colors[2])
+                  .setOpacity(0.3)
+                  .get(),
+              borderWidth: 0
+          }]
+      },
+
+      yAxis: {
+          min: 0,
+          max: 100,
+          lineWidth: 0,
+          tickPositions: []
+      },
+
+      plotOptions: {
+          solidgauge: {
+              dataLabels: {
+                  enabled: false
+              },
+              linecap: 'round',
+              stickyTracking: false,
+              rounded: true
+          }
+      },
+
+      series: [{
+          name: 'Tasks',
+          data: [{
+              color: Highcharts.getOptions().colors[0],
+              radius: '112%',
+              innerRadius: '88%',
+              y: 80
+          }]
+      }, {
+          name: 'Errors',
+          data: [{
+              color: Highcharts.getOptions().colors[1],
+              radius: '87%',
+              innerRadius: '63%',
+              y: 65
+          }]
+      }, {
+          name: 'Deployments',
+          data: [{
+              color: Highcharts.getOptions().colors[2],
+              radius: '62%',
+              innerRadius: '38%',
+              y: 50
+          }]
+      }]
+  });
 },
 
 // Add some life
@@ -376,4 +451,4 @@ Highcharts.chart('percentageChart', {
     //this.buildBurndownChart();
     //this.buildGaugeChart();
   }
-})
+});
