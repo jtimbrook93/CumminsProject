@@ -152,7 +152,7 @@ var digitalProductApp = new Vue({
         });
     },
     buildBurndownChart(){
-          Highcharts.chart('burndownChart', {
+          Highcharts.chart('#burndownChart', {
               title: {
                 text: 'Burndown Chart',
                 x: -20 //center
