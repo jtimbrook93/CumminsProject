@@ -38,8 +38,9 @@ tempName: '',
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
           console.log(this.customerNameValue);
-          invoiceApp.invoiceArr = json;
-            window.open('InvoiceByCustomer.html?customerName='+document.getElementById('customerName').value)
+          invoiceApp.invoices = json;
+          console.log(this.invoices);
+            // window.open('InvoiceByCustomer.html?customerName='+document.getElementById('customerName').value)
             })
           .catch( err => {
             console.log('METRIC LIST FETCH ERROR:');
