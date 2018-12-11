@@ -4,7 +4,7 @@ data: {
 
     sales: {
 
-          businessSegment: '',
+          businessSegment: "Jon sucks",
           percentOfRevenue: '',
           quarter1Revenue: null,
           quarter2Revenue: null,
@@ -16,7 +16,7 @@ data: {
 
   DistributionArr: [{
 
-    businessSegment: '',
+    businessSegment: "Jon sucks",
     percentOfRevenue: '',
     quarter1Revenue: null,
     quarter2Revenue: null,
@@ -28,7 +28,7 @@ data: {
 
   EnginesArr: [{
 
-    businessSegment: '',
+    businessSegment: "Jon sucks",
     percentOfRevenue: '',
     quarter1Revenue: null,
     quarter2Revenue: null,
@@ -39,7 +39,7 @@ data: {
   }],
   FiltrationArr: [{
 
-    businessSegment: '',
+    businessSegment: "Jon sucks",
     percentOfRevenue: '',
     quarter1Revenue: null,
     quarter2Revenue: null,
@@ -50,7 +50,7 @@ data: {
   }],
   PowerGenerationArr: [{
 
-    businessSegment: '',
+    businessSegment:"Jon sucks",
     percentOfRevenue: '',
     quarter1Revenue: null,
     quarter2Revenue: null,
