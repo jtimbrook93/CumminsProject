@@ -33,6 +33,10 @@ section .ban {
   height: 250px;
 
 }
+#gaugeChart {
+  height: 250px;
+
+}
 
 #taskTable > tbody > tr {
   border-left: 12px solid #eee;

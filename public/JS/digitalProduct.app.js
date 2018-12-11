@@ -222,11 +222,11 @@ var digitalProductApp = new Vue({
     },
 
     title: {
-        text: 'Speedometer'
+        text: 'Project Status'
     },
 
     pane: {
-        startAngle: -150,
+        startAngle: 90,
         endAngle: 150,
         background: [{
             backgroundColor: {
@@ -279,7 +279,7 @@ var digitalProductApp = new Vue({
             rotation: 'auto'
         },
         title: {
-            text: 'km/h'
+            text: 'Project Health'
         },
         plotBands: [{
             from: 0,
@@ -297,10 +297,10 @@ var digitalProductApp = new Vue({
     },
 
     series: [{
-        name: 'Speed',
+        name: 'Project Health',
         data: [80],
         tooltip: {
-            valueSuffix: ' km/h'
+            valueSuffix: 'Tasks Left'
         }
     }]
 
