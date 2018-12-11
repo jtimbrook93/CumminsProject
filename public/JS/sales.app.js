@@ -163,7 +163,7 @@ data: {
           },
           series: [{
               name: 'Distribution',
-              data: this.DistributionArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ])
+              data: [this.DistributionArr.quarter1Revenue, this.DistributionArr.quarter2Revenue, this.DistributionArr.quarter3Revenue, this.DistributionArr.quarter4Revenue ]
 
           }, {
               name: 'Filtration',
@@ -175,7 +175,7 @@ data: {
 
           }, {
               name: 'Power Generation',
-              data: this.PowerGenerationArr.map( item => parseFloat([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
+              data: this.PowerGenerationArr.map( item => parseFloa([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
 
           }]
       });
