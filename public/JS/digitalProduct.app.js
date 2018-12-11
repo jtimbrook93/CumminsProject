@@ -340,7 +340,7 @@ var digitalProductApp = new Vue({
     this.fetchProject(projectId);
     this.fetchTasks(projectId);
     this.fetchProjectWork(projectId);
-    this.buildBurndownChart();
-    this.buildGaugeChart();
+    //this.buildBurndownChart();
+    //this.buildGaugeChart();
   }
 })
