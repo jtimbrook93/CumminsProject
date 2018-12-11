@@ -304,6 +304,38 @@ var digitalProductApp = new Vue({
 
 });
 },
+buildPercentageChart(){
+Highcharts.chart('percentageChart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Project Completion %'
+    },
+    xAxis: {
+        categories: ['Project Id 1']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Percentage Complete'
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    series: [{
+        name: 'Project Id 1',
+        data: [9]
+    }]
+});
+},
 
 // Add some life
 // function (chart) {
