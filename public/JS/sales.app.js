@@ -23,7 +23,7 @@ data: {
         .then( response => response.json() )
         .then( json => {
           salesApp.sales = json;
-      this.buildSalesChart();  } )
+         this.buildSalesChart();  } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
           console.log(err);
@@ -66,7 +66,7 @@ data: {
         name: 'Filtration',
         data:  this.sales.map( item => [item.quarter3Revenue])
         },{
-        name: 'Filtration',
+        name: '',
         data:  this.sales.map( item => [item.quarter4Revenue])
         }
       ]});
