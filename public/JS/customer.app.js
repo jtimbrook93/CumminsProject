@@ -18,7 +18,7 @@ data: {
 
     methods: {
 
-      displayCustomerReport(id){
+      displayCustomerReport(){
         fetch('api/customer.php?Id='+id)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
