@@ -30,6 +30,7 @@ data: {
         })
       },
 
+buildSalesChart(){
     Highcharts.chart('salesChart', {
     chart: {
         type: 'column'
@@ -58,7 +59,7 @@ data: {
     series: [{
         name: 'Distribution',
         data: this.sales.map( item => [item.quarter1Revenue])
-      {
+      },{
         name: 'Engines',
         data:  this.sales.map( item => [item.quarter2Revenue])
     }, {
@@ -68,9 +69,11 @@ data: {
         name: 'Filtration',
         data:  this.sales.map( item => [item.quarter3Revenue])
         }
-      ]}
-});
+      ]};
+
+}
 },
+
 
       created () {
 
