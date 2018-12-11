@@ -81,7 +81,8 @@ var digitalProductApp = new Vue({
         digitalProductApp.workHours = json;
         this.formatWorkHours();
         this.buildEffortChart();
-      //  this.buildBurndownChart();
+        this.buildBurndownChart();
+        this.buildGaugeChart();
       } )
       .catch( err => {
         console.log('PROJECT WORK FETCH ERROR:');
