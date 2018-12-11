@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 }
 // go to the database and get stuff
 
-$customerName = intval($_GET['customerName'] ?? '');
+$customerName = ($_GET['customerName'] ?? '');
 
 $invoiceByCustomerArr = Invoice::fetchInvoiceByCustomer($customerName);
 
