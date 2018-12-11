@@ -81,7 +81,7 @@ var digitalProductApp = new Vue({
         digitalProductApp.workHours = json;
         this.formatWorkHours();
         this.buildEffortChart();
-        this.buildBurndownChart();
+      //  this.buildBurndownChart();
       } )
       .catch( err => {
         console.log('PROJECT WORK FETCH ERROR:');
@@ -210,6 +210,7 @@ var digitalProductApp = new Vue({
             });
 
     },
+    buildGaugeChart(){
     Highcharts.chart('gaugeChart', {
 
     chart: {
@@ -321,8 +322,8 @@ function (chart) {
 
         }, 3000);
     }
-}),
-
+});
+},
     gotoTask(tid) {
       window.location = 'task.html?taskId=' + tid;
     }
@@ -340,6 +341,7 @@ function (chart) {
     this.fetchProject(projectId);
     this.fetchTasks(projectId);
     this.fetchProjectWork(projectId);
-    //this.buildBurndownChart();
+    this.buildBurndownChart();
+    this.buildGaugeChart();
   }
 })
