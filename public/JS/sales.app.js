@@ -163,19 +163,19 @@ data: {
           },
           series: [{
               name: 'Distribution',
-              data: this.DistributionArr.map( item => [item.DistributionArr.quarter1Revenue, item.DistributionArr.quarter2Revenue, item.DistributionArr.quarter3Revenue, item.DistributionArr.quarter4Revenue])
+              data: this.DistributionArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue])
 
           }, {
               name: 'Filtration',
-              data: this.FiltrationArr.map( item => [item.FiltrationArr.quarter1Revenue, item.FiltrationArr.quarter2Revenue, item.FiltrationArr.quarter3Revenue, item.FiltrationArr.quarter4Revenue])
+              data: this.FiltrationArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue])
 
           }, {
               name: 'Engines',
-              data: this.EnginesArr.map( item => [item.EnginesArr.quarter1Revenue, item.EnginesArr.quarter2Revenue, item.EnginesArr.quarter3Revenue, item.EnginesArr.quarter4Revenue])
+              data: this.EnginesArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue])
 
           }, {
               name: 'Power Generation',
-              data: this.PowerGenerationArr.map( item => [item.PowerGenerationArr.quarter1Revenue, item.PowerGenerationArr.quarter2Revenue, item.PowerGenerationArr.quarter3Revenue, item.PowerGenerationArr.quarter4Revenue])
+              data: this.PowerGenerationArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue])
 
           }]
       });
