@@ -163,19 +163,19 @@ data: {
           },
           series: [{
               name: 'Distribution',
-              data: this.DistributionArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ])
+              data: this.DistributionArr.map( item => parseFloat([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
 
           }, {
               name: 'Filtration',
-              data: this.FiltrationArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ])
+              data: this.FiltrationArr.map( item => parseFloat([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
 
           }, {
               name: 'Engines',
-              data: this.EnginesArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ])
+              data: this.EnginesArr.map( item => parseFloat([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
 
           }, {
               name: 'Power Generation',
-              data: this.PowerGenerationArr.map( item => [item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ])
+              data: this.PowerGenerationArr.map( item => parseFloat([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
 
           }]
       });
