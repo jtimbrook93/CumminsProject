@@ -58,7 +58,7 @@ tempName: '',
         this.customerNameValue = name;
 
         // Do data fetch
-        this.fetchAll();
+        this.displayInvoiceReport();
 
 
       }
