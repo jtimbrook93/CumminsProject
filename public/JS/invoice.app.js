@@ -26,6 +26,7 @@ tempName: '',
         .then( response => response.json() )
         .then( json => {
           invoiceApp.invoices = json;
+          this.displayInvoiceReport(name);
         } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
@@ -58,7 +59,8 @@ tempName: '',
         this.customerNameValue = name;
 
         // Do data fetch
-        //this.fetchAll();
+        this.fetchAll();
+
 
       }
     });
