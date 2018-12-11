@@ -205,7 +205,7 @@ var digitalProductApp = new Vue({
                 marker: {
                   radius: 6
                 },
-                data: this.workHours.map( item => [item.date, item.runningTotalHours] )
+                data: this.tasks.map( item => [item.hours_worked] )
               }]
             });
 
@@ -341,7 +341,7 @@ function (chart) {
     this.fetchProject(projectId);
     this.fetchTasks(projectId);
     this.fetchProjectWork(projectId);
-    this.buildBurndownChart(projectId);
-    this.buildGaugeChart(projectId);
+    this.buildBurndownChart();
+    this.buildGaugeChart();
   }
 })
