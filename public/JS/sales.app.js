@@ -67,7 +67,7 @@ data: {
         this.fetchFiltration();
         this.fetchDistribution();
         this.fetchPowerGeneration();
-        this.buildSalesChart();
+      //  this.buildSalesChart();
       },
 
       fetchDistribution() {
@@ -114,7 +114,7 @@ data: {
         .then( response => response.json() )
         .then( json => {
           salesApp.PowerGenerationArr = json;
-         // this.buildSalesChart();
+         this.buildSalesChart();
          } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
