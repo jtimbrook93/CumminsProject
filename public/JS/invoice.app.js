@@ -3,6 +3,7 @@ var invoiceApp = new Vue({
 data: {
 
 customerNameValue: '',
+tempName: '',
 
   invoices: {
 
@@ -32,11 +33,11 @@ customerNameValue: '',
         })
       },
 
-      displayInvoiceReport(){
+      displayInvoiceReport(name){
         fetch('api/invoiceByCustomer.php?customerName='+document.getElementById('customerName').value)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
-          console.log(json);
+          console.log(this.customerNameValue);
           invoiceApp.invoiceArr = json;
             window.open('InvoiceByCustomer.html?customerName='+document.getElementById('customerName').value)
             })
