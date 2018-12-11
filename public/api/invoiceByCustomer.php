@@ -8,10 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   exit;
 }
 // go to the database and get stuff
-$invoiceArr = Invoice::fetchAll();
+
+$customerName = intval($_GET['customerName'] ?? '');
+
+$invoiceByCustomerArr = Invoice::fetchInvoiceByCustomer($customerName);
 
 // convert to json and print
-$json = json_encode($invoiceArr, JSON_PRETTY_PRINT);
+$json = json_encode($invoiceByCustomerArr, JSON_PRETTY_PRINT);
 
 header ('Content-type: application/json;charset=utf-8');
-echo json_encode($invoiceArr);
+echo json_encode($invoiceByCustomerArr);
