@@ -222,7 +222,7 @@ var digitalProductApp = new Vue({
     },
 
     title: {
-        text: 'Project Status'
+        text: 'Tasks Left'
     },
 
     pane: {
@@ -304,7 +304,7 @@ var digitalProductApp = new Vue({
         }
     }]
 
-})
+});
 },
 
 // Add some life
