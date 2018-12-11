@@ -2,6 +2,8 @@ var invoiceApp = new Vue({
   el: '#invoiceMain',
 data: {
 
+customerNameValue: '',
+
   invoices: {
 
     invoiceNumber: '',
@@ -27,10 +29,31 @@ data: {
           console.log('PRODUCT FETCH ERROR:');
           console.log(err);
         })
+      },
+
+      displayInvoiceReport(){
+        fetch('api/invoice.php?customerName='+name)
+        .then( response => response.json() )  // "a => expression" is shorthand function declaration
+        .then( json => {
+          console.log(json);
+          customerApp.invoiceArr = json;
+            // window.open('CustomerReport.html?Id='+document.getElementById('customerId').value)
+            })
+          .catch( err => {
+            console.log('METRIC LIST FETCH ERROR:');
+            console.log(err);
+          });
+
       }
       },
 
       created () {
+
+
+        const url = new URL(window.location.href);
+        const name = url.searchParams.get('customerName') || 0;
+
+        this.customerNameValue = name;
 
         // Do data fetch
         this.fetchAll();

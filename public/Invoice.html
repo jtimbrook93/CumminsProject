@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -128,11 +129,24 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
+
 <div class="w3-row-padding" style="margin:0 -16px">
   <div id="contentbox" align="left">
   <div id="invoiceMain" class="container">
       <h3>Welcome!</h3>
       Take a look at customer order details!
+          <div class="w3-third">
+            <h5>Customer Search</h5>
+            <form id="invoiceReport" @submit.prevent="displayInvoiceReport()">
+            <div class="form-group" id="invoiceForm">
+            <label for="Customer Name">Enter Customer Name to Filter Results </label>
+            <input type="text" class="form-control" id="customerName" placeholder="Enter Customer Name" v-model="customerNameValue">
+            </div>
+
+            <button v-on:submit="displayInvoiceReport()" form="newInvoiceReportForm" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          <!-- <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map"> -->
+          </div>
     <table class="table table-responsive table-striped table-sm" id="invoiceTable">
         <thead>
           <tr>

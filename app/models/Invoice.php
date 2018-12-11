@@ -54,6 +54,32 @@ class Invoice
 
     // 4.b. return the array of work objects
     return $arr;
+  },
+
+  public function fetchInvoiceByCustomer($customerName) {
+
+    // 1. Connect to the database
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+
+    // 2. Prepare the query
+    $sql = 'SELECT * FROM invoice where customerName = ?';
+    $statement = $db->prepare($sql);
+
+    // 3. Run the query
+    $success = $statement->execute([$customerName]);
+
+    // 4. Handle the results
+    $arr2 = [];
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+      // 4.a. For each row, make a new work php object
+      $invoiceByCustomerArrItem =  new Invoice($row);
+      array_push($arr2, $invoiceByCustomerArrItem);
+
+    }
+
+    // 4.b. return the array of work objects
+    return $arr2;
   }
 
   }
