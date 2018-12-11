@@ -2,6 +2,8 @@ var repairsApp = new Vue({
   el: '#repairscontainer',
 data: {
 
+  customerIdValue: '',
+
   repairs: {
 
     repairID: '',
@@ -37,17 +39,33 @@ computed: {
       console.log(err);
     })
   },
-  },
+
+  getRepairsByCustomer(id){
+    fetch('api/getRepairsByCustomer.php?customerId='+id)
+    .then( response => response.json() )  // "a => expression" is shorthand function declaration
+  .then( json => {
+    repairsApp.repairsArr = json;
+  } )
+  .catch( err => {
+    console.log('CLIENT LIST FETCH ERROR:');
+    console.log(err);
+  });
+
+},
+
+customerChange(){
+  console.log(repairsApp.customerIdValue);
+  this.getRepairsByCustomer(repairsApp.customerIdValue);
+}
+},
 
   created () {
 
+    const url = new URL(window.location.href);
+    const cid = url.searchParams.get('customerId') || 0;
+
+      this.customerIdValue = id;
     // Do data fetch
-    fetch('api/repairs.php')
-    .then( response => response.json() )
-    .then( json => {repairsApp.repairs = json} )
-    .catch( err => {
-      console.error('CLIENT FETCH ERROR:');
-      console.error(err);
-    })
+  this.getAllRepairs();
   }
 })

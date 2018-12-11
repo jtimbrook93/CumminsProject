@@ -57,59 +57,32 @@ $sql = 'SELECT * FROM repairs';
   return $arr;
 
 }
+public static function getRepairsByCustomer(int $customerId){
+$db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-// public function create() {
-//   $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-//
-// $sql = 'INSERT INTO SITE (siteId, clientId, siteName, siteDescription, primaryContact, capacity, addrLine1, addrLine2, addrCity, addrState, addrZip, addrCountry)
-//         VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
-//
-//
-//
-//   $statement = $db->prepare($sql);
-//
-//   // 3. Run the query
-//   $success = $statement->execute([
-//     $this->clientId,
-//     $this->siteName,
-//     $this->siteDescription,
-//     $this->primaryContact,
-//     $this->capacity,
-//     $this->addrLine1,
-//     $this->addrLine2,
-//     $this->addrCity,
-//     $this->addrState,
-//     $this->addrZip,
-//     $this->addrCountry
-//   ]);
-//       $this->id = $db->lastInsertId();
-// }
-//
-//   public static function getWorkByTaskId(int $taskId) {
-//
-//     // 1. Connect to the database
-//     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
-//
-//     // 2. Prepare the query
-//     $sql = 'SELECT * FROM Work WHERE task_id = ?';
-//
-//     $statement = $db->prepare($sql);
-//
-//     // 3. Run the query
-//     $success = $statement->execute(
-//         [$taskId]
-//     );
-//
-//     // 4. Handle the results
-//     $arr = [];
-//     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-//
-//       // 4.a. For each row, make a new work php object
-//       $workItem =  new Work($row);
-//       array_push($arr, $workItem);
-//     }
-//
-//     // 4.b. return the array of work objects
-//     return $arr;
-//   }
+$sql = 'SELECT * FROM repairs where customerId = ?';
+
+
+
+$statement = $db->prepare($sql);
+
+// 3. Run the query
+$success = $statement->execute([$customerId
+
+
+]);
+// 4. Handle the results
+$arr2 = [];
+while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+  // 4.a. For each row, make a new work php object
+  $repairItem2 =  new Repairs($row);
+array_push($arr2, $repairItem2);
+}
+
+// 4.b. return the array of work objects
+return $arr2;
+
+}
+
 }
