@@ -39,7 +39,7 @@ data: {
         text: 'Stacked column chart'
     },
     xAxis: {
-        categories: ['Quarter 1 Revenue', 'Quarter 2 Revenue', 'Quarter 3 Revenue', 'Quarter 4 Revenue']
+        categories: ['Distribution', 'Engines', 'Filtration', 'Power Generation']
     },
     yAxis: {
         min: 0,
@@ -57,17 +57,17 @@ data: {
         }
     },
     series: [{
-        name: 'Distribution',
-        data: this.sales.mapwhen(this.businessSegment = 'Distribution')( item => [item.quarter1Revenue])
+        name: 'Quarter 1 Revenue',
+        data: this.sales.map( item => [item.quarter1Revenue])
       },{
-        name: 'Engines',
-        data:  this.sales.mapwhen(this.businessSegment = 'Engines')( item => [item.quarter2Revenue])
+        name: 'Quarter 2 Revenue',
+        data:  this.sales.map( item => [item.quarter2Revenue])
     }, {
-        name: 'Filtration',
-        data:  this.sales.mapwhen(this.businessSegment = 'Filtration')( item => [item.quarter3Revenue])
+        name: 'Quarter 3 Revenue',
+        data:  this.sales.map( item => [item.quarter3Revenue])
         },{
-        name: 'Power Generation',
-        data:  this.sales.mapwhen(this.businessSegment = 'Power Generation')( item => [item.quarter4Revenue])
+        name: 'Quarter 4 Revenue',
+        data:  this.sales.map( item => [item.quarter4Revenue])
         }
       ]
     });
