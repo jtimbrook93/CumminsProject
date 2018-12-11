@@ -193,7 +193,7 @@ var digitalProductApp = new Vue({
               legend: {
                 layout: 'vertical',
                 align: 'right',
-                verticalAlign: 'middle',
+              //  verticalAlign: 'middle',
                 borderWidth: 0
               },
               series: [{
