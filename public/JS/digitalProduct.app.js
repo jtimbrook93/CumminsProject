@@ -205,7 +205,7 @@ var digitalProductApp = new Vue({
                 marker: {
                   radius: 6
                 },
-                data: this.tasks.map( item => [item.hours_worked] )
+                data: [100, 110, 85, 60, 60, 30, 32, 23, 9, 2]
               }]
             });
 
