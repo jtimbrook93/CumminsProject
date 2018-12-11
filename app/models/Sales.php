@@ -26,19 +26,17 @@ class Sales
 
   }
 
-  public function fetchAll() {
+  public function fetchAll($businessSegment) {
 
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
     // 2. Prepare the query
-    $sql = 'SELECT * FROM sales';
+    $sql = 'SELECT * FROM sales where businessSegment = ?';
     $statement = $db->prepare($sql);
 
     // 3. Run the query
-    $success = $statement->execute(
-
-    );
+    $success = $statement->execute([$businessSegment]);
 
     // 4. Handle the results
     $arr = [];
