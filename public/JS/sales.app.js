@@ -58,16 +58,16 @@ data: {
     },
     series: [{
         name: 'Distribution',
-        data: this.sales.map( item => [item.quarter1Revenue])
+        data: this.sales.mapwhen(this.businessSegment = 'Distribution')( item => [item.quarter1Revenue])
       },{
         name: 'Engines',
-        data:  this.sales.map( item => [item.quarter2Revenue])
+        data:  this.sales.mapwhen(this.businessSegment = 'Engines')( item => [item.quarter2Revenue])
     }, {
         name: 'Filtration',
-        data:  this.sales.map( item => [item.quarter3Revenue])
+        data:  this.sales.mapwhen(this.businessSegment = 'Filtration')( item => [item.quarter3Revenue])
         },{
-        name: '',
-        data:  this.sales.map( item => [item.quarter4Revenue])
+        name: 'Power Generation',
+        data:  this.sales.mapwhen(this.businessSegment = 'Power Generation')( item => [item.quarter4Revenue])
         }
       ]
     });
