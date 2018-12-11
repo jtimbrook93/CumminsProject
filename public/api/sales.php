@@ -8,9 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
   exit;
 }
 // go to the database and get stuff
-  // $this->businessSegment = ($data['businessSegment']);
+$businessSegment = ($_GET['businessSegment'] ?? '');
 
-$salesArr = Sales::fetchAll();
+$salesArr = Sales::fetchAll($businessSegment);
 
 // convert to json and print
 $json = json_encode($salesArr, JSON_PRETTY_PRINT);
