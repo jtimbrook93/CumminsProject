@@ -37,7 +37,7 @@ customerNameValue: '',
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
           console.log(json);
-          customerApp.invoiceArr = json;
+          invoiceApp.invoiceArr = json;
             window.open('InvoiceByCustomer.html?customerName='+document.getElementById('customerName').value)
             })
           .catch( err => {
