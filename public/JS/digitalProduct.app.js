@@ -222,7 +222,7 @@ var digitalProductApp = new Vue({
     },
 
     title: {
-        text: 'Tasks Left'
+        text: 'Project Health'
     },
 
     pane: {
@@ -297,12 +297,9 @@ var digitalProductApp = new Vue({
     },
 
     series: [{
-        name: 'Project Health',
-        data: [80],
-        tooltip: {
-            valueSuffix: 'Tasks Left'
-        }
-    }]
+        name: 'Tasks Left',
+        data: [80]
+      }]
 
 });
 },
