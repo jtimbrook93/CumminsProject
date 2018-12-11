@@ -23,7 +23,7 @@ data: {
         .then( response => response.json() )
         .then( json => {
           salesApp.sales = json;
-        } )
+      this.buildSalesChart();  } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
           console.log(err);
@@ -79,5 +79,6 @@ buildSalesChart(){
 
         // Do data fetch
         this.fetchAll();
+
       }
     });
