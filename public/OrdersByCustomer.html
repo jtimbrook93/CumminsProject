@@ -163,18 +163,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           </tr>
         </thead>
         <tbody id="ordersTableBody">
-          <tr v-for="orders in orders">
-            <td>{{orders.customerId}}</td>
-            <td>{{orders.serialNumber}}</td>
-            <td>{{orders.productName}}</td>
-            <td>{{orders.productType}}</td>
-            <td>{{orders.productApplication}}</td>
-            <td>{{orders.digitalProduct}}</td>
-            <td>{{orders.horsepower}}</td>
-            <td>{{orders.torque}}</td>
-            <td>{{orders.classification}}</td>
-            <td>{{orders.size}}</td>
-            <td>{{orders.orderStatus}}</td>
+          <tr v-for="orders in ordersArr">
+            <td>{{ordersArr.customerId}}</td>
+            <td>{{ordersArr.serialNumber}}</td>
+            <td>{{ordersArr.productName}}</td>
+            <td>{{ordersArr.productType}}</td>
+            <td>{{ordersArr.productApplication}}</td>
+            <td>{{ordersArr.digitalProduct}}</td>
+            <td>{{ordersArr.horsepower}}</td>
+            <td>{{ordersArr.torque}}</td>
+            <td>{{ordersArr.classification}}</td>
+            <td>{{ordersArr.size}}</td>
+            <td>{{ordersArr.orderStatus}}</td>
           </tr>
         </tbody>
       </table>

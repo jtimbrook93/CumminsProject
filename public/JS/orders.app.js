@@ -2,6 +2,8 @@ var ordersApp = new Vue({
   el: '#ordersMain',
 data: {
 
+  customerIdValue: '',
+
   orders: {
 
     serialNumber: '',
@@ -22,6 +24,7 @@ data: {
 },
 
     methods: {
+      
       fetchAll() {
         fetch('api/orders.php')
         .then( response => response.json() )
@@ -32,7 +35,33 @@ data: {
           console.log('PRODUCT FETCH ERROR:');
           console.log(err);
         })
-      }
+      },
+      getRepairsByCustomer(id){
+        fetch('api/ordersByCustomer.php?customerId='+id)
+        .then( response => response.json() )  // "a => expression" is shorthand function declaration
+      .then( json => {
+        ordersApp.ordersArr = json;
+          window.open('ordersByCustomer.html?customerId='+document.getElementById('customerId').value)
+      } )
+      .catch( err => {
+        console.log('CLIENT LIST FETCH ERROR:');
+        console.log(err);
+      });
+
+    },
+
+    customerChange(){
+      console.log(ordersApp.customerIdValue);
+      this.getOrdersByCustomer(ordersApp.customerIdValue);
+    }
+    },
+
+      created () {
+
+        const url = new URL(window.location.href);
+        const id = url.searchParams.get('customerId') || 0;
+
+          this.customerIdValue = id;
       },
 
       created () {

@@ -32,7 +32,6 @@ computed: {
     .then( json => {
       repairsApp.repairs = json;
       //  TODO: Build out client chart
-
     } )
     .catch( err => {
       console.log('CLIENT LIST FETCH ERROR:');

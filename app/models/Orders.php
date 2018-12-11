@@ -61,4 +61,29 @@ class Orders
     return $arr;
   }
 
+public function getOrdersByCustomer(int $customerId) {
+
+  // 1. Connect to the database
+  $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+
+  // 2. Prepare the query
+  $sql = 'SELECT * FROM products where customerId = ?';
+  $statement = $db->prepare($sql);
+
+  // 3. Run the query
+  $success = $statement->execute([$customerId]);
+
+  // 4. Handle the results
+  $arr2 = [];
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+    // 4.a. For each row, make a new work php object
+    $productsItem2 =  new Orders($row);
+    array_push($arr2, $productsItem2);
+
+  }
+
+  // 4.b. return the array of work objects
+  return $arr2;
+}
   }
