@@ -67,7 +67,7 @@ data: {
         data:  this.sales.map( item => [item.quarter3Revenue])
         },{
         name: 'Filtration',
-        data:  this.sales.map( item => [item.quarter3Revenue])
+        data:  this.sales.map( item => [item.quarter4Revenue])
         }
       ]});
 
