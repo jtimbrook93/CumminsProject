@@ -19,6 +19,7 @@ customerNameValue: '',
 },
 
     methods: {
+
       fetchAll() {
         fetch('api/invoice.php')
         .then( response => response.json() )
@@ -32,7 +33,7 @@ customerNameValue: '',
       },
 
       displayInvoiceReport(){
-        fetch('api/invoice.php?customerName='+name)
+        fetch('api/invoicebyCustomer.php?customerName='+name)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
           console.log(json);
