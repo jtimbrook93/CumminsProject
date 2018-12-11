@@ -226,7 +226,7 @@ var digitalProductApp = new Vue({
     },
 
     pane: {
-        startAngle: 90,
+        startAngle: -150,
         endAngle: 150,
         background: [{
             backgroundColor: {
