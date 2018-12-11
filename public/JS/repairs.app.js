@@ -45,7 +45,7 @@ computed: {
     .then( response => response.json() )  // "a => expression" is shorthand function declaration
   .then( json => {
     repairsApp.repairsArr = json;
-      window.open('repairsByCustomer.html?customerId='+document.getElementById('customerId').value)
+      window.open('repairByCustomer.html?customerId='+document.getElementById('customerId').value)
   } )
   .catch( err => {
     console.log('CLIENT LIST FETCH ERROR:');
