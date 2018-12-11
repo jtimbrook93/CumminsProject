@@ -55,7 +55,7 @@ tempName: '',
         const url = new URL(window.location.href);
         const name = url.searchParams.get('customerName') || '';
 
-        this.customerNameValue = name;
+      this.customerNameValue = name;
 
         // Do data fetch
         this.fetchAll();
