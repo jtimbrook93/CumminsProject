@@ -279,7 +279,7 @@ var digitalProductApp = new Vue({
             rotation: 'auto'
         },
         title: {
-            text: 'Project Health'
+            text: 'Tasks Left'
         },
         plotBands: [{
             from: 0,
