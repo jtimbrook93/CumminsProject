@@ -167,15 +167,15 @@ data: {
 
           }, {
               name: 'Filtration',
-              data: this.FiltrationArr.map( item => parseFloat([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
+              data: [this.FiltrationArr.quarter1Revenue, this.FiltrationArr.quarter2Revenue, this.FiltrationArr.quarter3Revenue, this.FiltrationArr.quarter4Revenue ]
 
           }, {
               name: 'Engines',
-              data: this.EnginesArr.map( item => parseFloat([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
+              data: [this.EnginesArr.quarter1Revenue, this.EnginesArr.quarter2Revenue, this.EnginesArr.quarter3Revenue, this.EnginesArr.quarter4Revenue ]
 
           }, {
               name: 'Power Generation',
-              data: this.PowerGenerationArr.map( item => parseFloa([item.quarter1Revenue, item.quarter2Revenue, item.quarter3Revenue, item.quarter4Revenue ]))
+              data: [this.PowerGenerationArr.quarter1Revenue, this.PowerGenerationArr.quarter2Revenue, this.PowerGenerationArr.quarter3Revenue, this.PowerGenerationArr.quarter4Revenue ]
 
           }]
       });
