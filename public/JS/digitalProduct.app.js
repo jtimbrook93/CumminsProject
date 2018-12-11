@@ -191,8 +191,8 @@ var digitalProductApp = new Vue({
                 shared: true
               },
               legend: {
-                layout: 'vertical',
-                align: 'right',
+                layout: 'horizontal',
+                align: 'middle',
               //  verticalAlign: 'middle',
                 borderWidth: 0
               },
