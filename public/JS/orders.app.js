@@ -36,7 +36,7 @@ data: {
           console.log(err);
         })
       },
-      getRepairsByCustomer(id){
+      getOrdersByCustomer(id){
         fetch('api/ordersByCustomer.php?customerId='+id)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
