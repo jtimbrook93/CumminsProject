@@ -114,7 +114,6 @@ data: {
         .then( response => response.json() )
         .then( json => {
           salesApp.PowerGenerationArr = json;
-         this.buildSalesChart();
          } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
@@ -282,6 +281,6 @@ data: {
 
         // Do data fetch
         this.fetchAll();
-
+        this.buildSalesChart();
       }
     });
