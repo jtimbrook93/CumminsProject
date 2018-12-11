@@ -307,7 +307,7 @@ var digitalProductApp = new Vue({
 },
 
 buildPercentageChart(){
-Highcharts.chart('gaugeChart', {
+Highcharts.chart('percentageChart', {
 
 chart: {
     type: 'gauge',
