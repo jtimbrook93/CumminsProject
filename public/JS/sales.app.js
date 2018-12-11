@@ -30,7 +30,7 @@ data: {
         })
       },
 
- buildSalesChart(){
+ buildSalesChart() {
     Highcharts.chart('salesChart', {
     chart: {
         type: 'column'
@@ -69,13 +69,14 @@ data: {
         name: '',
         data:  this.sales.map( item => [item.quarter4Revenue])
         }
-      ]});
+      ]
+    });
 
 }
 },
 
 
-      created () {
+      created() {
 
         // Do data fetch
         this.fetchAll();
