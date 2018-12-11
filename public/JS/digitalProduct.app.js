@@ -400,7 +400,7 @@ series: [{
 });
 },
 buildPercentageChart(){
-  function renderIcons() {
+   renderIcons() {
 
       // Move icon
       if (!this.series[0].icon) {
