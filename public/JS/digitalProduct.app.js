@@ -378,7 +378,7 @@ Highcharts.chart('percentageChart', {
     series: [{
         name: 'Stress Levels',
         data: [-20],
-        yAxis: -75
+        yAxis: 0
     }]
 
 },
