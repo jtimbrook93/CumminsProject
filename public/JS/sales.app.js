@@ -185,7 +185,7 @@ data: {
 
           }, {
               name: 'Power Generation',
-              data: this.PowerGenerationArr.map( item => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
+              data: this.PowerGenerationArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
 
           }]
       });
