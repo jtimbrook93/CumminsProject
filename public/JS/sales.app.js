@@ -328,8 +328,8 @@ Highcharts.chart('salesChart', {
 
       created() {
 
-        const url = new URL(window.location.href);
-        const bs = url.searchParams.get('businessSegment') || '';
+        // const url = new URL(window.location.href);
+        // const bs = url.searchParams.get('businessSegment') || '';
         // Do data fetch
         this.buildSalesChart();
         this.fetchAll();
