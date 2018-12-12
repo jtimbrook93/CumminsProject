@@ -325,7 +325,7 @@ Highcharts.chart('percentageChart', {
     },
 
     title: {
-        text: 'VU meter'
+        text: 'Stress Levels'
     },
 
     pane: [{
@@ -333,12 +333,6 @@ Highcharts.chart('percentageChart', {
         endAngle: 45,
         background: null,
         center: ['25%', '145%'],
-        size: 300
-    }, {
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['75%', '145%'],
         size: 300
     }],
 
@@ -367,28 +361,8 @@ Highcharts.chart('percentageChart', {
             text: 'VU<br/><span style="font-size:8px">Channel A</span>',
             y: -40
         }
-    }, {
-        min: -20,
-        max: 6,
-        minorTickPosition: 'outside',
-        tickPosition: 'outside',
-        labels: {
-            rotation: 'auto',
-            distance: 20
-        },
-        plotBands: [{
-            from: 0,
-            to: 6,
-            color: '#C02316',
-            innerRadius: '100%',
-            outerRadius: '105%'
-        }],
-        pane: 1,
-        title: {
-            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
-            y: -40
-        }
-    }],
+    }
+    ],
 
     plotOptions: {
         gauge: {
@@ -406,10 +380,6 @@ Highcharts.chart('percentageChart', {
         name: 'Stress Levels',
         data: [-20],
         yAxis: 0
-    }, {
-        name: 'Attitude',
-        data: [-20],
-        yAxis: 1
     }]
 
 },
