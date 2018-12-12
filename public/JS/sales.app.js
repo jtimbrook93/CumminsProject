@@ -331,6 +331,6 @@ Highcharts.chart('salesChart', {
         const bs = url.searchParams.get('businessSegment') || '';
         // Do data fetch
         this.fetchAll();
-        //this.buildSalesChart();
+        this.buildSalesChart();
       }
     });
