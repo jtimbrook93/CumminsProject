@@ -131,6 +131,7 @@ data: {
           console.log(err);
         });
       },
+      
 buildSalesChart(){
 Highcharts.chart('salesChart', {
     chart: {
