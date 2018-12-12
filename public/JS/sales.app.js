@@ -2,18 +2,20 @@
   el: '#salesMain',
 data: {
 
-    sales: {
+//     sales: {
+//
+//           businessSegment: "Jon sucks",
+//           percentOfRevenue: '',
+//           quarter1Revenue: null,
+//           quarter2Revenue: null,
+//           quarter3Revenue: null,
+//           quarter4Revenue: null,
+//           profitMargin: ''
+//
+// },
 
-          businessSegment: "Jon sucks",
-          percentOfRevenue: '',
-          quarter1Revenue: null,
-          quarter2Revenue: null,
-          quarter3Revenue: null,
-          quarter4Revenue: null,
-          profitMargin: ''
-
-},
-
+  Sales: [],
+  
   DistributionArr: [{
 
     businessSegment: "Jon sucks",
