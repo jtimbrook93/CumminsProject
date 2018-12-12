@@ -59,17 +59,17 @@ class Customer
     $success = $statement->execute();
 
     // 4. Handle the results
-    $arr = [];
+    $arr2 = [];
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
 
       // 4.a. For each row, make a new work php object
-      $customerItem =  new Customer($row);
-      array_push($arr, $customerItem);
+      $customerItem2 =  new Customer($row);
+      array_push($arr2, $customerItem2);
 
     }
 
     // 4.b. return the array of work objects
-    return $arr;
+    return $arr2;
   }
 
   }
