@@ -54,11 +54,12 @@ data: {
       created () {
 
 
-
+        this.displayCustomers();
         const url = new URL(window.location.href);
         const id = url.searchParams.get('customerId') || 0;
 
         this.customerIdValue = id;
+
 
         // Do data fetch
       //  this.displayCustomers();
