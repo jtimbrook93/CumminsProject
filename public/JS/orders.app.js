@@ -40,8 +40,8 @@ data: {
         fetch('api/ordersByCustomer.php?customerId='+id)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
       .then( json => {
-        ordersApp.ordersArr = json;
-          window.open('OrdersByCustomer.html?customerId='+document.getElementById('customerId').value)
+        ordersApp.orders = json;
+          //window.open('OrdersByCustomer.html?customerId='+document.getElementById('customerId').value)
       } )
       .catch( err => {
         console.log('CLIENT LIST FETCH ERROR:');
