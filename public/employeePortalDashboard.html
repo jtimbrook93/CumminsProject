@@ -157,12 +157,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           </tr>
         </thead>
         <tbody id="customerTableBody">
-          <tr v-for="customers in customers">
-            <td>{{customers.Id}}</td>
-            <td>{{customers.customerName}}</td>
-            <td>{{customers.customerSince}}</td>
-            <td>{{customers.primaryContactName}}</td>
-            <td>{{customers.primaryContactNumber}}</td>
+          <tr v-for="customers in customers" >
+            <td @click:="window.open('CustomerReport.html')">{{customers.Id}}</td>
+            <td @click:="window.open('CustomerReport.html')">{{customers.customerName}}</td>
+            <td @click:="window.open('CustomerReport.html')">{{customers.customerSince}}</td>
+            <td @click:="window.open('CustomerReport.html')">{{customers.primaryContactName}}</td>
+            <td @click:="window.open('CustomerReport.html')">{{customers.primaryContactNumber}}</td>
           </tr>
         </tbody>
       </table>
