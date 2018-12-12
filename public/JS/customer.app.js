@@ -36,10 +36,10 @@ data: {
 
 
       displayCustomerReport(id){
-        fetch('api/customer.php?Id='+id)
+        fetch('api/customer.php?Id='+document.getElementById('customerId').value)
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
-          console.log(json);
+          console.log(this.customerIdValue);
           customerApp.customers = json;
           //  window.open('CustomerReport.html?Id='+document.getElementById('customerId').value)
           })
