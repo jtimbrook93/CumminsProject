@@ -321,7 +321,7 @@ Highcharts.chart('percentageChart', {
             ]
         },
         plotBackgroundImage: null,
-        height: 200
+        height: 50
     },
 
     title: {
