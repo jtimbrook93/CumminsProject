@@ -346,7 +346,7 @@ Highcharts.chart('percentageChart', {
         tickPosition: 'outside',
         labels: {
             rotation: 'auto',
-            distance: -75
+            distance: 20
         },
         plotBands: [{
             from: 0,
@@ -358,7 +358,7 @@ Highcharts.chart('percentageChart', {
         pane: 0,
         title: {
             text: 'VU<br/><span style="font-size:8px">Team A</span>',
-            y: -75
+            y: 0
         }
     }
     ],
