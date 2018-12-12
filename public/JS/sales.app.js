@@ -4,7 +4,7 @@ data: {
 
     sales: {
 
-          businessSegment: "Jon sucks",
+          businessSegment:null,
           percentOfRevenue: '',
           quarter1Revenue: null,
           quarter2Revenue: null,
@@ -279,6 +279,8 @@ data: {
 
       created() {
 
+        const url = new URL(window.location.href);
+        const bs = url.searchParams.get('businessSegment') || '';
         // Do data fetch
         this.fetchAll();
         this.buildSalesChart();
