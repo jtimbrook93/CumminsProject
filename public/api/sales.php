@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 $businessSegment = ($_GET['businessSegment'] ?? '');
 
 $salesArr = Sales::fetchAll($businessSegment);
+$salesArr = Sales::fetchAll();
 
 // convert to json and print
 $json = json_encode($salesArr, JSON_PRETTY_PRINT);
