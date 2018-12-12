@@ -132,7 +132,7 @@ data: {
         });
       },
 buildSalesChart(){
-Highcharts.chart('container', {
+Highcharts.chart('salesChart', {
     chart: {
         type: 'column'
     },
