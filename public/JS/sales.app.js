@@ -166,11 +166,11 @@ data: {
               useHTML: true
           },
           plotOptions: {
-              column: {
-                  pointPadding: 0.2,
-                  borderWidth: 0
-              }
-          },
+                          column: {
+                       stacking: 'percent'
+    }
+  },
+
           series: [{
               name: 'Distribution',
               // data: this.DistributionArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
