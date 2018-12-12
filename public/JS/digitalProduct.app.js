@@ -346,7 +346,7 @@ Highcharts.chart('percentageChart', {
         tickPosition: 'outside',
         labels: {
             rotation: 'auto',
-            distance: -20
+            distance: -75
         },
         plotBands: [{
             from: 0,
@@ -358,7 +358,7 @@ Highcharts.chart('percentageChart', {
         pane: 0,
         title: {
             text: 'VU<br/><span style="font-size:8px">Team A</span>',
-            y: 0
+            y: -75
         }
     }
     ],
@@ -378,7 +378,7 @@ Highcharts.chart('percentageChart', {
     series: [{
         name: 'Stress Levels',
         data: [-20],
-        yAxis: 0
+        yAxis: -75
     }]
 
 },
