@@ -46,5 +46,30 @@ class Customer
     // 4.b. return the array of work objects
     return $arr;
   }
+  public function fetchCustomers() {
+
+    // 1. Connect to the database
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+
+    // 2. Prepare the query
+    $sql = 'SELECT * FROM customers';
+    $statement = $db->prepare($sql);
+
+    // 3. Run the query
+    $success = $statement->execute();
+
+    // 4. Handle the results
+    $arr = [];
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+      // 4.a. For each row, make a new work php object
+      $customerItem =  new Customer($row);
+      array_push($arr, $customerItem);
+
+    }
+
+    // 4.b. return the array of work objects
+    return $arr;
+  }
 
   }
