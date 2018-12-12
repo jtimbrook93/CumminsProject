@@ -23,8 +23,9 @@ data: {
         .then( response => response.json() )  // "a => expression" is shorthand function declaration
         .then( json => {
           console.log(json);
-          customerApp.dataCustomer = json;
-            window.open('CustomerReport.html?Id='+document.getElementById('customerId').value)  })
+          customerApp.customers = json;
+          //  window.open('CustomerReport.html?Id='+document.getElementById('customerId').value)
+          })
           .catch( err => {
             console.log('METRIC LIST FETCH ERROR:');
             console.log(err);
