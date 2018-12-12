@@ -321,7 +321,7 @@ Highcharts.chart('percentageChart', {
             ]
         },
         plotBackgroundImage: null,
-        height: 100
+        height: 300
     },
 
     title: {
@@ -358,7 +358,7 @@ Highcharts.chart('percentageChart', {
         pane: 0,
         title: {
             text: 'VU<br/><span style="font-size:8px">Channel A</span>',
-            y: -40
+            y: -100
         }
     }
     ],
