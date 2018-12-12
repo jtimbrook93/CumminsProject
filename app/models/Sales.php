@@ -51,7 +51,7 @@ class Sales
     // 4.b. return the array of work objects
     return $arr;
   }
-  public function fetchAll() {
+  public function fetchDEEZ() {
 
     // 1. Connect to the database
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
