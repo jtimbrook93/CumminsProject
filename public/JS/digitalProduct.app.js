@@ -332,7 +332,6 @@ Highcharts.chart('percentageChart', {
         startAngle: -45,
         endAngle: 45,
         background: null,
-        center: ['100%'],
         size: 150
     }],
 
