@@ -1,384 +1,260 @@
 <!DOCTYPE html>
 <html>
-<title>Cummins Customer View</title>
-
-<!-- code for styling from https://www.w3schools.com/w3css/w3css_templates.asp -->
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="CSS/chatbox.css" />
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey">
-
-<!-- Top container -->
-<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <a href="img/cumminsLogo.jpg" class="w3-bar-item w3-left" target="_blank"><img src="img/cumminsLogo.jpg" alt="https://d2a2wjuuf1c30f.cloudfront.net/product_photos/28207461/300001_original.png" height="30" width="30"/></a>
-</div>
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:250px;" id="mySidebar"><br>
-  <div class="w3-container w3-row">
-    <div class="w3-col s4">
-      <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
-    </div>
-    <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong>Mike</strong></span><br>
-      <!--TODO: change href to have functionality ?  -->
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-    </div>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Dashboard</h5>
-  </div>
-    <div class="w3-bar-block">
-      <!--TODO: change sidebar titles to relate to employee tools?   -->
-      <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-red w3-hover-red" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-      <a href="employeePortalDashboard.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-home fa-fw"></i>Home</a>
-      <!--TODO: create a digital project board like in class  -->
-      <a href="DigitalProjectDashboard.html?projectId=1" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Digital Product Development</a>
-        <!--TODO: create view of recent marketing iniciatives   -->
-      <a href="support.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i> Tech Support</a>
-      <!--TODO: create view of sales by division -->
-      <a href="Sales.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Sales</a>
-      <!--TODO: create view of customer Financial history statements  -->
-      <a href="Invoice.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i> Billing</a>
-      <!--TODO: create view order status for a particular customer ADD ORDERSTATUS TO DATA   -->
-      <a href="Orders.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
-      <!--TODO: create a list of analytics applicaitons to choose from and have premade charts   -->
-      <a href="Analytics.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i> Analytics</a>
-      <!--TODO: create view of serive department scedule / notes?  -->
-      <a href="repair.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i> Service Department</a>
-      <!--TODO: create link to show the customer view for support  (add in a parameter to pass the customer ID ?) -->
-      <a href="customerLogin.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Customer View</a>
-      <!--TODO: create view of other applications ?   -->
-      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i> Other Applications</a><br><br>
-    </div>
-    </nav>
+<head>
+            <title>Customer Support Persona Sample | Xtensio Content | Xtensio</title>
+        <meta name="description" content="This is a user-created folio on Xtensio. Bring your ideas to life with easily-editable, interactive documents. Share it as a link, present it or export.">
 
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
-  <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> Employee Dashboard</b></h5>
-  </header>
-
-  <div class="w3-row-padding w3-margin-bottom">
-
-    <!--TODO: application content box? -->
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>3</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Pending Customer Chat</h4>
-      </div>
-    </div>
-
-      <!--TODO: application content box? -->
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>6</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Service Order Requests</h4>
-      </div>
-    </div>
-
-      <!--TODO: application content box? -->
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>36</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>New Leads</h4>
-      </div>
-    </div>
-
-      <!--TODO: application content box? -->
-    <div class="w3-quarter">
-      <div class="w3-container w3-red w3-text-white w3-padding-16">
-        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-        <div class="w3-right">
-          <h3>3</h3>
-        </div>
-        <div class="w3-clear"></div>
-        <h4>Pending tasks</h4>
-      </div>
-    </div>
-  </div>
-
-  <!--TODO: add functionality to these containers -->
-  <div id="customerMain" class="w3-row-padding w3-margin-bottom">
-      <h3>Welcome!</h3>
-      Take a look at customer order details!
-    <table class="table table-striped table-sm" id="customerTable">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Customer Name</th>
-            <th>Customer Since</th>
-            <th>Primary Contact Name</th>
-            <th>Primary Contact Number</th>
-          </tr>
-        </thead>
-        <tbody id="customerTableBody">
-          <tr v-for="customers in dataCustomer">
-            <td>{{customers.Id}}</td>
-            <td>{{customers.customerName}}</td>
-            <td>{{customers.customerSince}}</td>
-            <td>{{customers.primaryContactName}}</td>
-            <td>{{customers.primaryContactNumber}}</td>
-          </tr>
-        </tbody>
-      </table>
-          </div>
-
-        <!--TODO: fix feeds to reflect cummins -->
-      <div class="w3-row-padding w3-margin-bottom">
-        <h5> Feeds</h5>
-        <table class="w3-table w3-striped w3-white">
-          <tr>
-            <td><i class="fa fa-user w3-text-red w3-large"></i></td>
-            <td>New record, over 90 views.</td>
-            <td><i>10 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-            <td>Database error.</td>
-            <td><i>15 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-users w3-text-red w3-large"></i></td>
-            <td>New record, over 40 users.</td>
-            <td><i>17 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-            <td>New comments.</td>
-            <td><i>25 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-bookmark w3-text-red w3-large"></i></td>
-            <td>Check transactions.</td>
-            <td><i>28 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-            <td>CPU overload.</td>
-            <td><i>35 mins</i></td>
-          </tr>
-          <tr>
-            <td><i class="fa fa-share-alt w3-text-red w3-large"></i></td>
-            <td>New shares.</td>
-            <td><i>39 mins</i></td>
-          </tr>
-        </table>
-      </div>
-
-
-      <!-- <img src="/w3images/region.jpg" style="width:100%" alt="Google Regional Map"> -->
+    <link href="/Content/styles/v-636794516129413386-froala-combined-1.css" rel="stylesheet" type="text/css" />
+        <link rel="canonical" href="https://content.xtensio.com/folio/wozjlgav" />
+        <!--# Facebook Open Graph Metadata -->
+            <meta property="og:locale" content="en_US" />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="Customer Support Persona Sample" />
+            <meta property="og:description" content=" Age: 45 Work: Operations/Support Family: Married Location: Seattle, WA Character: The Authentic " />
+            <meta property="og:url" content="https://content.xtensio.com:443/folio/wozjlgav" />
+            <meta property="og:site_name" content="Xtensio" />
+            <meta property="fb:app_id" content="929118813784683" />
+            <meta property="og:image" content="https://xtensio.com/wp-content/uploads/2018/01/Banner_Folio.jpg" />
+            <meta property="og:image:secure_url" content="https://xtensio.com/wp-content/uploads/2018/01/Banner_Folio.jpg" />
+    <!--# Twitter Card Metadata -->
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:description" content=" Age: 45 Work: Operations/Support Family: Married Location: Seattle, WA Character: The Authentic " />
+            <meta name="twitter:title" content="Customer Support Persona Sample" />
+            <meta name="twitter:site" content="@xtensio" />
+            <meta name="twitter:image" content="https://xtensio.com/wp-content/uploads/2018/01/Banner_Folio.jpg" />
+            <meta name="twitter:creator" content="@xtensio" />
+            <link rel="alternate" type="application/json+oembed"
+                  href="https://content.xtensio.com:443/oembed?url=https%3a%2f%2fcontent.xtensio.com%3a443%2ffolio%2fwozjlgav&format=json"
+                  title="Xtensio oEmbed Profile" />
 
 
 
+<link rel="icon" href="/Xtensio_favicon.ico" sizes="16x16 24x24 32x32 48x48 64x64 110x110 114x114 128x128" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="/favicon-144.png">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp, noydir">
+<link href="https://plus.google.com/+Xtensio" rel="publisher" />
 
-    <!--TODO: General Stats of? -->
-  <hr>
-  <div class="w3-container-fluid">
-  <h5>Digital Product Adoption</h5>
-  <p>PowerSpec</p>
-  <div class="w3-grey">
-  <div class="w3-container w3-center w3-padding w3-red" style="width:25%">+25%</div>
-  </div>
-
-  <p>INLINE</p>
-  <div class="w3-grey">
-  <div class="w3-container w3-center w3-padding w3-red" style="width:50%">50%</div>
-  </div>
-
-  <p>Connected Diagnostics</p>
-  <div class="w3-grey">
-  <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
-  </div>
-  </div>
-  <hr>
-
-
-  <!--TODO: some sort of table  -->
-  <div class="w3-container">
-  <h5>Product Lines profitability</h5>
-  <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-  <tr>
-    <td>Engines</td>
-    <td>65%</td>
-  </tr>
-  <tr>
-    <td>Distribution</td>
-    <td>15.7%</td>
-  </tr>
-  <tr>
-    <td>Power Systems</td>
-    <td>5.6%</td>
-  </tr>
-  <tr>
-    <td>Componants</td>
-    <td>2.1%</td>
-  </tr>
-  <tr>
-    <td>Electrified Power</td>
-    <td>1.9%</td>
-  </tr>
-  </table><br>
-
-  <!--TODO: link to complete log of something? -->
-  <button class="w3-button w3-dark-grey">More Metrics  <i class="fa fa-arrow-right"></i></button>
-  </div>
-  <hr>
-
-  <!--TODO: come up with something -->
-  <div class="w3-container">
-  <h5>Product Development Team</h5>
-  <ul class="w3-ul w3-card-4 w3-white">
-  <li class="w3-padding-16">
-    <img src="img/billGates.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
-    <span class="w3-xlarge">Bill</span><br>
-  </li>
-  <li class="w3-padding-16">
-    <img src="img/linus.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
-    <span class="w3-xlarge">Linus</span><br>
-  </li>
-  <li class="w3-padding-16">
-    <img src="img/mark.jpg" class="w3-left w3-circle w3-margin-right" style="width:35px">
-    <span class="w3-xlarge">Mark</span><br>
-  </li>
-  </ul>
-  </div>
-  <hr>
-
-  <!--TODO:comment table? -->
-  <div class="w3-container">
-  <h5>Recent Comments</h5>
-  <div class="w3-row">
-  <div class="w3-col m2 text-center">
-    <img class="w3-circle" src="img/billGates.jpg" style="width:96px;height:96px">
-  </div>
-  <div class="w3-col m10 w3-container">
-    <h4>Bill <span class="w3-opacity w3-medium">Sep 29, 2014, 9:12 PM</span></h4>
-    <p>I had a look at our code for the new application we are building and found some interesting oprotunites for advancement to new markets. I will discuss with everyone next time we go to steak n' shake for out meeting.</p><br>
-  </div>
-  </div>
-
-  <div class="w3-row">
-  <div class="w3-col m2 text-center">
-    <img class="w3-circle" src="img/mark.jpg" style="width:96px;height:96px">
-  </div>
-  <div class="w3-col m10 w3-container">
-    <h4>Mark <span class="w3-opacity w3-medium">Sep 28, 2014, 10:15 PM</span></h4>
-    <p>I spoke to some potential investors about our new digital product. They want us to come up with a RFP and discuss how the App will benefit stakeholders.</p><br>
-  </div>
-    </div>
-  </div>
-  <br>
-
-    <!--TODO: not sure what to put here either -->
-  <div class="w3-container w3-dark-grey w3-padding-32">
-    <div class="w3-row">
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-red">Connect</h5>
-        <p>Twitter</p>
-        <p>Instagram</p>
-        <p>Facebook</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-red">News</h5>
-        <p>Company</p>
-        <p>Global</p>
-        <p>New Markets</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-red">Target</h5>
-        <p>Users</p>
-        <p>Active</p>
-        <p>Interests</p>
-      </div>
-    </div>
-  </div>
-    </div>
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-light-grey">
-    <h4>FOOTER</h4>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-  </footer>
-
-  <!-- End page content -->
-
+<link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/Content/foundation-icons.css" rel="stylesheet" type="text/css" />
+<link href="/Content/styles/v-636794516128223405-vendor-2.css" rel="stylesheet" type="text/css"/>
+<link href="/Content/styles/v-636794517078483910-site-2.css" rel="stylesheet" type="text/css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.11/d3.min.js"  defer="defer"></script>
 <script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
+    window.jQuery || document.write('<script src="/Scripts/jquery-2.1.4.min.js"><\/script>');
+    window.d3 || document.write('<script src="/Scripts/d3-3.5.11.min.js" defer="defer"><\/script>');
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" defer="defer"></script>
+<script src="/Content/scripts/v-636794517006324658-vendor-2.js" defer="defer"></script>
+<script src="/Content/scripts/v-636794517151233209-app-2.js" defer="defer"></script>
+<script src="/Scripts/jquery.signalR-2.2.3.min.js"  defer="defer"></script>
+<script src="/signalr/hubs" defer="defer"></script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org/",
+    "@type": "Organization",
+    "name": "Xtensio",
+    "url": "https://xtensio.com/",
+    "description": "Xtensio is a collaborative workspace where teams can easily create and share beautiful living documents.",
+    "logo": "https://xtensio.com/wp-content/themes/Divi-child/images/xtensio.svg",
+    "foundingDate": "2015",
+    "founders": [
+    {
+    "@type": "Person",
+    "name": "Alper Cakir"
+    },
+    {
+    "@type": "Person",
+    "name": "Asli Sonceley"
+    } ],
+    "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90028",
+    "addressCountry": "USA"
+    },
+    "sameAs": [
+    "https://www.facebook.com/xtensio",
+    "https://twitter.com/xtensio",
+    "https://plus.google.com/+xtensio",
+    "https://www.youtube.com/Xtensio",
+    "https://www.pinterest.com/xtensio/boards/",
+    "https://www.linkedin.com/company/xtensio/",
+    "https://app.xtensio.com/account/signin?ReturnUrl=%2F"
+    ]
     }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-}
 </script>
-<script>
-(function(){
-      $("#addClass").click(function () {
-      $('#qnimate').addClass('popup-box-on');
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org/",
+        "@type": "PresentationDigitalDocument",
+        "copyrightHolder": "Xtensio Product",
+        "copyrightYear": "2018",
+        "dateCreated": "1/2/0001",
+        "dateModified": "1/2/0001",
+        "publisher": "Xtensio Product",
+        "alternateName": "Customer Support Persona Sample",
+        "description": " Age: 45 Work: Operations/Support Family: Married Location: Seattle, WA Character: The Authentic ",
+        "image": {
+        "@type": "ImageObject",
+        "contentUrl": "//xtensio.com/wp-content/uploads/2018/01/Banner_Folio.jpg",
+        "isBasedOnUrl": "//xtensio.com/wp-content/uploads/2018/01/Banner_Folio.jpg"
+        },
+        "mainEntityOfPage": "https://content.xtensio.com/folio/wozjlgav",
+        "name": "Customer Support Persona Sample"
+        }
+    </script>
+    <style type="text/css">
+        body #home-page {
+            padding-bottom: 0px;
+        }
+        @media (max-width: 767px) {
+            .archived-topbar {
+                height: auto;
+            }
+
+                .archived-topbar .section {
+                    vertical-align: top;
+                }
+
+                .archived-topbar a.back span {
+                    display: none;
+                }
+
+                .archived-topbar .detail-section {
+                    padding: 20px 0;
+                }
+
+                .archived-topbar a.back {
+                    font-size: 0;
+                    display: inline-block;
+                    min-width: 35px;
+                    min-height: 20px;
+                    vertical-align: top;
+                }
+
+            .popup-wrapper.export .paper {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .popup-main-btn {
+                min-width: 80px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div id="antiForgeryContainer" style="display: none;">
+    <input name="__RequestVerificationToken" type="hidden" value="sUBbTDajbMQ5Np2IL7woNSXSNExCY12WuFz3aoN5dI-445vF543LTAqmllTMgaCAwffqed3j5OszAnhJsYPp-6Rz1S41" />
+</div>
+<div id="home-page">
+    <div class="container-fluid">
+        <div id="modules-preview-header" class="row"></div>
+        <div id="modules-preview-main" class="row"></div>
+    </div>
+</div>
+    <div id="templates" style="display: none"></div>
+    <script>
+        $(function () {
+            var config = {
+                token: 'wozjlgav', //for convenience; folio will also have it
+                IsMod: 0,
+                userName: '',
+                verificationToken: $('#antiForgeryContainer input[name="__RequestVerificationToken"]').val(),
+                fontFamily: null,
+                banner: 0,
+                passError: '',
+                sharePlusLink: '',
+                PlusEnd: '1587066823083',
+                EditTemplate:'true',
+                FolioName:'Customer Support Persona Sample',
+                presentationMode:true,
+                isAdmin:false,
+                exportLimits: {"LimitsImposed":false,"CreditsLeft":0,"MaxCredits":0},
+                isTeam: true,
+                Team: {"Id":17,"Name":"Xtensio Content","LogoUrl":"//xtensio.blob.core.windows.net/images/big/Xtensio Content/re-qK_1saEqiIIBrdZUSPQ.png","TeamUrl":"content.xtensio.com","Status":1,"Role":-1,"RoleName":"","ST":14,"Plan":"Business","IsDelinquent":false},
+                UserTeams :[],
+                TeamRoles :[{"Id":4,"Name":"Premium Guest"},{"Id":5,"Name":"Single Folio Guest"},{"Id":2,"Name":"Team Admin"},{"Id":3,"Name":"Team Member"},{"Id":1,"Name":"Team Owner"}],
+                Environment: 'live',
+                isUserTemplate: false,
+                FreeUserLimitPerImage: 1048576,
+                PaidUserLimitPerImage: 5242880,
+                IsDelinquent : false,
+                UserFolios: 0,
+                StyleGuides :[{"Id":6,"Name":"Xtensio Content","TeamFonts":[{"Id":1,"Name":"proxima-nova","SourceIdentifier":"proxima-nova","SourceString":"Xtensio","Status":1,"IsDefaultFontAppWide":false,"CreatedUTC":"2018-04-29T21:25:20.863","ModifiedUTC":null,"FontJson":{"Name":"proxima-nova","IdString":"proxima-nova","LastModified":"4/29/2018","Version":"v1","FontStyle":null,"FontWeight":null,"UnicodeRange":null,"FontUrl":null,"FontUrlWoff":null,"FontLocalName":null},"TeamId":17,"FontBinary":null,"FontCdnLink":""},{"Id":2,"Name":"proxima-light","SourceIdentifier":"proxima-light","SourceString":"Xtensio","Status":1,"IsDefaultFontAppWide":true,"CreatedUTC":"2018-04-29T21:25:20.88","ModifiedUTC":null,"FontJson":{"Name":"proxima-light","IdString":"proxima-light","LastModified":"4/29/2018","Version":"v1","FontStyle":null,"FontWeight":null,"UnicodeRange":null,"FontUrl":null,"FontUrlWoff":null,"FontLocalName":null},"TeamId":17,"FontBinary":null,"FontCdnLink":""},{"Id":3,"Name":"proxima-bold","SourceIdentifier":"proxima-bold","SourceString":"Xtensio","Status":1,"IsDefaultFontAppWide":false,"CreatedUTC":"2018-04-29T21:25:20.893","ModifiedUTC":null,"FontJson":{"Name":"proxima-bold","IdString":"proxima-bold","LastModified":"4/29/2018","Version":"v1","FontStyle":null,"FontWeight":null,"UnicodeRange":null,"FontUrl":null,"FontUrlWoff":null,"FontLocalName":null},"TeamId":17,"FontBinary":null,"FontCdnLink":""},{"Id":6,"Name":"Georgia","SourceIdentifier":"Georgia","SourceString":"System","Status":1,"IsDefaultFontAppWide":false,"CreatedUTC":"2018-04-29T21:25:20.893","ModifiedUTC":null,"FontJson":{"Name":"Georgia","IdString":"Georgia","LastModified":"4/29/2018","Version":"v1","FontStyle":null,"FontWeight":null,"UnicodeRange":null,"FontUrl":null,"FontUrlWoff":null,"FontLocalName":null},"TeamId":17,"FontBinary":null,"FontCdnLink":""},{"Id":1221,"Name":"Lobster regular","SourceIdentifier":"Lobster:regular","SourceString":"GoogleFonts","Status":1,"IsDefaultFontAppWide":false,"CreatedUTC":"2018-12-10T21:50:02.927","ModifiedUTC":null,"FontJson":{"Name":"Lobster regular","IdString":"Lobster:regular","LastModified":"2017-11-07","Version":"v20","FontStyle":"normal","FontWeight":"400","UnicodeRange":"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD","FontUrl":"https://fonts.gstatic.com/s/lobster/v20/neILzCirqoswsqX9zoKmMw.woff2","FontUrlWoff":"https://fonts.gstatic.com/s/lobster/v20/neILzCirqoswsqX9zoKmNQ.woff","FontLocalName":"Lobster-Regular"},"TeamId":17,"FontBinary":null,"FontCdnLink":""}],"TeamColors":[{"Id":5277,"HexCode":"#353536","IsDefault":true},{"Id":5278,"HexCode":"#FFFFFF","IsDefault":false},{"Id":5279,"HexCode":"#000000","IsDefault":false},{"Id":5280,"HexCode":"#F6F6F6","IsDefault":false},{"Id":5281,"HexCode":"#313131","IsDefault":false},{"Id":5282,"HexCode":"#111C24","IsDefault":false},{"Id":5283,"HexCode":"#00ADEE","IsDefault":false},{"Id":5284,"HexCode":"#212529","IsDefault":false},{"Id":5285,"HexCode":"#ED1C24","IsDefault":false},{"Id":5286,"HexCode":"#DC3545","IsDefault":false},{"Id":5287,"HexCode":"#989898","IsDefault":false}],"TeamId":17,"UserId":"78eb343b-0ebb-438d-84ca-86181088bdb7","DefaultFontFamily":"proxima-light","FallbackFontFamily":"proxima-light","DefaultColor":"#052B3E","IsDefault":true,"maxNumberOfFonts":15,"maxNumberOfColors":27,"StylePickerApi":"https://stylepicker.xtensio.com/query?url=","CreatedUTC":"2018-04-29T21:25:20.63","ModifiedUTC":null}],
+                Curl : '',
+                baseUrl : 'https://app.xtensio.com',
+            }
+            var folio = {"ID":275683,"TimeStamp":0,"Token":"wozjlgav","Store":"{\"style\":\".hide-h .title {display: none;}\\n.bio .header{padding-left:5px;}\\n .canvas-module .bio .text-module .header-container {background-color:transparent !important;}\"}","HasPass":false,"GetPass":false,"Private":false,"Indexed":true,"ParentID":7,"Version":2,"TemplateMessage":"","FolioName":"Customer Support Persona Sample","CurrentVersion":0,"BgUrl":null,"CreatedUtc":1491595931067,"LastSavedUtc":1529375852273,"TileImage":null,"PresentationMode":true,"EditTemplate":true,"Modules":[{"Records":null,"ID":2684765,"Tag":1,"Key":"114105","Type":"DataModule","Data":"{\"Type\":\"DataModule\",\"Sections\":[{\"Order\":1,\"Tag\":8,\"ModIds\":[15]}],\"Exports\":{\"sec\":true,\"format\":\"PNG\",\"orient\":\"landscape\",\"mode\":\"print\"}}","Store":null},{"Records":null,"ID":2684769,"Tag":15,"Key":"484286","Type":"Canvas","Data":"{\"Type\":\"Canvas\",\"Cols\":\"12\",\"Theme\":\"#00BD9C\",\"BgColor\":\"#FFFFFF\",\"Arr\":[4,5,3],\"Head\":\"1\",\"Border\":\"1\",\"Header\":\"Jack Rowland\",\"Mods\":[{\"Tag\":86,\"Col\":0,\"Row\":0},{\"Tag\":89,\"Col\":0,\"Row\":1},{\"Tag\":149,\"Col\":0,\"Row\":2},{\"Tag\":133,\"Col\":1,\"Row\":0},{\"Tag\":93,\"Col\":1,\"Row\":1},{\"Tag\":94,\"Col\":1,\"Row\":2},{\"Tag\":117,\"Col\":1,\"Row\":3},{\"Tag\":132,\"Col\":2,\"Row\":0},{\"Tag\":92,\"Col\":2,\"Row\":1},{\"Tag\":88,\"Col\":2,\"Row\":2},{\"Tag\":87,\"Col\":2,\"Row\":3}]}","Store":null},{"Records":null,"ID":2684791,"Tag":86,"Key":"2683496","Type":"Text","Data":"{\"Type\":\"Text\",\"Theme\":\"#00BD9C\",\"Html\":\"<p class=\\\"desc\\\"><span class=\\\"name\\\">Age:&nbsp;</span>45<br><span class=\\\"name\\\">Work:&nbsp;</span>Operations/Support<br><span class=\\\"name\\\">Family:&nbsp;</span> Married<br><span class=\\\"name\\\">Location:&nbsp;</span>Seattle, WA<br><span class=\\\"name\\\">Character:&nbsp;</span>The Authentic</p>\",\"Cols\":\"4\",\"Align\":\"left\",\"Header\":\"Edit me\"}","Store":null},{"Records":null,"ID":2684792,"Tag":87,"Key":"2683497","Type":"Text","Data":"{\"Type\":\"Text\",\"Html\":\"<div style=\\\"font-style: italic; color: #fff\\\"><p style=\\\"text-align: center\\\">\\\"I want to optimize how the support ticketing system works to capture product feedback better.\\\"</p></div>\",\"BgColor\":\"#00BD9C\",\"Cols\":\"4\",\"Align\":\"left\",\"Theme\":\"#66D7C4\",\"Header\":\"Edit me\"}","Store":null},{"Records":null,"ID":2684793,"Tag":88,"Key":"2683498","Type":"Images","Data":"{\"Type\":\"Images\",\"Theme\":\"#00BD9C\",\"Html\":\"<p class=\\\"text-center fr-tag\\\"><span style=\\\"font-size: 16px\\\">\\\"I want to optimize how the support ticketing system works to give better feedback and quicker turn around time.\\\"</span><br></p>\",\"Items\":[{\"Url\":\"//xtensio.blob.core.windows.net/images/big/jxj6563/SLWwZgfXFkmgq_REmuJgmw.jpg\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}","Store":null},{"Records":null,"ID":2684794,"Tag":89,"Key":"2683499","Type":"Text","Data":"{\"Type\":\"Text\",\"Theme\":\"#00BD9C\",\"Html\":\"<p>Jack as been working in customer support for the past fifteen years and loves it. He is very tech savvy and enjoys helping others. On a daily basis, he provides customer service and audits accounts focusing on KPI.<span>&nbsp;</span>When there's a problem, he always prefers to deal<span>&nbsp;</span>with clients personally. He wants the system to be easy and intuitive so he can find solutions easily.</p>\",\"BgColor\":\"#f2f2f3\",\"Cols\":\"4\",\"Align\":\"left\",\"Header\":\"Bio\",\"Head\":\"1\"}","Store":null},{"Records":null,"ID":2684795,"Tag":92,"Key":"2683502","Type":"Tag","Data":"{\"Type\":\"Tag\",\"Items\":[{\"ID\":\"1\",\"Name\":\"<p>Agreeable</p>\"},{\"ID\":\"2\",\"Name\":\"<p>Accessible</p>\"},{\"ID\":\"3\",\"Name\":\"<p>Dependable</p>\"}],\"Cols\":\"4\",\"Align\":\"left\",\"Theme\":\"#66D7C4\",\"Header\":\"Edit me\"}","Store":null},{"Records":null,"ID":2684796,"Tag":93,"Key":"2683503","Type":"Text","Data":"{\"Type\":\"Text\",\"Theme\":\"#00BD9C\",\"Html\":\"<ul><li>To reduce churn</li><li>To help educate advertisers</li><li>To transition toward email / automated customer service</li></ul>\",\"Cols\":\"4\",\"Align\":\"left\",\"Header\":\"Goals\",\"Head\":\"1\"}","Store":null},{"Records":null,"ID":2684797,"Tag":94,"Key":"2683504","Type":"Text","Data":"{\"Type\":\"Text\",\"Theme\":\"#00BD9C\",\"Html\":\"<ul><li>Confusing UX for advertisers leading to increased tickets</li><li>Logging the calls manually</li><li>Multiple steps to completing a ticket</li></ul>\",\"Cols\":\"4\",\"Align\":\"left\",\"Header\":\"Frustrations\",\"Head\":\"1\"}","Store":null},{"Records":null,"ID":2684802,"Tag":117,"Key":"2683694","Type":"Images","Data":"{\"Type\":\"Images\",\"Theme\":\"#00BD9C\",\"Align\":\"left\",\"Title\":\"<h2>Brands</h2>\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//xtensio.blob.core.windows.net/images/big/jxj6563/3MnwJK1zRUW-TtLPg7NrAQ.png\",\"Val\":\"44\"},{\"ID\":\"2\",\"Url\":\"//xtensio.blob.core.windows.net/images/big/jxj6563/wOzfQGTb406Rnde6ZM8E0g.png\",\"Val\":\"31\"},{\"ID\":\"3\",\"Url\":\"//xtensio.blob.core.windows.net/images/big/jxj6563/CUtEVCekL0SrwBpFKSmrXA.png\",\"Val\":\"17\"}],\"Cols\":\"2\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}","Store":null},{"Records":null,"ID":2684807,"Tag":132,"Key":"2684074","Type":"Scale","Data":"{\"Type\":\"Scale\",\"Theme\":\"#00BD9C\",\"Items\":[{\"ID\":\"1\",\"Name1\":\"Introvert\",\"Name2\":\"Extrovert\",\"Val\":\"30\"},{\"ID\":\"2\",\"Name1\":\"Analytical\",\"Name2\":\"Creative\",\"Val\":\"50\"},{\"ID\":\"3\",\"Name1\":\"Loyal\",\"Name2\":\"Fickle\",\"Val\":\"40\"},{\"ID\":\"4\",\"Name1\":\"Passive\",\"Name2\":\"Active\",\"Val\":\"70\"}],\"Title\":\"<p>Personality</p>\",\"Cols\":\"4\",\"Head\":\"1\",\"Txt\":\"1\",\"Header\":\"Personality\",\"CssClass\":\"\",\"Titlehide\":\"1\"}","Store":null},{"Records":null,"ID":2684808,"Tag":133,"Key":"2684075","Type":"Bar","Data":"{\"Type\":\"Bar\",\"Theme\":\"#00BD9C\",\"Items\":[{\"ID\":\"1\",\"Name\":\"Designer Products\",\"Val\":\"25\"},{\"ID\":\"2\",\"Name\":\"Eco-Friendly\",\"Val\":\"88\"},{\"ID\":\"3\",\"Name\":\"Personalization&nbsp;\",\"Val\":\"83\"},{\"ID\":\"4\",\"Name\":\"Low Prices\",\"Val\":\"30\"},{\"ID\":\"5\",\"Name\":\"Convenience\",\"Val\":\"56\"},{\"ID\":\"6\",\"Name\":\"Social\",\"Val\":\"90\"}],\"Title\":\"<p>Motivations</p>\",\"Cols\":\"4\",\"Head\":\"1\",\"Txt\":\"1\",\"Header\":\"Motivations\",\"Titlehide\":\"1\"}","Store":null},{"Records":null,"ID":2684813,"Tag":149,"Key":"2684303","Type":"Bar","Data":"{\"Type\":\"Bar\",\"Theme\":\"#00BD9C\",\"Title\":\"<h2>Preferred Channels</h2>\",\"Items\":[{\"ID\":\"1\",\"Name\":\"Traditional Ads\",\"Val\":\"62\"},{\"ID\":\"2\",\"Name\":\"Social Media\",\"Val\":\"37\"},{\"ID\":\"3\",\"Name\":\"Referral\",\"Val\":\"99\"},{\"ID\":\"4\",\"Name\":\"Guerrilla Efforts &amp; PR\",\"Val\":\"13\"}],\"Cols\":\"4\",\"Head\":\"1\",\"Txt\":\"1\",\"Header\":\"Preferred Channels\",\"Titlehide\":\"1\"}","Store":null}],"UserBgImages":null,"Collaborators":[],"SubmitUrl":null,"Labels":["27ff3e44","oeldaixd","xew0lq8t","q1607v7p"],"Status":0,"Role":0,"UsedCount":0,"IsUserTemplate":false,"TagStore":null,"Curl":"wozjlgav","UserFullName":"Xtensio Product"};
+            $( "#templates" ).load("/Content/templates/v-636794517013034559-all-templates-2.html", function(r, s, x) {
+                if (s == "error") {
+                    setTimeout(function () {location.reload();}, 3000);
+                }
+                app.main(config, folio);
+                $('#home-page').append($('#tmp-power-by-footer'));
+            });
+
         });
+    </script>
 
-        $("#removeClass").click(function () {
-      $('#qnimate').removeClass('popup-box-on');
-        });
-}());
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script type="text/javascript">
+        (function (w, d) {
+            w.HelpCrunch = function () { w.HelpCrunch.q.push(arguments) };
+            w.HelpCrunch.q = [];
+            function r() {
+                var s = document.createElement('script');
+                s.async = 1; s.type = 'text/javascript';
+                s.src = 'https://widget.helpcrunch.com/'; (d.body || d.head).appendChild(s);
+            }
+            if (w.attachEvent) {
+                w.attachEvent('onload', r)
+            } else {
+                w.addEventListener('load', r, false)
+            }
+        })(window, document);
 
-<script src="JS/customer.app.js"></script>
-<script src="JS/tablesort.min.js"></script>
+    </script>
 
-</body>
-</html>
+
+        <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45224507-4', 'auto', { 'allowLinker': true });
+        ga('require', 'linker');
+ga('linker:autoLink', ['xtensio.com', 'app.xtensio.com']);        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+        <script>
+            $(function () {
+                var firstTime = true;
+                var url = 'https://xtensio.com/';
+                $('.xtensio-link').on("click", function (e) {
+                    e.preventDefault();
+                    if (firstTime) {
+                        firstTime = false;
+                        ga('send', 'event', 'outbound', 'click', url, {
+                            'hitCallback': function () {
+                                document.location = url;
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+      </body>
+      </html>
