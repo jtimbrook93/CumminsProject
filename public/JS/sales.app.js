@@ -4,7 +4,7 @@ data: {
 
     sales: {
 
-          businessSegment:null,
+          businessSegment: '',
           percentOfRevenue: '',
           quarter1Revenue: null,
           quarter2Revenue: null,
@@ -63,10 +63,19 @@ data: {
 
     methods: {
       fetchAll(){
-        this.fetchEngines();
-        this.fetchFiltration();
-        this.fetchDistribution();
-        this.fetchPowerGeneration();
+        fetch('api/sales.php')
+        .then( response => response.json() )
+        .then( json => {
+          salesApp.sales = json;
+          this.fetchEngines();
+          this.fetchFiltration();
+          this.fetchDistribution();
+          this.fetchPowerGeneration();
+         } )
+        .catch( err => {
+          console.log('PRODUCT FETCH ERROR:');
+          console.log(err);
+        })
       //  this.buildSalesChart();
       },
 
