@@ -173,7 +173,7 @@ var dashboardApp = new Vue ({
                 responsive: {
                   rules: [{
                     condition: {
-                      maxWidth: 500
+                      maxWidth: 400
                     },
                     chartOptions: {
                       legend: {
