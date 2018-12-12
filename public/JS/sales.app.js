@@ -131,8 +131,8 @@ data: {
           console.log(err);
         });
       },
-      
-buildSalesChart(){
+
+buildSalesChart() {
 Highcharts.chart('salesChart', {
     chart: {
         type: 'column'
@@ -169,6 +169,7 @@ Highcharts.chart('salesChart', {
         data: [3, 4, 4, 2, 5]
     }]
 });
+},
 
   // buildSalesChart() {
   //     Highcharts.chart('salesChart', {
@@ -227,7 +228,6 @@ Highcharts.chart('salesChart', {
   //
   //         }]
   //     });
-    },
 //  buildSalesChart() {
 //     Highcharts.chart('salesChart', {
 //     chart: {
@@ -331,7 +331,7 @@ Highcharts.chart('salesChart', {
         const url = new URL(window.location.href);
         const bs = url.searchParams.get('businessSegment') || '';
         // Do data fetch
-        this.fetchAll();
         this.buildSalesChart();
+        this.fetchAll();
       }
     });
