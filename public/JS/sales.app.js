@@ -173,8 +173,8 @@ data: {
           },
           series: [{
               name: 'Distribution',
-              data: this.DistributionArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
-
+              // data: this.DistributionArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
+              data:  [5, 3, 4, 7, 2]
           }, {
               name: 'Filtration',
               data: this.FiltrationArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
