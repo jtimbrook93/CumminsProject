@@ -332,7 +332,7 @@ Highcharts.chart('percentageChart', {
         startAngle: -45,
         endAngle: 45,
         background: null,
-        center: ['25%', '145%'],
+        center: ['100%'],
         size: 300
     }],
 
@@ -389,22 +389,17 @@ Highcharts.chart('percentageChart', {
         setInterval(function () {
             if (chart.series) { // the chart may be destroyed
                 var left = chart.series[0].points[0],
-                    right = chart.series[1].points[0],
                     leftVal,
-                    rightVal,
+
                     inc = (Math.random() - 0.5) * 3;
 
                 leftVal = left.y + inc;
-                rightVal = leftVal + inc / 3;
                 if (leftVal < -20 || leftVal > 6) {
                     leftVal = left.y - inc;
                 }
-                if (rightVal < -20 || rightVal > 6) {
-                    rightVal = leftVal;
-                }
+
 
                 left.update(leftVal, false);
-                right.update(rightVal, false);
                 chart.redraw();
             }
         }, 500);
