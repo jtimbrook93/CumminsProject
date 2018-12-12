@@ -332,7 +332,7 @@ Highcharts.chart('percentageChart', {
         startAngle: -45,
         endAngle: 45,
         background: null,
-        size: 100
+        size: 175
     }],
 
     tooltip: {
@@ -358,7 +358,7 @@ Highcharts.chart('percentageChart', {
         pane: 0,
         title: {
             text: 'VU<br/><span style="font-size:8px">Channel A</span>',
-            y: -100
+            y: 0
         }
     }
     ],
