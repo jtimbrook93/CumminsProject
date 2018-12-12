@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
 $Id = intval($_GET['Id'] ?? 0);
 // 1. Go to the database and get all work associated with the $taskId
 $customerArr = Customer::fetchCustomers();
-$customerArr2 = Customer::fetchAll($Id);
+$customerArr = Customer::fetchAll($Id);
 
 // 2. Convert to JSON
 $json = json_encode($customerArr,  JSON_PRETTY_PRINT);
