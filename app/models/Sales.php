@@ -18,10 +18,10 @@ class Sales
 
     $this->businessSegment = ($data['businessSegment']);
     $this->percentOfRevenue = ($data['percentOfRevenue']);
-    $this->quarter1Revenue = floatval($data['quarter1Revenue']);
-    $this->quarter2Revenue = floatval($data['quarter2Revenue']);
-    $this->quarter3Revenue = floatval($data['quarter3Revenue']);
-    $this->quarter4Revenue = floatval($data['quarter4Revenue']);
+    $this->quarter1Revenue = intval($data['quarter1Revenue']);
+    $this->quarter2Revenue = intval($data['quarter2Revenue']);
+    $this->quarter3Revenue = intval($data['quarter3Revenue']);
+    $this->quarter4Revenue = intval($data['quarter4Revenue']);
     $this->profitMargin = ($data['profitMargin']);
 
   }
