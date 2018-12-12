@@ -332,7 +332,7 @@ Highcharts.chart('percentageChart', {
         startAngle: -45,
         endAngle: 45,
         background: null,
-        size: 150
+        size: 100
     }],
 
     tooltip: {
