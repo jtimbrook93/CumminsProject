@@ -14,8 +14,8 @@ data: {
 //
 // },
 
-  Sales: [],
-  
+  sales: [],
+
   DistributionArr: [{
 
     businessSegment: "Jon sucks",
