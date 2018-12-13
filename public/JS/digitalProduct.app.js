@@ -384,33 +384,33 @@ Highcharts.chart('percentageChart', {
 
 },
 
-    // Let the music play
-    function (chart) {
-        setInterval(function () {
-            if (chart.series) { // the chart may be destroyed
-                var left = chart.series[0].points[0],
-                    right = chart.series[1].points[0],
-                    leftVal,
-                    rightVal,
-                    inc = (Math.random() - 0.5) * 3;
-
-                leftVal = left.y + inc;
-                rightVal = leftVal + inc / 3;
-                if (leftVal < -20 || leftVal > 6) {
-                    leftVal = left.y - inc;
-                }
-                if (rightVal < -20 || rightVal > 6) {
-                    rightVal = leftVal;
-                }
-
-                left.update(leftVal, false);
-                right.update(rightVal, false);
-                chart.redraw();
-            }
-        }, 500);
-
-    });
-  },
+  //   // Let the music play
+  //   function (chart) {
+  //       setInterval(function () {
+  //           if (chart.series) { // the chart may be destroyed
+  //               var left = chart.series[0].points[0],
+  //                   right = chart.series[1].points[0],
+  //                   leftVal,
+  //                   rightVal,
+  //                   inc = (Math.random() - 0.5) * 3;
+  //
+  //               leftVal = left.y + inc;
+  //               rightVal = leftVal + inc / 3;
+  //               if (leftVal < -20 || leftVal > 6) {
+  //                   leftVal = left.y - inc;
+  //               }
+  //               if (rightVal < -20 || rightVal > 6) {
+  //                   rightVal = leftVal;
+  //               }
+  //
+  //               left.update(leftVal, false);
+  //               right.update(rightVal, false);
+  //               chart.redraw();
+  //           }
+  //       }, 500);
+  //
+  //   });
+  // },
 // Highcharts.chart('percentageChart', {
 //
 //     chart: {
@@ -488,28 +488,28 @@ Highcharts.chart('percentageChart', {
 //
 // },
 //
-//     // Let the music play
-//     function (chart) {
-//         setInterval(function () {
-//             if (chart.series) { // the chart may be destroyed
-//                 var left = chart.series[0].points[0],
-//                     leftVal,
-//
-//                     inc = (Math.random() - 0.5) * 3;
-//
-//                 leftVal = left.y + inc;
-//                 if (leftVal < -20 || leftVal > 6) {
-//                     leftVal = left.y - inc;
-//                 }
-//
-//
-//                 left.update(leftVal, false);
-//                 chart.redraw();
-//             }
-//         }, 500);
-//
-//     });
-// },
+    // Let the music play
+    function (chart) {
+        setInterval(function () {
+            if (chart.series) { // the chart may be destroyed
+                var left = chart.series[0].points[0],
+                    leftVal,
+
+                    inc = (Math.random() - 0.5) * 3;
+
+                leftVal = left.y + inc;
+                if (leftVal < -20 || leftVal > 6) {
+                    leftVal = left.y - inc;
+                }
+
+
+                left.update(leftVal, false);
+                chart.redraw();
+            }
+        }, 500);
+
+    });
+},
 
     gotoTask(tid) {
       window.location = 'task.html?taskId=' + tid;
