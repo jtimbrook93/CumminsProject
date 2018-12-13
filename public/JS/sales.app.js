@@ -69,6 +69,7 @@ data: {
         .then( response => response.json() )
         .then( json => {
           salesApp.sales = json;
+          this.buildSalesChart();
           this.fetchEngines();
           this.fetchFiltration();
           this.fetchDistribution();
@@ -78,7 +79,7 @@ data: {
           console.log('PRODUCT FETCH ERROR:');
           console.log(err);
         })
-      //  this.buildSalesChart();
+
       },
 
       fetchDistribution() {
@@ -133,7 +134,7 @@ data: {
       },
 
 buildSalesChart() {
-Highcharts.chart('salesChart', {
+      Highcharts.chart('salesChart', {
     chart: {
         type: 'column'
     },
@@ -271,58 +272,7 @@ Highcharts.chart('salesChart', {
 //     });
 //
 // }
-// getSeries(){
-//   var series = [];
-//   if(this.businessSegment=='Distribution')
-//   {
-//     series = [{name: 'Distribution', data: this.sales.map( item => [item.quarter1Revenue])}]
-//   }
-//   else if(this.dataValue=='fuelMassFlowRate')
-//   {
-//     series = [{name: 'fuelMassFlowRate', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.fuelMassFlowRate])}]
-//   }
-//   else if(this.dataValue == "drag")
-//   {
-//     series = [{name: 'drag', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.drag])}]
-//   }
-//   else if(this.dataValue=='thrust')
-//   {
-//     series = [{name: 'thrust', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.thrust])}]
-//   }
-//   else if(this.dataValue == "fuelBurned")
-//   {
-//     series = [{name: 'fuelBurned', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.fuelBurned])}]
-//   }
-//   else if(this.dataValue=='fuelEfficiency')
-//   {
-//     series = [{name: 'fuelEfficiency', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.fuelEfficiency])}]
-//   }
-//   else if(this.dataValue == "noxLevels")
-//   {
-//     series = [{name: 'noxLevels', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.noxLevels])}]
-//   }
-//   else if(this.dataValue=='momentumChangeAMF')
-//   {
-//     series = [{name: 'momentumChangeAMF', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.momentumChangeAMF])}]
-//   }
-//   else if(this.dataValue == "momentumChangeFMF")
-//   {
-//     series = [{name: 'momentumChangeFMF', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.momentumChangeFMF])}]
-//   }
-//   else if(this.dataValue=='energyBalance')
-//   {
-//     series = [{name: 'energyBalance', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.energyBalance])}]
-//   }
-//   else if(this.dataValue == "propulsiveEfficiency")
-//   {
-//     series = [{name: 'propulsiveEfficiency', data: this.dataArr2.map( item => [Date.parse(item.dateCollected), item.propulsiveEfficiency])}]
-//   }
-//   else if(this.dataValue=='thermalEfficiency')
-//   {
-//     series = [{name: 'thermalEfficiency', data: this.dataArr2.map( item => [Date.parse(entry.dateCollected), entry.thermalEfficiency])}]
-//   }
-//   return series;
-// },
+
 },
 
 
@@ -331,7 +281,7 @@ Highcharts.chart('salesChart', {
         // const url = new URL(window.location.href);
         // const bs = url.searchParams.get('businessSegment') || '';
         // Do data fetch
-        this.buildSalesChart();
+
         this.fetchAll();
       }
     });
