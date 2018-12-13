@@ -306,14 +306,14 @@ var digitalProductApp = new Vue({
 });
 
 },
-buildPercentageChart(){
-Highcharts.chart('percentageChart', {
+buildBurndownChart(){
+Highcharts.chart('container', {
 
     chart: {
         type: 'gauge',
         plotBorderWidth: 1,
         plotBackgroundColor: {
-            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
             stops: [
                 [0, '#FFF4C6'],
                 [0.3, '#FFFFFF'],
@@ -321,17 +321,18 @@ Highcharts.chart('percentageChart', {
             ]
         },
         plotBackgroundImage: null,
-        height: 250
+        height: 0
     },
 
     title: {
-        text: 'Stress Levels'
+        text: 'VU meter'
     },
 
     pane: [{
         startAngle: -45,
         endAngle: 45,
         background: null,
+        center: ['50%'],
         size: 175
     }],
 
@@ -357,11 +358,10 @@ Highcharts.chart('percentageChart', {
         }],
         pane: 0,
         title: {
-            text: 'VU<br/><span style="font-size:8px">Team A</span>',
-            y: 0
+
+            y: -40
         }
-    }
-    ],
+    }],
 
     plotOptions: {
         gauge: {
@@ -376,7 +376,7 @@ Highcharts.chart('percentageChart', {
 
 
     series: [{
-        name: 'Stress Levels',
+
         data: [-20],
         yAxis: 0
     }]
@@ -388,23 +388,28 @@ Highcharts.chart('percentageChart', {
         setInterval(function () {
             if (chart.series) { // the chart may be destroyed
                 var left = chart.series[0].points[0],
+                    right = chart.series[1].points[0],
                     leftVal,
-
+                    rightVal,
                     inc = (Math.random() - 0.5) * 3;
 
                 leftVal = left.y + inc;
+                rightVal = leftVal + inc / 3;
                 if (leftVal < -20 || leftVal > 6) {
                     leftVal = left.y - inc;
                 }
-
+                if (rightVal < -20 || rightVal > 6) {
+                    rightVal = leftVal;
+                }
 
                 left.update(leftVal, false);
+                right.update(rightVal, false);
                 chart.redraw();
             }
         }, 500);
 
     });
-},
+  },
 
     gotoTask(tid) {
       window.location = 'task.html?taskId=' + tid;
