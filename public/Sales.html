@@ -145,6 +145,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <thead>
           <tr>
             <th>Business Segment</th>
+            <th>Quarter 1 Revenue</th>
+            <th>Quarter 2 Revenue</th>
+            <th>Quarter 3 Revenue</th>
+            <th>Quarter 4 Revenue</th>
             <th>Percent Of Revenue</th>
             <th>Profit Margin</th>
 
@@ -154,6 +158,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           <tr v-for="sales in sales">
 
             <td>{{sales.businessSegment}}</td>
+            <td>{{sales.quarter1Revenue}}</td>
+            <td>{{sales.quarter2Revenue}}</td>
+            <td>{{sales.quarter3Revenue}}</td>
+            <td>{{sales.quarter4Revenue}}</td>
             <td>{{sales.percentOfRevenue}}</td>
             <td>{{sales.profitMargin}}</td>
 
