@@ -74,7 +74,7 @@ data: {
           this.fetchFiltration();
           this.fetchDistribution();
           this.fetchPowerGeneration();
-      
+
          } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
@@ -162,13 +162,13 @@ buildSalesChart() {
     },
     series: [{
         name: 'Distribution',
-        data: [5, 3, 4, 7, 2]
+        data: [5, 3, 4, 7]
     }, {
         name: 'Filtration',
-        data: [2, 2, 3, 2, 1]
+        data: [2, 2, 3, 2]
     }, {
         name: 'Engines',
-        data: [3, 4, 4, 2, 5]
+        data: [3, 4, 4, 2]
     }]
 });
 },
