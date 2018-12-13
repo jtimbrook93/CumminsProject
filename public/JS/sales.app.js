@@ -133,102 +133,102 @@ data: {
         });
       },
 
-buildSalesChart() {
-      Highcharts.chart('salesChart', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Stacked column chart'
-    },
-    xAxis: {
-        categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Total fruit consumption'
-        }
-    },
-    tooltip: {
-        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-        shared: true
-    },
-    plotOptions: {
-        column: {
-            stacking: 'percent'
-        }
-    },
-    series: [{
-        name: 'John',
-        data: [5, 3, 4, 7, 2]
-    }, {
-        name: 'Jane',
-        data: [2, 2, 3, 2, 1]
-    }, {
-        name: 'Joe',
-        data: [3, 4, 4, 2, 5]
-    }]
-});
-},
+// buildSalesChart() {
+//       Highcharts.chart('salesChart', {
+//     chart: {
+//         type: 'column'
+//     },
+//     title: {
+//         text: 'Stacked column chart'
+//     },
+//     xAxis: {
+//         categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+//     },
+//     yAxis: {
+//         min: 0,
+//         title: {
+//             text: 'Total fruit consumption'
+//         }
+//     },
+//     tooltip: {
+//         pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+//         shared: true
+//     },
+//     plotOptions: {
+//         column: {
+//             stacking: 'percent'
+//         }
+//     },
+//     series: [{
+//         name: 'John',
+//         data: [5, 3, 4, 7, 2]
+//     }, {
+//         name: 'Jane',
+//         data: [2, 2, 3, 2, 1]
+//     }, {
+//         name: 'Joe',
+//         data: [3, 4, 4, 2, 5]
+//     }]
+// });
+// },
 
-  // buildSalesChart() {
-  //     Highcharts.chart('salesChart', {
-  //         chart: {
-  //             type: 'column'
-  //         },
-  //         title: {
-  //             text: 'Revenue by Division'
-  //         },
-  //
-  //         xAxis: {
-  //             categories: [
-  //                 'Quarter 1',
-  //                 'Quarter 2',
-  //                 'Quarter 3',
-  //                 'Quarter 4',
-  //
-  //             ],
-  //             crosshair: true
-  //         },
-  //         yAxis: {
-  //             min: 0,
-  //             title: {
-  //                 text: 'Revenue by Quarter in Millions'
-  //             }
-  //         },
-  //         tooltip: {
-  //             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-  //             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-  //                 '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-  //             footerFormat: '</table>',
-  //             shared: true,
-  //             useHTML: true
-  //         },
-  //         plotOptions: {
-  //                         column: {
-  //                      stacking: 'percent'
-  //   }
-  // },
-  //
-  //         series: [{
-  //             name: 'Distribution',
-  //             // data: this.DistributionArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
-  //             data:  [5, 3, 4, 7, 2]
-  //         }, {
-  //             name: 'Filtration',
-  //             data: this.FiltrationArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
-  //
-  //         }, {
-  //             name: 'Engines',
-  //             data: this.EnginesArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
-  //
-  //         }, {
-  //             name: 'Power Generation',
-  //             data: this.PowerGenerationArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
-  //
-  //         }]
-  //     });
+  buildSalesChart() {
+      Highcharts.chart('salesChart', {
+          chart: {
+              type: 'column'
+          },
+          title: {
+              text: 'Revenue by Division'
+          },
+
+          xAxis: {
+              categories: [
+                  'Quarter 1',
+                  'Quarter 2',
+                  'Quarter 3',
+                  'Quarter 4',
+
+              ],
+              crosshair: true
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: 'Revenue by Quarter in Millions'
+              }
+          },
+          tooltip: {
+              headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+              pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                  '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+              footerFormat: '</table>',
+              shared: true,
+              useHTML: true
+          },
+          plotOptions: {
+                          column: {
+                       stacking: 'percent'
+    }
+  },
+          series: [{
+              name: 'Distribution',
+              // data: this.DistributionArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
+              data:  [5, 3, 4, 7, 2]
+          }, {
+              name: 'Filtration',
+              data: this.FiltrationArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
+
+          }, {
+              name: 'Engines',
+              data: this.EnginesArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
+
+          }, {
+              name: 'Power Generation',
+              data: this.PowerGenerationArr.map( entry => [entry.quarter1Revenue, entry.quarter2Revenue, entry.quarter3Revenue, entry.quarter4Revenue])
+
+          }]
+      });
+    }
 //  buildSalesChart() {
 //     Highcharts.chart('salesChart', {
 //     chart: {
