@@ -306,8 +306,9 @@ var digitalProductApp = new Vue({
 });
 
 },
-buildBurndownChart(){
-Highcharts.chart('container', {
+buildPercentageChart(){
+
+Highcharts.chart('percentageChart', {
 
     chart: {
         type: 'gauge',
@@ -410,6 +411,105 @@ Highcharts.chart('container', {
 
     });
   },
+// Highcharts.chart('percentageChart', {
+//
+//     chart: {
+//         type: 'gauge',
+//         plotBorderWidth: 1,
+//         plotBackgroundColor: {
+//             linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+//             stops: [
+//                 [0, '#FFF4C6'],
+//                 [0.3, '#FFFFFF'],
+//                 [1, '#FFF4C6']
+//             ]
+//         },
+//         plotBackgroundImage: null,
+//         height: 250
+//     },
+//
+//     title: {
+//         text: 'Stress Levels'
+//     },
+//
+//     pane: [{
+//         startAngle: -45,
+//         endAngle: 45,
+//         background: null,
+//         size: 175
+//     }],
+//
+//     tooltip: {
+//         enabled: false
+//     },
+//
+//     yAxis: [{
+//         min: -20,
+//         max: 6,
+//         minorTickPosition: 'outside',
+//         tickPosition: 'outside',
+//         labels: {
+//             rotation: 'auto',
+//             distance: 20
+//
+//         },
+//         plotBands: [{
+//             from: 0,
+//             to: 6,
+//             color: '#C02316',
+//             innerRadius: '100%',
+//             outerRadius: '105%'
+//         }],
+//         pane: 0,
+//         title: {
+//             text: 'VU<br/><span style="font-size:8px">Team A</span>',
+//             y: 0
+//         }
+//     }
+//     ],
+//
+//     plotOptions: {
+//         gauge: {
+//             dataLabels: {
+//                 enabled: false
+//             },
+//             dial: {
+//                 radius: '100%'
+//             }
+//         }
+//     },
+//
+//
+//     series: [{
+//         name: 'Stress Levels',
+//         data: [-20],
+//         yAxis: 0
+//     }]
+//
+// },
+//
+//     // Let the music play
+//     function (chart) {
+//         setInterval(function () {
+//             if (chart.series) { // the chart may be destroyed
+//                 var left = chart.series[0].points[0],
+//                     leftVal,
+//
+//                     inc = (Math.random() - 0.5) * 3;
+//
+//                 leftVal = left.y + inc;
+//                 if (leftVal < -20 || leftVal > 6) {
+//                     leftVal = left.y - inc;
+//                 }
+//
+//
+//                 left.update(leftVal, false);
+//                 chart.redraw();
+//             }
+//         }, 500);
+//
+//     });
+// },
 
     gotoTask(tid) {
       window.location = 'task.html?taskId=' + tid;
