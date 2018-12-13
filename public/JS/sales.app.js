@@ -69,11 +69,12 @@ data: {
         .then( response => response.json() )
         .then( json => {
           salesApp.sales = json;
+          this.buildSalesChart();
           this.fetchEngines();
           this.fetchFiltration();
           this.fetchDistribution();
           this.fetchPowerGeneration();
-          this.buildSalesChart();
+      
          } )
         .catch( err => {
           console.log('PRODUCT FETCH ERROR:');
