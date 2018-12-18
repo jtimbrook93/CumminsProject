@@ -26,3 +26,4 @@ require 'models/Team.php';
 require 'models/Work.php';
 require 'models/WorkHoursReport.php';
 require 'models/Task.php';
+require 'models/Project.php';
