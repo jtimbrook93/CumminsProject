@@ -1,0 +1,4 @@
+http://ec2-52-89-69-131.us-west-2.compute.amazonaws.com
+
+login id - 218
+password - 1234

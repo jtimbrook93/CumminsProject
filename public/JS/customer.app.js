@@ -55,6 +55,7 @@ data: {
 
 
         this.displayCustomers();
+        
         const url = new URL(window.location.href);
         const id = url.searchParams.get('Id') || 0;
 
