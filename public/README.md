@@ -1,2 +1,2 @@
-# Team29_Final_Project
-Our teams collaborative repository
+# Jon's Code for Cummins Case Project Fall 2018
+
