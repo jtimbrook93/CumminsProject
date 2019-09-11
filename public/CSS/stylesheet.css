@@ -23,7 +23,7 @@ header {
   font-weight: Bold;
   color: white;
   padding: 1em;
-  background: green;
+  background: red;
   text-align: center;
 }
 header h1 {
@@ -49,7 +49,7 @@ header nav a:hover {
 a {
   outline: none;
   text-decoration: none;
-  color: green;
+  color: red;
 }
 a:hover {
   color: #a6c4AA;
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
   font-size: 20pt;
   font-weight: 400;
-  color: green;
+  color: red;
 }
 p {
   margin: 0;
@@ -79,13 +79,13 @@ div {
   background: white;
 }
 div h3 {
-  color: green;
+  color: black;
 }
 div p {
-  color: green;
+  color: black;
 }
 main {
-  background: green;
+  background: red;
   padding-bottom: 1.5em;
 }
 main section,
@@ -99,7 +99,7 @@ main article {
   border-radius: 3px;
 }
 main article p {
-  color: green;
+  color: black;
   line-height: 1.5;
 }
 .capsule {
@@ -144,7 +144,7 @@ main article p {
     border-color: black;
   }
   #formtitle {
-    color: green;
+    color: black;
     font-weight: bold;
   }
 
@@ -185,7 +185,7 @@ main article p {
   }
 
   button {
-    background-color: green;
+    background-color: red;
     padding: 6px 10px 6px 10px;
     color: white;
     border: 1px solid black;
